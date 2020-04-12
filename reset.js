@@ -1,8 +1,8 @@
 // Script for setting up a database.
 const mongoose = require('mongoose');
 const connect = require('./db');
-const Club = require('./models/clubs');
-const User = require('./models/users');
+const Club = require('./models/club');
+const User = require('./models/user');
 
 // Connect to the database
 connect();
@@ -15,8 +15,8 @@ const clubs = [
             meetingTime: 'Sunday 7pm',
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
-            officerList: ‘[Amy, Lilly, Jacky, Meaghan]’,
-            memberList: ‘[Ruoya, Kevin, Colby, Cole…]’,
+            officerList: ['Amy', 'Lilly', 'Jacky', 'Meaghan'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: 'Haunted House'}),
   new Club({_id: "American Chemical Society",
             category: "SLU Club",
@@ -24,8 +24,8 @@ const clubs = [
             meetingTime: '6pm',
             meetingLocation: 'Johnson 309',
             comingEvent: 'There Are No Upcoming Events',
-            officerList: ‘[Nicole Rosenberg, Dhimiter Cobani, Samuel Tartakoff]’,
-            memberList: ‘[Ruoya, Kevin, Colby, Cole…]’,
+            officerList: ['Nicole Rosenberg', 'Dhimiter Cobani', 'Samuel Tartakoff'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: 'Review sessions for General Chemistry'}),
   new Club({_id: "Graceful Movements",
             category: "SLU Club",
@@ -33,8 +33,8 @@ const clubs = [
             meetingTime: 'Tuesdays 4-5:30pm and Sundays 1-3pm',
             meetingLocation: 'Griffiths 40',
             comingEvent: 'Spring Dance Concert',
-            officerList: ‘[Meiting Li]’,
-            memberList: ‘[Ruoya, Kevin, Colby, Cole…]’,
+            officerList: ['Meiting Li'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: 'Fall Dance Concert'}),
   new Club({_id: "L.I.G.H.T. House",
             category: "Theme House",
@@ -42,8 +42,8 @@ const clubs = [
             meetingTime: 'TBD',
             meetingLocation: '17 College St. Canton, NY',
             comingEvent: 'Morning Yoga on Monday',
-            officerList: ‘[Bob]’,
-            memberList: ‘[Ruoya, Kevin, Colby, Cole…]’,
+            officerList: ['Bob'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: 'Making candles'})
 ];
 
