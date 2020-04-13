@@ -41,7 +41,7 @@ const clubs = [
             introduction: 'The L.I.G.H.T. house stands to light a path promoting a healthy lifestyle for individuals and the community in both local and global arenas centered around the ideas of balance and awareness of self. We will provide information and activities that promote self-awareness for St. Lawrence students and the Canton community. In doing so this will hopefully raise awareness of our lifestyle choices and their impact on the environment and health of our peers. The L.I.G.H.T. House is located across from 13 University and a few houses down from 25 College.',
             meetingTime: 'TBD',
             meetingLocation: '17 College St. Canton, NY',
-            comingEvent: 'Morning Yoga on Monday',
+            comingEvent: 'Morning yoga on Monday',
             officerList: ['Bob'],
             memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: 'Making candles'})
@@ -51,31 +51,20 @@ const clubs = [
 // Model a collection of users
 const users = [
   new User({_id: 'Kevin15',
-    password: 'k15',
     my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house:'The Hub',
-    club_theme_house: ['L.I.G.H.T. House']
+    my_theme_house:'The Hub'
   }),
   new User({_id: 'Colby16',
-    password: 'c16',
     my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house:'The Hub',
-    club_theme_house: ['The Hub']
-
+    my_theme_house:'The Hub'
   }),
   new User({_id: 'Cole18',
-    password: 'c18',
     my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house: 'L.I.G.H.T. House',
-    club_theme_house: ['Commons College']
-
+    my_theme_house: 'L.I.G.H.T. House'
   }),
   new User({_id: 'Jacky17',
-    password: 'j17',
     my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house: 'L.I.G.H.T. House',
-    club_theme_house: ['Haunted House']
-
+    my_theme_house: 'L.I.G.H.T. House'
   })
 
 ];
