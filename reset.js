@@ -50,6 +50,33 @@ const clubs = [
 
 // Model a collection of users
 const users = [
+  new User({_id: 'Kevin15',
+    password: 'k15',
+    my_club: ['American Chemical Society', 'Graceful Movements'],
+    my_theme_house:'The Hub',
+    club_theme_house: ['L.I.G.H.T. House']
+  }),
+  new User({_id: 'Colby16',
+    password: 'c16',
+    my_club: ['American Chemical Society', 'Graceful Movements'],
+    my_theme_house:'The Hub',
+    club_theme_house: ['The Hub']
+
+  }),
+  new User({_id: 'Cole18',
+    password: 'c18',
+    my_club: ['American Chemical Society', 'Graceful Movements'],
+    my_theme_house: 'L.I.G.H.T. House',
+    club_theme_house: ['Commons College']
+
+  }),
+  new User({_id: 'Jacky17',
+    password: 'j17',
+    my_club: ['American Chemical Society', 'Graceful Movements'],
+    my_theme_house: 'L.I.G.H.T. House',
+    club_theme_house: ['Haunted House']
+
+  })
 
 ];
 
