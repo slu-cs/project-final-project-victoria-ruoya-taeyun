@@ -9,7 +9,7 @@ const Club = new mongoose.Schema({
   meetingTime:String,
   meetingLocation: String,
   comingEvent: String,
-  numberOfMember: Int,
+  numberOfMember: Integar,
   officerList: [String],
   memberList: [String],
   passEvent: [String]
