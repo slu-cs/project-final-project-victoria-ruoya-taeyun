@@ -1,5 +1,5 @@
 // Controller for the club collection.
-const Course = require('../models/club');
+const Club = require('../models/club');
 
 // GET /clubs
 module.exports.index = function(request, response, next) {
@@ -8,24 +8,7 @@ module.exports.index = function(request, response, next) {
     .catch(error => next(error));
 };
 
-// Get / clubs/: category
-module.exports.retrieve = function(request, response, next) {
-  const queries = [
-    Course.findByCatefory(request.params.category),
-    Course.distinct('category')
-  ];
-
-  Promise.all(queries).then(function([club, clubCategories]) {
-    if (club) {
-      response.render('clubs/index', {club: club, clubCategories: clubCategories});
-    } else {
-      next(); // No such club
-    }
-  }).catch(error => next(error));
-};
-
 // GET /clubs/:id
-/*
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     Course.findById(request.params.id),
