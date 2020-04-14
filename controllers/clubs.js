@@ -11,7 +11,7 @@ module.exports.index = function(request, response, next) {
 // Get / clubs/: category
 module.exports.index = function(request, response, next) {
   Course.distinct('category')
-    .then(courseIDs => response.redirect(`/courses/${courseIDs[1]}`))
+    .then(courseIDs => response.redirect(`/clubs/${clubIDs[1]}`))
     .catch(error => next(error));
 };
 
