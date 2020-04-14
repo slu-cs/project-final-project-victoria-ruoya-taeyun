@@ -11,8 +11,8 @@ module.exports.index = function(request, response, next) {
 // GET /clubs/:id
 module.exports.retrieve = function(request, response, next) {
   const queries = [
-    Course.findById(request.params.id),
-    Course.distinct('_id')
+    Club.findById(request.params.id),
+    Club.distinct('_id')
   ];
 
   Promise.all(queries).then(function([club, clubIDs]) {
