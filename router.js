@@ -18,15 +18,15 @@ const authorize = function(request, response, next) {
 // Handle club requests
 router.get('/clubs', clubs.index);
 router.get('/clubs/:id', clubs.retrieve);
-router.post('/clubs', authorize, clubs.create);
-router.delete('/clubs/:id', authorize, clubs.delete);
-router.put('/clubs/:id', authorize, clubs.update);
+//router.post('/clubs', authorize, clubs.create);
+//router.delete('/clubs/:id', authorize, clubs.delete);
+//router.put('/clubs/:id', authorize, clubs.update);
 
 // Handle user requests
 router.get('/users', users.index);
-router.post('/users', authorize, users.create);
-router.delete('/users/:id', authorize, users.delete);
-router.put('/users/:id', authorize, users.update);
+//router.post('/users', authorize, users.create);
+//router.delete('/users/:id', authorize, users.delete);
+//router.put('/users/:id', authorize, users.update);
 
 // Export the router
 module.exports = router;
