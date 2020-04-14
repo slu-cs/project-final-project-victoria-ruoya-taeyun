@@ -8,7 +8,7 @@
         <div class="col-auto p-3 border-right">
           <nav class="nav nav-pills flex-column">
             <a>Clubs</a>
-            <%_ for (const item of clubIDs) { -%>
+            <%_ for (const id of clubIDs) { -%>
               <%_ const status = (id === club._id) ? 'active bg-dark' : 'inactive'; -%>
               <a href="/clubs/<%=  club._id -%>" class="nav-item nav-link"><%= club._id -%></a>
             <%_ } -%>
