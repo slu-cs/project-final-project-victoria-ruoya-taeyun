@@ -17,10 +17,10 @@
           <main class="p-3">
             <h2><%= club.category -%></h2>
             <p><%= club.introduction -%></p>
-            <%_ if (clubs.memberList.length > 0) { -%>
+            <%_ if (club.memberList.length > 0) { -%>
               <p>Members:</p>
               <ul>
-                <%_ for (const member of course.memberList) { -%>
+                <%_ for (const member of club.memberList) { -%>
                   <li><a href="/clubs/<%= memberList -%>"><%= memberList -%></a></li>
                 <%_ } -%>
               </ul>
