@@ -7,15 +7,16 @@
       <div class="row">
         <div class="col-auto p-3 border-right">
           <nav class="nav nav-pills flex-column">
-            <%_ for (const id of clubIDs) { -%>
-              <%_ const status = (id === club.id) ? 'active bg-dark' : 'inactive'; -%>
+            <a>Clubs</a>
+            <%_ for (const id of club.category) { -%>
+              <%_ const status = ('SLU Club' === club.category) ? 'active bg-dark' : 'inactive'; -%>
               <a href="/clubs/<%= id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
             <%_ } -%>
           </nav>
         </div>
         <div class="col">
           <main class="p-3">
-            <h2><%= club.category -%></h2>
+            <h2><%= club._id -%></h2>
             <p><%= club.introduction -%></p>
             <%_ if (club.memberList.length > 0) { -%>
               <p>Members:</p>
@@ -25,6 +26,13 @@
                 <%_ } -%>
               </ul>
             <%_ } -%>
+            meetingTime:String,
+            meetingLocation: String,
+            comingEvent: String,
+            numberOfMember: String,
+            officerList: [String],
+            memberList: [String],
+            passEvent: [String]
           </main>
         </div>
       </div>
