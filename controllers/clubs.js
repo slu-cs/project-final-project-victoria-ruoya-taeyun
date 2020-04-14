@@ -8,6 +8,13 @@ module.exports.index = function(request, response, next) {
     .catch(error => next(error));
 };
 
+// Get / clubs/: category
+module.exports.index = function(request, response, next) {
+  Course.distinct('category')
+    .then(courseIDs => response.redirect(`/courses/${courseIDs[1]}`))
+    .catch(error => next(error));
+};
+
 // GET /clubs/:id
 module.exports.retrieve = function(request, response, next) {
   const queries = [
