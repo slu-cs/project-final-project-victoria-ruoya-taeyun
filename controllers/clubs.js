@@ -9,10 +9,19 @@ module.exports.index = function(request, response, next) {
 };
 
 // Get / clubs/: category
-module.exports.index = function(request, response, next) {
-  Course.distinct('category')
-    .then(courseIDs => response.redirect(`/clubs/${clubIDs[1]}`))
-    .catch(error => next(error));
+module.exports.retrieve = function(request, response, next) {
+  const queries = [
+    Course.findById(request.params.category),
+    Course.distinct('category')
+  ];
+
+  Promise.all(queries).then(function([club, clubIDs]) {
+    if (club) {
+      response.render('clubs/index', {club: club, clubIDs: clubIDs});
+    } else {
+      next(); // No such club
+    }
+  }).catch(error => next(error));
 };
 
 // GET /clubs/:id
