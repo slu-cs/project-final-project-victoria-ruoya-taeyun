@@ -25,6 +25,7 @@ module.exports.retrieve = function(request, response, next) {
 };
 
 // GET /clubs/:id
+/*
 module.exports.retrieve = function(request, response, next) {
   const queries = [
     Course.findById(request.params.id),
@@ -39,3 +40,4 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
+*/
