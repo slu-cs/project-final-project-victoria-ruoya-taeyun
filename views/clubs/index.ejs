@@ -10,7 +10,7 @@
             <a>Clubs</a>
             <%_ for (const id of clubIDs) { -%>
               <%_ const status = (id === club._id) ? 'active bg-dark' : 'inactive'; -%>
-              <a href="/clubs/<%=  club._id -%>" class="nav-item nav-link"><%= club._id -%></a>
+              <a href="/clubs/<%=  id -%>" class="nav-item nav-link"><%= id -%></a>
             <%_ } -%>
           </nav>
         </div>
