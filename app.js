@@ -27,7 +27,7 @@ app.use(function(request, response, next) {
 
 // Redirect from the home page
 app.get('/', function(request, response) {
-  response.redirect('/courses');
+  response.redirect('/clubs');
 });
 
 // Route content requests
