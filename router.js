@@ -23,7 +23,7 @@ router.get('/clubs/:id', clubs.retrieve);
 //router.put('/clubs/:id', authorize, clubs.update);
 
 // Handle user requests
-router.get('/users', users.index);
+//router.get('/users', users.index);
 //router.post('/users', authorize, users.create);
 //router.delete('/users/:id', authorize, users.delete);
 //router.put('/users/:id', authorize, users.update);
