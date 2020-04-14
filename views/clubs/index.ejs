@@ -18,21 +18,20 @@
           <main class="p-3">
             <h2><%= club._id -%></h2>
             <p><%= club.introduction -%></p>
-            <%_ if (club.memberList.length > 0) { -%>
-              <p>Members:</p>
-              <ul>
-                <%_ for (const member of club.memberList) { -%>
-                  <li><%= member -%></li>
-                <%_ } -%>
-              </ul>
-            <%_ } -%>
-            meetingTime:String,
-            meetingLocation: String,
-            comingEvent: String,
-            numberOfMember: String,
-            officerList: [String],
-            memberList: [String],
-            passEvent: [String]
+            //<%_ if (club.memberList.length > 0) { -%>
+          //    <p>Members:</p>
+          //    <ul>
+          //      <%_ for (const member of club.memberList) { -%>
+            //      <li><%= member -%></li>
+          //      <%_ } -%>
+          //    </ul>
+        //    <%_ } -%>
+            <p><%= club.meetingTime -%></p>
+            :String,
+            <p><%= club.meetingLocation -%></p>
+            <p><%= club.numberOfMember -%></p>
+            <p><%= club.comingEvent -%></p>
+            <p><%= club.passEvent -%></p>
           </main>
         </div>
       </div>
