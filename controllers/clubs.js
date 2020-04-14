@@ -11,13 +11,13 @@ module.exports.index = function(request, response, next) {
 // Get / clubs/: category
 module.exports.retrieve = function(request, response, next) {
   const queries = [
-    Course.findById(request.params.category),
+    Course.findByCatefory(request.params.category),
     Course.distinct('category')
   ];
 
-  Promise.all(queries).then(function([club, clubIDs]) {
+  Promise.all(queries).then(function([club, clubCategories]) {
     if (club) {
-      response.render('clubs/index', {club: club, clubIDs: clubIDs});
+      response.render('clubs/index', {club: club, clubCategories: clubCategories});
     } else {
       next(); // No such club
     }
