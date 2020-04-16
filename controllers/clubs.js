@@ -3,7 +3,7 @@ const Club = require('../models/club');
 
 // GET /clubs
 module.exports.index = function(request, response, next) {
-  Course.distinct('_id')
+  Club.distinct('_id')
     .then(clubIDs => response.redirect(`/clubs/${clubIDs[0]}`))
     .catch(error => next(error));
 };
