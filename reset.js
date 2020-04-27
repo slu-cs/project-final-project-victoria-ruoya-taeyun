@@ -15,9 +15,8 @@ const clubs = [
             meetingTime: 'Sunday 7pm',
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
-            numberOfMember: 8,
             officerList: ['Amy', 'Lilly', 'Jacky', 'Meaghan'],
-            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Taeyun'],
             passEvent: ['Haunted House','Gaming Night']}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
@@ -25,9 +24,8 @@ const clubs = [
             meetingTime: '6pm',
             meetingLocation: 'Johnson 309',
             comingEvent: 'There Are No Upcoming Events',
-            numberOfMember:7,
             officerList: ['Nicole Rosenberg', 'Dhimiter Cobani', 'Samuel Tartakoff'],
-            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
+            memberList: ['Victoria', 'Kevin', 'Colby', 'Cole'],
             passEvent: ['Review sessions for General Chemistry']}),
   new Club({_id: 'Graceful Movements',
             category: 'SLU Club',
@@ -35,7 +33,6 @@ const clubs = [
             meetingTime: 'Tuesdays 4-5:30pm and Sundays 1-3pm',
             meetingLocation: 'Griffiths 40',
             comingEvent: 'Spring Dance Concert',
-            numberOfMember: 5,
             officerList: ['Meiting Li'],
             memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             passEvent: ['Fall Dance Concert']}),
@@ -45,31 +42,19 @@ const clubs = [
             meetingTime: 'TBD',
             meetingLocation: '17 College St. Canton, NY',
             comingEvent: 'Morning yoga on Monday',
-            numberOfMember: 5,
             officerList: ['Bob'],
-            memberList: ['Rita', 'Kate', 'Jack', 'Andrew'],
+            memberList: ['Rita', 'Kate', 'Jack', 'Victoria'],
             passEvent: ['Making candles']})
 ];
 
 
 // Model a collection of users
 const users = [
-  new User({_id: 'Kevin15',
-    my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house:'The Hub'
+  new User({_id: 'Victoria'
   }),
-  new User({_id: 'Colby16',
-    my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house:'The Hub'
+  new User({_id: 'Ruoya'
   }),
-  new User({_id: 'Cole18',
-    my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house: 'The Hub'
-  }),
-  new User({_id: 'Jacky17',
-    my_club: ['American Chemical Society', 'Graceful Movements'],
-    my_theme_house: 'The Hub',
-    club_theme_house_created_by_me:['The Hub']
+  new User({_id: 'Taeyun'
   })
 
 ];
