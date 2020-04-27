@@ -23,3 +23,24 @@ module.exports.retrieve = function(request, response, next) {
     }
   }).catch(error => next(error));
 };
+
+// POST /club
+module.exports.create = function(request, response, next) {
+  Club.create(request.body)
+    .then(club => response.status(201).send(club.id))
+    .catch(error => next(error));
+};
+
+// DELETE /club/:id
+module.exports.delete = function(request, response, next) {
+  Club.findByIdAndDelete(request.params.id)
+    .then(club => club ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
+
+// PUT /club/:id
+module.exports.update = function(request, response, next) {
+  Club.findByIdAndUpdate(request.params.id, request.body)
+    .then(club => club ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
