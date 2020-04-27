@@ -4,4 +4,12 @@
     <a href="/clubs" class="nav-item nav-link <%= (active === 'clubs') ? 'active' : 'inactive' -%>">Clubs</a>
     <a href="/users" class="nav-item nav-link <%= (active === 'users') ? 'active' : 'inactive' -%>">Users</a>
   </nav>
+  
+  <nav class="navbar-nav ml-auto">
+    <%_ if (admin) { -%>
+      <a href="/logout" class="nav-item nav-link">Logout</a>
+    <%_ } else { -%>
+      <a href="/login" class="nav-item nav-link">Login</a>
+    <%_ } -%>
+  </nav>
 </header>
