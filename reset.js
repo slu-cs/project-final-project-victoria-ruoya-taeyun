@@ -16,7 +16,7 @@ const clubs = [
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
             officerList: ['Amy', 'Lilly', 'Jacky', 'Meaghan'],
-            memberList: ['Ruoya', 'Kevin', 'Colby', 'Taeyun'],
+            memberList: ['Ruoya', 'Kevin', 'Taeyun'],
             passEvent: ['Haunted House','Gaming Night']}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
