@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}));
 
 // Generate a session for each client
 app.use(session({
-  name: 'catalog', // Name of client cookies
+  name: 'clubinfo', // Name of client cookies
   secret: 'temporary', // Password for client cookies
   resave: false, // Recommended setting
   saveUninitialized: false // Recommended setting
