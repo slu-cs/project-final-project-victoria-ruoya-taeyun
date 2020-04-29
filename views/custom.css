@@ -5,3 +5,8 @@ background: #af1e2d;
 .BROWN .nav-link {
 color: #4b2b23;
 }
+
+.BROWN .nav-link.active {
+  background: #4b2b23;
+  color: #ffffff;
+}
