@@ -11,7 +11,7 @@ const Club = new mongoose.Schema({
   comingEvent: String,
   officerList: [String],
   memberList: [String],
-  passEvent: [String]
+  pastEvent: [String]
 });
 
 // Export the model
