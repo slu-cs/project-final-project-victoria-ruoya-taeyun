@@ -17,7 +17,7 @@ const clubs = [
             comingEvent: 'Watch the movie “Mulan” together',
             officerList: ['Amy', 'Lilly', 'Jacky', 'Meaghan'],
             memberList: ['Ruoya', 'Kevin', 'Taeyun'],
-            passEvent: ['Haunted House','Gaming Night']}),
+            pastEvent: ['Haunted House','Gaming Night']}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
             introduction: 'To facilitate interest in chemistry through general meetings, educational outreach, and departmental events. To support and recognize students within the chemistry department through actions such as, but not limited to, hosting major/minor declaration events, hosting Chymist honorary society inductions, and financially assisting chemistry students in their attempts to share their research. To cultivate relationships with other departments, especially within the sciences, by collaboration with other student organizations within those departments to host events at the university or in the greater St. Lawrence Community.',
@@ -26,7 +26,7 @@ const clubs = [
             comingEvent: 'There Are No Upcoming Events',
             officerList: ['Nicole Rosenberg', 'Dhimiter Cobani', 'Samuel Tartakoff'],
             memberList: ['Victoria', 'Kevin', 'Colby', 'Cole'],
-            passEvent: ['Review sessions for General Chemistry']}),
+            pastEvent: ['Review sessions for General Chemistry']}),
   new Club({_id: 'Graceful Movements',
             category: 'SLU Club',
             introduction: 'We are a family that dances different styles of dance (mostly hip-hop/jazz) and aim to provide diversity in the arts. All are welcomed, we do hold dance auditions. Therefore, our purpose is to give students a chance to explore the elegance and gracefulness of art expressed through various styles of dance from different cultures and bond over the love of dance and performance.',
@@ -35,7 +35,7 @@ const clubs = [
             comingEvent: 'Spring Dance Concert',
             officerList: ['Meiting Li'],
             memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
-            passEvent: ['Fall Dance Concert']}),
+            pastEvent: ['Fall Dance Concert']}),
   new Club({_id: 'L.I.G.H.T. House',
             category: 'Theme House',
             introduction: 'The L.I.G.H.T. house stands to light a path promoting a healthy lifestyle for individuals and the community in both local and global arenas centered around the ideas of balance and awareness of self. We will provide information and activities that promote self-awareness for St. Lawrence students and the Canton community. In doing so this will hopefully raise awareness of our lifestyle choices and their impact on the environment and health of our peers. The L.I.G.H.T. House is located across from 13 University and a few houses down from 25 College.',
@@ -44,7 +44,7 @@ const clubs = [
             comingEvent: 'Morning yoga on Monday',
             officerList: ['Bob'],
             memberList: ['Rita', 'Kate', 'Jack', 'Victoria'],
-            passEvent: ['Making candles']})
+            pastEvent: ['Making candles']})
 ];
 
 
