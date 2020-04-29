@@ -9,8 +9,8 @@
           <nav class="nav nav-pills flex-column">
             <a>Clubs</a>
             <%_ for (const id of clubIDs) { -%>
-              <%_ const status = (id === club._id) ? 'active' : 'inactive'; -%>
-              <a href="/clubs/<%=  id -%>" class="nav-item nav-link"><%= id -%></a>
+              <%_ const status = (id === club._id) ? 'active bg-dark' : 'inactive'; -%>
+              <a href="/clubs/<%=  id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
             <%_ } -%>
           </nav>
         </div>
