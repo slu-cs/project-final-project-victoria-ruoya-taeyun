@@ -1,0 +1,28 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+ // Create a club
+ $('#create').on('submit', function(event) {
+   const form = $(this);
+   event.preventDefault();
+   $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+     .done(id => window.location.replace(`/clubs/${id}`))
+     .fail(error => alert(error.responseText));
+ });
+
+ // Update a club
+ $('#update').on('submit', function(event) {
+   const form = $(this);
+   event.preventDefault();
+   $.ajax({method: 'put', url: '/clubs/<%= club.id -%>', data: form.serialize()})
+     .fail(error => alert(error.responseText));
+ });
+
+ // Delete a club
+ $('#delete').on('click', function(event) {
+   event.preventDefault();
+   $.ajax({method: 'delete', url: '/clubs/<%= club.id -%>'})
+     .done(() => window.location.replace('/clubs'))
+     .fail(error => alert(error.responseText));
+ });
+</script>
