@@ -23,7 +23,7 @@
         $('#signup').on('click', function(event) {
           const form = $(this);
           const new_id = form.find('text')
-          new User ({_id: <%=${new_id.val()}_%>, club_theme_house_created_by_me:[]});
+          new User ({_id: <%=${new_id.val()}-%>, club_theme_house_created_by_me:[]});
           event.preventDefault();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
             .done(() => window.location.replace('/clubs'));
