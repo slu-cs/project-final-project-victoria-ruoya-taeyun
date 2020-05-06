@@ -20,9 +20,9 @@
           //if (users.includes(currentID)){
             //  console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
-             .done(() => window.location.reload())
+             .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
-             
+
           //};
         })
 
