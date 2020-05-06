@@ -17,7 +17,7 @@
           const form = $(this);
           event.preventDefault();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload());
+            .done(() => window.location.replace('/clubs'));
             //.fail(error => alert('Could not log in.'));
         })
         $('form').on('create', function(event) {
@@ -25,8 +25,9 @@
           const new_id = form.find('text')
           event.preventDefault();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(new User({_id: ${new_id.val()}, club_theme_house_created_by_me: []
-            }));
+            .done(new User({_id: ${new_id.val()}, club_theme_house_created_by_me:[]
+            }))
+            .done(() => window.location.replace('/clubs'));
             //.fail(error => alert('Could not log in.'));
         })
       </script>
