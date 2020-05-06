@@ -7,7 +7,7 @@
 
     <%_ if (!user) { -%>
       <form>
-        <input type="text" name="id">
+        <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
         <button type="buttom" id= "signup">Sign Up</button>
       </form>
@@ -15,11 +15,16 @@
       <script> // Log in
         $('#signin').on('submit', function(event) {
           const form = $(this);
+          const currentID = $('#curID').val();
           event.preventDefault();
-          //$.ajax({method: 'post', url: '/login', data: form.serialize()})
-            $.done(() => window.location.replace('/clubs'));
+          if (users.includes(currentID)){
+            $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+            .done(() => window.location.replace('/clubs'));
+          }
+
+
             //.fail(error => alert('Could not log in.'));
-        })
+        
         $('#signup').on('click', function(event) {
           const form = $(this);
           const new_id = form.find('text')
