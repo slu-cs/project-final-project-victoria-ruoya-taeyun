@@ -13,16 +13,17 @@
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
+      window.location.replace("/clubs");
         $('form').on('submit', function(event) {
           const form = $(this);
-          window.location.replace("/clubs");
+
           //const currentID = $('#curID').val();
           event.preventDefault();
           //if (users.includes(currentID)){
             //  console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
 
-             .done(() => window.location.replace("/clubs"));
+             .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
 
           //};
