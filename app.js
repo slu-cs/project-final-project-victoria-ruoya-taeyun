@@ -44,7 +44,7 @@ app.use(function(request, response, next) {
 });
 
 // Route content requests
-app.use('/', router);
+//app.use('/', router);
 
 
 // Redirect from the home page
