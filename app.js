@@ -43,6 +43,13 @@ app.use(function(request, response, next) {
   next();
 });
 
+// Make the mode available in all views
+app.use(function(request, response, next) {
+  response.locals.admin = request.session.admin;
+  next();
+});
+
+
 // Route content requests
 app.use('/', router);
 
@@ -67,11 +74,6 @@ app.get('/logout', function(request, response) {
 });
 
 
-// Make the mode available in all views
-app.use(function(request, response, next) {
-  response.locals.admin = request.session.admin;
-  next();
-});
 
 
 
