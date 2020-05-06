@@ -37,6 +37,9 @@ app.use(function(request, response, next) {
   next();
 });
 
+// Route content requests
+app.use('/', router);
+
 // Redirect from the home page
 app.get('/', function(request, response) {
   response.redirect('/clubs');
@@ -60,8 +63,7 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Route content requests
-app.use('/', router);
+
 
 // Handle undefined routes
 app.use(function(request, response) {
