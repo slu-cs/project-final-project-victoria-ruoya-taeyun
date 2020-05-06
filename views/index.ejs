@@ -19,7 +19,7 @@
           event.preventDefault();
           //if (users.includes(currentID)){
             //  console.log("sl")
-              $.ajax({method: 'get', url: `/users`})
+              $.ajax({method: 'post', url: '/login'})
               .done(() => window.location.reload())
               .fail(error => alert('Could not log in.'));
           };
