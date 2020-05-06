@@ -37,10 +37,14 @@ app.use(function(request, response, next) {
   next();
 });
 
-
+// Make user data available in all views
+app.use(function(request, response, next) {
+  response.locals.user = request.session.user;
+  next();
+});
 
 // Route content requests
-//app.use('/', router);
+app.use('/', router);
 
 
 // Redirect from the home page
@@ -48,11 +52,7 @@ app.get('/', function(request, response) {
   response.redirect('/clubs');
 });
 
-// Make user data available in all views
-app.use(function(request, response, next) {
-  response.locals.user = request.session.user;
-  next();
-});
+
 
 // Enter admin mode and return to the previous page
 /*
