@@ -13,6 +13,10 @@
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
+        var myBtn=document.getElementsByClassName('signin')[0];
+        myBtn.onclick=function(){
+        window.location.replace('/clubs/index')
+    }
 
         $('form').on('submit', function(event) {
           event.preventDefault();
