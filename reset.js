@@ -15,7 +15,7 @@ const clubs = [
             meetingTime: 'Sunday 7pm',
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
-            officerList: ['Amy', 'Lilly', 'Jacky', 'Meaghan'],
+            officerList: ['Ruoya', 'Lilly', 'Jacky', 'Meaghan'],
             memberList: ['Ruoya', 'Kevin', 'Taeyun'],
             pastEvent: ['Haunted House','Gaming Night']}),
   new Club({_id: 'American Chemical Society',
@@ -24,8 +24,8 @@ const clubs = [
             meetingTime: '6pm',
             meetingLocation: 'Johnson 309',
             comingEvent: 'There Are No Upcoming Events',
-            officerList: ['Nicole Rosenberg', 'Dhimiter Cobani', 'Samuel Tartakoff'],
-            memberList: ['Victoria', 'Kevin', 'Colby', 'Cole'],
+            officerList: ['Victoria', 'Dhimiter Cobani', 'Samuel Tartakoff'],
+            memberList: ['Victoria', 'Kevin', 'Ruoya', 'Cole'],
             pastEvent: ['Review sessions for General Chemistry']}),
   new Club({_id: 'Graceful Movements',
             category: 'SLU Club',
@@ -42,8 +42,8 @@ const clubs = [
             meetingTime: 'TBD',
             meetingLocation: '17 College St. Canton, NY',
             comingEvent: 'Morning yoga on Monday',
-            officerList: ['Bob'],
-            memberList: ['Rita', 'Kate', 'Jack', 'Victoria'],
+            officerList: ['Taeyun'],
+            memberList: ['Rita', 'Taeyun', 'Jack', 'Victoria'],
             pastEvent: ['Making candles']})
 ];
 
