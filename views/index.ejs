@@ -17,12 +17,12 @@
           const form = $(this);
           const currentID = $('#curID').val();
           event.preventDefault();
-          //if (users.includes(currentID)){
-          //  console.log("sl")
-          $.ajax({method: 'get', url: `/users`})
-          .done(() => window.location.replace('/clubs/index'))
-          .fail(error => alert('Could not log in.'));
-          //};
+          if (users.includes(currentID)){
+              console.log("sl")
+              $.ajax({method: 'get', url: `/users`})
+              .done(() => window.location.reload())
+              .fail(error => alert('Could not log in.'));
+          };
         })
 
 
