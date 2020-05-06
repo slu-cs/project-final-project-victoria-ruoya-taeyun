@@ -8,8 +8,8 @@
     <%_ if (!user) { -%>
       <form>
         <input type="text" name="id">
-        <button type="submit">Sign in</button>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign In</button>
+        <button type="create">Sign Up</button>
       </form>
 
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -18,8 +18,17 @@
           const form = $(this);
           event.preventDefault();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload())
-            .fail(error => alert('Could not log in.'));
+            .done(() => window.location.reload());
+            //.fail(error => alert('Could not log in.'));
+        })
+        $('form').on('create', function(event) {
+          const form = $(this);
+          const new_id = form.find('text')
+          event.preventDefault();
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+            .done(new User({_id: ${new_id.val()}, club_theme_house_created_by_me: []
+            }));
+            //.fail(error => alert('Could not log in.'));
         })
       </script>
     <%_ } else { -%>
