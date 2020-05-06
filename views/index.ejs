@@ -18,7 +18,7 @@
           const currentID = $('#curID').val();
           event.preventDefault();
           if (users.includes(currentID)){
-            $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+            $.ajax({method: 'get', url: '/clubs', data: form.serialize()})
             .done(() => window.location.replace('/clubs'));
           }
 
