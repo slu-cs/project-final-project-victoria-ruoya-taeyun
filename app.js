@@ -49,7 +49,7 @@ app.use('/', router);
 
 // Redirect from the home page
 app.get('/', function(request, response) {
-  response.redirect('/users');
+  response.redirect('/clubs');
 });
 
 // Enter admin mode and return to the previous page
