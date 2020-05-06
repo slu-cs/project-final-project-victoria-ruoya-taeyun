@@ -20,7 +20,7 @@
           if (users.includes(currentID)){
             $.ajax({method: 'get', url: '/clubs', data: form.serialize()})
             .done(() => window.location.replace('/clubs'));
-          }
+          });
 
 
             //.fail(error => alert('Could not log in.'));
@@ -31,7 +31,7 @@
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           event.preventDefault();
           //$.ajax({method: 'post', url: '/login', data: form.serialize()})
-            $.done(() => window.location.replace('/clubs'));
+          $.done(() => window.location.replace('/clubs'));
             //.fail(error => alert('Could not log in.'));
         });
       </script>
