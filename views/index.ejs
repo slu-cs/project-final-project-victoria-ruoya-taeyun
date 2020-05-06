@@ -5,7 +5,7 @@
   </head>
   <body>
 
-    <%_ if (!user) { -%>
+
       <form>
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
@@ -52,10 +52,7 @@
         */
       </script>
 
-    <%_ } else { -%>
-      <p>Hello, <%= user.name -%>!</p>
-      <a href="/logout">Logout</a>
-    <%_ } -%>
+    
 
   </body>
 </html>
