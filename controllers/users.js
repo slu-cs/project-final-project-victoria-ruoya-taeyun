@@ -3,7 +3,7 @@ const Users = require('../models/user');
 
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
-  User.findById(request.body.id)
+  Users.findById(request.body.id)
     .then(function(user) {
       if (user) {
         request.session.user = user;
