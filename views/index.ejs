@@ -17,7 +17,7 @@
           const form = $(this);
           event.preventDefault();
           //$.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.replace('/clubs'));
+            $.done(() => window.location.replace('/clubs'));
             //.fail(error => alert('Could not log in.'));
         })
         $('#signup').on('click', function(event) {
