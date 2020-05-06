@@ -55,7 +55,6 @@ app.get('/', function(request, response) {
 
 
 // Enter admin mode and return to the previous page
-
 app.get('/login', function(request, response) {
   request.session.admin = true;
   response.redirect('back');
