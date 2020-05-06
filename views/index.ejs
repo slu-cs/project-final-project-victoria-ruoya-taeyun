@@ -27,7 +27,7 @@
 
           const currentID = $('#curID').val();
 
-          if (users.includes(currentID)){
+          if (user.includes(currentID)){
               console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
 
