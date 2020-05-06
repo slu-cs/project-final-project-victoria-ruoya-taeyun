@@ -39,7 +39,7 @@ app.use(function(request, response, next) {
 
 // Redirect from the home page
 app.get('/', function(request, response) {
-  response.redirect('/clubs');
+  response.redirect('/index');
 });
 
 // Enter admin mode and return to the previous page
