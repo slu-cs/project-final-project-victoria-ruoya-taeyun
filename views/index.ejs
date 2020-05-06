@@ -14,15 +14,14 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
         $('#signin').on('submit', function(event) {
-          window.location.replace("/clubs");
           const form = $(this);
-          const currentID = $('#curID').val();
+          //const currentID = $('#curID').val();
           event.preventDefault();
           //if (users.includes(currentID)){
             //  console.log("sl")
-              $.ajax({method: 'post', url: '/login'})
-              .done(() => window.location.reload())
-              .fail(error => alert('Could not log in.'));
+            $.ajax({method: 'post', url: '/login', data: form.serialize()})
+             .done(() => window.location.reload())
+             .fail(error => alert('Could not log in.'));
           //};
         })
 
