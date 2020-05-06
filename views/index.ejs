@@ -22,6 +22,7 @@
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
              .done(() => window.location.reload())
              .fail(error => alert('Could not log in.'));
+             
           //};
         })
 
