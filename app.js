@@ -53,7 +53,7 @@ app.get('/', function(request, response) {
 });
 
 
-
+/*
 // Enter admin mode and return to the previous page
 app.get('/login', function(request, response) {
   request.session.admin = true;
@@ -73,7 +73,7 @@ app.use(function(request, response, next) {
   next();
 });
 
-
+*/
 
 // Handle undefined routes
 app.use(function(request, response) {
