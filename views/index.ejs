@@ -6,11 +6,13 @@
   <body>
 
     <%_ if (!user) { -%>
+       <main class="p-3">
       <form>
-        <input type="text" name="id">
-        <button type="submit">Sign In</button>
-        <button type="button" id= "create">Sign Up</button>
-      </form>
+          <input type="text" name="id">
+          <button type="submit">Sign In</button>
+          <button type="button" id= "create">Sign Up</button>
+        </form>
+      </main>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
         $('form').on('submit', function(event) {
