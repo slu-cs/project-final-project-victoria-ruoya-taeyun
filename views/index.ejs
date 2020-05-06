@@ -21,7 +21,7 @@
           //  console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
             .done(() => window.location.replace('/clubs'));
-            .fail(error => alert('Could not log in.'));
+            //.fail(error => alert('Could not log in.'));
           //};
         });
 
