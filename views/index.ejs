@@ -13,26 +13,28 @@
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
+      /*
         var myBtn=document.getElementsByClassName('signin')[0];
         myBtn.onclick=function(){
         window.location.replace('/clubs/index')
     }
+    */
 
         $('form').on('submit', function(event) {
           event.preventDefault();
 
           const form = $(this);
 
-          //const currentID = $('#curID').val();
+          const currentID = $('#curID').val();
 
-          //if (users.includes(currentID)){
-            //  console.log("sl")
+          if (users.includes(currentID)){
+              console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
 
              .done(() => window.location.replace("http://cs-linuxlab-13.stlawu.edu:3000//clubs"))
              .fail(error => alert('Could not log in.'));
 
-          //};
+          };
         })
 
 
