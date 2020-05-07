@@ -3,17 +3,16 @@
   <%- include('../head'); -%>
   <body>
     <%- include('../navbar', {active: 'accounts'}); -%>
-    <div class="container-fluid">
-      <div class="jumbotron mx-auto my-auto">
-        <h1 class="display-4">Hello, <%= user._id -%>!</h1>
-        <hr class="my-4">
-        <p>Club(s)/Theme house(s) that you are a member of: </p>
-        <p id = "memberOf"></p>
-        <p>Club(s)/Theme house(s) that you are an officer of:</p>
-        <p id = "officerOf"></p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
-      </div>
+    <div class="jumbotron mx-auto my-auto">
+      <h1 class="display-4">Hello, <%= user._id -%>!</h1>
+      <hr class="my-4">
+      <p>Club(s)/Theme house(s) that you are a member of: </p>
+      <p id = "memberOf"></p>
+      <p>Club(s)/Theme house(s) that you are an officer of:</p>
+      <p id = "officerOf"></p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
       // save club(s) that the user is a member of in this list
