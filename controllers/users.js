@@ -1,9 +1,9 @@
 // Controller for the club collection.
-const Users = require('../models/user');
+const User = require('../models/user');
 
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
-  Users.findById(request.body.id)
+  User.findById(request.body.id)
     .then(function(user) {
       if (user) {
         request.session.user = user;
@@ -16,7 +16,7 @@ module.exports.login = function(request, response, next) {
 
 // GET /clubs
 module.exports.index = function(request, response, next) {
-  Users.distinct('_id')
+  User.distinct('_id')
     .then(usersIDs => response.redirect(`/users/${usersIDs[0]}`))
     .catch(error => next(error));
 };
@@ -24,8 +24,8 @@ module.exports.index = function(request, response, next) {
 // GET /clubs/:id
 module.exports.retrieve = function(request, response, next) {
   const queries = [
-    Users.findById(request.params.id),
-    Users.distinct('_id')
+    User.findById(request.params.id),
+    User.distinct('_id')
   ];
 
   Promise.all(queries).then(function([user, usersIDs]) {
