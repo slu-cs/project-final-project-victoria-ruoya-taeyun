@@ -18,13 +18,13 @@
       // save club(s) that the user is a member of in this list
       var members = [];
       if (club.memberList.includes(user._id){
-        members.push(club._id)
-      });
+        members.push(club._id);
+      }
       for (let i = 0; i < members.length; i++){
         $('#memberOf').append($(`
-          <li class="list-group-item" style="width: 200px;">
+          <strong>
             ${members[i]}
-          </li>
+          </strong>
         `));
       }
 
@@ -33,13 +33,13 @@
       // save club(s) that the user is an officer of in this list
       var officers = [];
       if (club.officerList.includes(user._id){
-        officers.push(club._id)
-      });
+        officers.push(club._id);
+      }
       for (let j = 0; j < officers.length; j++){
         $('#officerOf').append($(`
-          <li class="list-group-item" style="width: 200px;">
+          <strong>
             ${officers[j]}
-          </li>
+          </strong>
         `));
       }
     </script>
