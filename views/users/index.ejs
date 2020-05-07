@@ -9,7 +9,7 @@
           <h1 class="display-4">Hello, <%= user._id -%>!</h1>
           <hr class="my-4">
 
-
+          <p>Club(s)/Theme house(s) that you are a member of: </p>
           <p id = "memberOf"></p>
           <p>Club(s)/Theme house(s) that you are an officer of:</p>
           <p id = "officerOf"></p>
@@ -20,13 +20,13 @@
           // save club(s) that the user is a member of in this list
           $("document").ready(function() {
               var members = [];
-              <p>Club(s)/Theme house(s) that you are a member of: </p>
+
               <%_ for (const club of clubs) { -%>
                 <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
                     members.push(club._id);
                 };
               };
-              
+
               for (let i = 0; i < members.length; i++){
                 console.log("lala")
                 $('#memberOf').append($(`
