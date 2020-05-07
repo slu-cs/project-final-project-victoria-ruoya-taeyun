@@ -18,9 +18,11 @@
         <script>
           // save club(s) that the user is a member of in this list
           var members = [];
-          if (club.memberList.includes(user._id){
-            members.push(club._id)
-          });
+          for club in clubs{
+            if club.memberList.includes(user._id){
+              members.push(club._id);
+            };
+        };
           for (let i = 0; i < members.length; i++){
             $('#memberOf').append($(`
               <li class="list-group-item" style="width: 200px;">
