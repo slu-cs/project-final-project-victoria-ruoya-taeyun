@@ -17,8 +17,8 @@
     <script>
       // save club(s) that the user is a member of in this list
       var members = [];
-      if (Club.memberList.includes(User._id){
-        members.push(Club._id);
+      if (jQuery.inArray(user._id, club.memberList)){
+        members.push(club._id);
       }
       for (let i = 0; i < members.length; i++){
         $('#memberOf').append($(`
@@ -31,9 +31,9 @@
 
 
       // save club(s) that the user is an officer of in this list
-      var officers = [];
-      if (Club.officerList.includes(User._id){
-        officers.push(Club._id);
+      var officers = ["aaa"];
+      if (jQuery.inArray(user._id, club.officerList)){
+        officers.push(club._id);
       }
       for (let j = 0; j < officers.length; j++){
         $('#officerOf').append($(`
@@ -41,6 +41,11 @@
             ${officers[j]}
           </strong>
         `));
+      }
+      if(officers.length != 0){
+        $('div').append($(`
+          <a class="btn btn-primary btn-lg" href="#" role="button">Go to officer page</a>
+        `)
       }
     </script>
   </body>
