@@ -31,7 +31,9 @@
       </div>
     </div>
     <%_ if (admin) { -%>
-      <%- include('./scripts', {club: club}); -%>
+      <%- include('./adminscripts', {club: club}); -%>
+    <%_ }else if(user){ -%>
+      <%- include('./userscripts', {club: club}); -%>
     <%_ } -%>
   </body>
 </html>
