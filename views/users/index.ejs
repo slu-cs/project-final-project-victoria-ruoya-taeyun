@@ -13,7 +13,7 @@
           <p id = "memberOf"></p>
           <%_ for (const club of clubIDs) { -%>
             <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
-              <a href="/clubs/<%=  id -%>" </a>
+              <a> <%=  id -%>" </a>
             <%_ } -%>
             };
           };
