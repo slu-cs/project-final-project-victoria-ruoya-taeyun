@@ -11,6 +11,12 @@
 
           <p>Club(s)/Theme house(s) that you are a member of: </p>
           <p id = "memberOf"></p>
+          <%_ for (const club of clubs) { -%>
+            <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
+              <a href="/clubs/<%=  id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
+            <%_ } -%>
+            };
+          };
           <p>Club(s)/Theme house(s) that you are an officer of:</p>
           <p id = "officerOf"></p>
           <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
