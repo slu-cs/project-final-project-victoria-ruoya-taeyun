@@ -5,5 +5,8 @@
     const form = $(this);
     event.preventDefault();
     club.memberList.push(user._id);
+    $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+      .done(id => window.location.replace(`/clubs/${id}`))
+      .fail(error => alert(error.responseText));
   });
 </script>
