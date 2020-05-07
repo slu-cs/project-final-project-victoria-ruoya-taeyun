@@ -18,9 +18,9 @@
         <script>
           // save club(s) that the user is a member of in this list
           $("document").ready(function() {
-              const clubs = require('././reset');
               var members = [];
-              for (let club of clubs){
+              <%_ for (const club of clubs) { -%>
+              
                 if (club.memberList.indexOf(user._id)>=0){
                   members.push(club._id);
                 };
