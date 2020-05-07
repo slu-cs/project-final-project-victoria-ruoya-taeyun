@@ -19,7 +19,7 @@
           // save club(s) that the user is a member of in this list
           $("document").ready(function() {
               var members = [];
-              for let club of clubs{
+              for (let club of clubs){
                 if club.memberList.includes(user._id){
                   members.push(club._id);
                 };
