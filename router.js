@@ -37,6 +37,7 @@ router.post('/clubs', authorize, clubs.create);
 router.delete('/clubs/:id', authorize, clubs.delete);
 router.put('/clubs/:id', authorize, clubs.update);
 
+router.get('/accounts/index',accnouts.inedx)
 // Handle user requests
 router.get('/users', users.index);
 router.get('/users/:id', users.retrieve);
