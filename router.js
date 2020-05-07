@@ -2,6 +2,7 @@
 const express = require('express');
 const clubs = require('./controllers/clubs');
 const users = require('./controllers/users');
+const accounts = require('./controllers/accounts');
 
 // Create the router
 const router = express.Router();
