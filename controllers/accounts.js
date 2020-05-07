@@ -19,7 +19,7 @@ module.exports.retrieve = function(request, response, next) {
     if (account) {
       response.render('clubs/index', {account: account, accountIDs: accountIDs});
     } else {
-      next(); // No such club
+      next(); 
     }
   }).catch(error => next(error));
 };
