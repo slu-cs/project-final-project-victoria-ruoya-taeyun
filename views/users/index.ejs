@@ -17,20 +17,22 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script>
           // save club(s) that the user is a member of in this list
-          var members = [];
-          for club in clubs{
-            if club.memberList.includes(user._id){
-              members.push(club._id);
-            };
-        };
-          for (let i = 0; i < members.length; i++){
-            console.log("lala")
-            $('#memberOf').append($(`
-              <li class="list-group-item" style="width: 200px;">
-                ${members[i]}
-              </li>
-            `));
-          }
+          $("document").ready(function() {
+              var members = [];
+              for club in clubs{
+                if club.memberList.includes(user._id){
+                  members.push(club._id);
+                };
+              };
+              for (let i = 0; i < members.length; i++){
+                console.log("lala")
+                $('#memberOf').append($(`
+                <li class="list-group-item" style="width: 200px;">
+                  ${members[i]}
+                </li>
+                `));
+              }
+            });
 
 
 
