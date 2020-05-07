@@ -1,5 +1,6 @@
 // Controller for the club collection.
 const User = require('../models/user');
+const Club = require('../models/club');
 
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
@@ -14,26 +15,13 @@ module.exports.login = function(request, response, next) {
     }).catch(error => next(error));
 };
 
-// GET /clubs
-module.exports.index = function(request, response, next) {
-  User.distinct('_id')
-    .then(usersIDs => response.redirect(`/users/${usersIDs[0]}`))
-    .catch(error => next(error));
-};
 
 // GET /clubs/:id
-module.exports.retrieve = function(request, response, next) {
-  const queries = [
-    User.findById(request.params.id),
-    User.distinct('_id')
-  ];
+module.exports.index = function(request, response, next) {
+  Club.find().then(function(clubs) {
 
-  Promise.all(queries).then(function([user, usersIDs]) {
-    if (user) {
-      response.render('users/index', {user: user, userIDs: usersIDs});
-    } else {
-      next(); // No such club
-    }
+    response.render('users/index', {clubs: clubs});
+
   }).catch(error => next(error));
 };
 

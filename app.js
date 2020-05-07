@@ -43,11 +43,6 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Make the mode available in all views
-app.use(function(request, response, next) {
-  response.locals.admin = request.session.admin;
-  next();
-});
 
 
 // Route content requests
@@ -59,19 +54,6 @@ app.get('/', function(request, response) {
   response.redirect('/index');
 });
 
-
-
-// Enter admin mode and return to the previous page
-app.get('/login', function(request, response) {
-  request.session.admin = true;
-  response.redirect('back');
-});
-
-// Exit admin mode and return to the previous page
-app.get('/logout', function(request, response) {
-  request.session.admin = false;
-  response.redirect('back');
-});
 
 
 
