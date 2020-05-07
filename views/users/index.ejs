@@ -27,8 +27,8 @@
           $("document").ready(function() {
               var members = [];
 
-              <%_ for (const club of clubs) { -%>
-                <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
+              for (const club of clubs) {
+                if (club.memberList.indexOf(user._id)>=0){
                     members.push(club._id);
                 };
               };
