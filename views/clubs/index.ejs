@@ -13,15 +13,15 @@
               <a href="/clubs/<%=  id -%>" class="nav-item nav-link <%= status -%>"><%= id -%></a>
             <%_ } -%>
           </nav>
-          <%_ if (admin) { -%>
-            <form id="create" class="form my-1">
-              <input type="text" name="_id" placeholder="Name of the Club/Theme house" size="1" class="form-control">
-            </form>
-          <%_ } -%>
+
+          <form id="create" class="form my-1">
+            <input type="text" name="_id" placeholder="Name of the Club/Theme house" size="1" class="form-control">
+          </form>
+          
         </div>
         <div class="col">
           <main class="p-3">
-            <%_ if (admin) { -%>
+            <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
               <%- include('./edit', {club: club, clubIDs: clubIDs}); -%>
             <%_ } else { -%>
               <%- include('./browse', {club: club}); -%>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <%_ if (admin) { -%>
+    <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
       <%- include('./adminscripts', {club: club}); -%>
     <%_ }else if(user){ -%>
       <%- include('./userscripts', {club: club}); -%>
