@@ -4,58 +4,34 @@
   <body>
     <%- include('../navbar', {active: 'accounts'}); -%>
     <div class="container-fluid">
-      <div class="row">
-        <div class="jumbotron">
-          <h1 class="display-4">Hello, <%= user._id -%>!</h1>
-          <hr class="my-4">
-
-          <p>Club(s)/Theme house(s) that you are a member of: </p>
-          <p id = "memberOf"></p>
-          <ul class="list-group">
-            <%_ for (const club of clubs) { -%>
-              <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
-                <li class="list-group-item"> <%=  club._id -%> </li>
-              <%_ } -%>
-            <%_ } -%>
-          </ul>
-
-          <p>Club(s)/Theme house(s) that you are an officer of:</p>
-          <p id = "officerOf"></p>
-          <ul>
-            <%_ for (const club of clubs) { -%>
-              <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
-                <li> <%=  club._id -%> </li>
-              <%_ } -%>
-            <%_ } -%>
-          </ul>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <!-- <script>
-          // save club(s) that the user is a member of in this list
-          $("document").ready(function() {
-              var members = [];
-
-              for (const club of clubs) {
-                if (club.memberList.indexOf(user._id)>=0){
-                    members.push(club._id);
-                };
-              };
-
-              for (let i = 0; i < members.length; i++){
-                console.log("lala")
-                $('#memberOf').append($(`
-                <li class="list-group-item" style="width: 200px;">
-                  ${members[i]}
-                </li>
-                `));
-              }
-            });
-
-
-
-        </script> -->
+      <div>
       </div>
+      <div class="jumbotron BROWN">
+        <h1 class="display-4">Hello, <%= user._id -%>!</h1>
+        <hr class="my-4">
+
+        <p>Club(s)/Theme house(s) that you are a member of: </p>
+        <p id = "memberOf"></p>
+        <ul>
+          <%_ for (const club of clubs) { -%>
+            <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
+              <li> <%=  club._id -%> </li>
+            <%_ } -%>
+          <%_ } -%>
+        </ul>
+
+        <p>Club(s)/Theme house(s) that you are an officer of:</p>
+        <p id = "officerOf"></p>
+        <ul>
+          <%_ for (const club of clubs) { -%>
+            <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+              <li> <%=  club._id -%> </li>
+            <%_ } -%>
+          <%_ } -%>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </div>
   </body>
 </html>
