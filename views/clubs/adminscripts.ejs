@@ -5,14 +5,15 @@
  $('#update').on('submit', function(event) {
    const form = $(this);
    event.preventDefault();
-   $.ajax({method: 'put', url: '/clubs/<%= club.id -%>', data: form.serialize()})
+   $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
      .fail(error => alert('Fail to update the club.'));
  });
 
  // Delete a club
  $('#delete').on('click', function(event) {
+   const form = $(this);
    event.preventDefault();
-   $.ajax({method: 'delete', url: '/clubs/<%= club.id -%>'})
+   $.ajax({method: 'delete', url: '/clubs/<%= club._id -%>'})
      .done(() => window.location.replace('/clubs'))
      .fail(error => alert('Fail to delete the club.'));
  });
