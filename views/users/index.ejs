@@ -11,19 +11,23 @@
 
           <p>Club(s)/Theme house(s) that you are a member of: </p>
           <p id = "memberOf"></p>
-          <%_ for (const club of clubs) { -%>
-            <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
-              <a> <%=  club._id -%>" </a>
+          <ul class="list-group">
+            <%_ for (const club of clubs) { -%>
+              <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
+                <li class="list-group-item"> <%=  club._id -%> </li>
+              <%_ } -%>
             <%_ } -%>
-          <%_ } -%>
+          </ul>
 
           <p>Club(s)/Theme house(s) that you are an officer of:</p>
           <p id = "officerOf"></p>
-          <%_ for (const club of clubs) { -%>
-            <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
-              <a> <%=  club._id -%>" </a>
+          <ul class="list-group">
+            <%_ for (const club of clubs) { -%>
+              <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+                <li class="list-group-item"> <%=  club._id -%> </li>
+              <%_ } -%>
             <%_ } -%>
-          <%_ } -%>
+          </ul>
           <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
