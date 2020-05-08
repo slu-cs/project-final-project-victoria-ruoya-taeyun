@@ -7,7 +7,7 @@
    event.preventDefault();
    $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
      .done(id => window.location.replace(`/clubs/${id}`))
-     .fail(error => alert(error.responseText));
+     .fail(error => alert('Fail to create the club.'));
  });
 
  // Update a club
@@ -15,7 +15,7 @@
    const form = $(this);
    event.preventDefault();
    $.ajax({method: 'put', url: '/clubs/<%= club.id -%>', data: form.serialize()})
-     .fail(error => alert(error.responseText));
+     .fail(error => alert('Fail to update the club.'));
  });
 
  // Delete a club
@@ -23,6 +23,6 @@
    event.preventDefault();
    $.ajax({method: 'delete', url: '/clubs/<%= club.id -%>'})
      .done(() => window.location.replace('/clubs'))
-     .fail(error => alert(error.responseText));
+     .fail(error => alert('Fail to delete the club.'));
  });
 </script>
