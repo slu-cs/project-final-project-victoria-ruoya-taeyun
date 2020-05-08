@@ -1,11 +1,20 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
+  // Create a club
+  $('#create').on('submit', function(event) {
+    const form = $(this);
+    event.preventDefault();
+    $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+      .done(id => window.location.replace(`/clubs/${id}`))
+      .fail(error => alert('Fail to create the club.'));
+  });
+
   $('#join').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
     if (club.memberList.indexOf(user._id)>=0){
-      // error: already in the club
+      $.fail(error => alert('You are already in this club/theme house.'));
     }else{
       club.memberList.push(user._id);
     }

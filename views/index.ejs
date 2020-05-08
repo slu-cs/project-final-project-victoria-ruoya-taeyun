@@ -4,42 +4,29 @@
     <%- include('head'); -%>
   </head>
   <body>
-
-
       <form>
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
         <button type="button" id= "signup">Sign Up</button>
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script> // Log in
-      /*
-        var myBtn=document.getElementsByClassName('signin')[0];
-        myBtn.onclick=function(){
-        window.location.replace('/clubs/index')
-    }
-    */
+      <script> 
 
         $('form').on('submit', function(event) {
           event.preventDefault();
 
           const form = $(this);
 
-          const currentID = $('#curID').val();
+          //const currentID = $('#curID').val();
 
-          //if (user.includes(currentID)){
-            //console.log("sl")
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
 
              .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
-
-          //};
         })
 
 
-            //.fail(error => alert('Could not log in.'));
-/*
+
         $('#signup').on('click', function(event) {
           const form = $(this);
           const new_id = form.find('text')
@@ -49,7 +36,7 @@
           $.done(() => window.location.reload());
             //.fail(error => alert('Could not log in.'));
         });
-        */
+
       </script>
 
 
