@@ -29,10 +29,10 @@
           var new_id = document.getElementById("curID").value;
           console.log(new_id);
 
-          <%_const userList = users.map(user=>user._id);-%>
+          <%_const userList = users.map(user=>user._id);
           for (const i in userList){
             console.log(i);
-          }
+          <%_}-%>
 
           // if (userList.indexOf(new_id)<0) {
           //   console.log("new_id");
