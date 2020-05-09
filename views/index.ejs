@@ -9,13 +9,6 @@
         <button type="submit" id= "signin">Sign In</button>
         <button type="button" id= "signup">Sign Up</button>
 
-        <%_ const new_id = form.find('text'); -%>
-        <%_ const userList = users.map(user=>user._id); -%>
-
-        <%_ if (userList.indexOf(new_id)<0) { -%>
-          <%_ console.log("new_id"); -%>
-          <%_ users.push(new User ({_id: new_id, club_theme_house_created_by_me: []})) -%>
-        <%_ } -%>
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
@@ -35,6 +28,14 @@
           event.preventDefault();
           const form = $(this);
           const new_id = form.find('text');
+
+
+          const userList = users.map(user=>user._id);
+
+          if (userList.indexOf(new_id)<0) {
+            console.log("new_id");
+            users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}))
+          }
 
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})

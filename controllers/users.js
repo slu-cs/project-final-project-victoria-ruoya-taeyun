@@ -56,6 +56,12 @@ module.exports.index = function(request, response, next) {
     response.render('users/index', {clubs: clubs});
 
   }).catch(error => next(error));
+
+  User.find().then(function(clubs) {
+
+    response.render('users/index', {users: users});
+
+  }).catch(error => next(error));
 };
 
 // POST /club
