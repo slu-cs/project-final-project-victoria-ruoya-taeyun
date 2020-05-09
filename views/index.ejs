@@ -29,7 +29,7 @@
           const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-            .done(function(){
+            .then(function(){
               const userList = users.map(user=>user._id);
               if (userList.indexOf(new_id)<0) {
                 new User ({_id: request.body.id, club_theme_house_created_by_me: []})
