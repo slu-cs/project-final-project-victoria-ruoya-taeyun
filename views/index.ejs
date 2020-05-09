@@ -33,7 +33,7 @@
           // if the id is existed
           <%_if (users.indexOf(new_id)>=0){-%>
             $.fail(error => alert('Could not sign up with this ID'));
-          }
+          <%_}-%>
 
 
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
