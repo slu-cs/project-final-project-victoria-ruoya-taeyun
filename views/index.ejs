@@ -14,13 +14,9 @@
 
         $('form').on('submit', function(event) {
           event.preventDefault();
-
           const form = $(this);
-
           //const currentID = $('#curID').val();
-
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
-
              .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
         });
@@ -35,7 +31,7 @@
 
 
           // if the id is existed
-          if (new_id.indexOf(user._id)>=0){
+          <%_if (users.indexOf(new_id)>=0){-%>
             $.fail(error => alert('Could not sign up with this ID'));
           }
 
