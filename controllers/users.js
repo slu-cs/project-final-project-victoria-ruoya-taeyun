@@ -16,7 +16,14 @@ module.exports.login = function(request, response, next) {
 };
 
 
+// Get /signup
+module.exports.signup = function(request, response, next) {
+  User.find().then(function(users) {
 
+    response.render('/index', {users: user._id});
+
+  }).catch(error => next(error));
+};
 
 
 // GET /clubs/:id
