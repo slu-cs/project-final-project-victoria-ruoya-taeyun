@@ -30,24 +30,24 @@
           var new_id = document.getElementById("curID").value;
           console.log(new_id);
 
-          const userList = users.map(user=>user._id);
+          // const userList = users.map(user=>user._id);
 
-          if (userList.indexOf(new_id)<0) {
-            console.log("new_id");
-            users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
-          }
+          // if (userList.indexOf(new_id)<0) {
+          //   console.log("new_id");
+          //   users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
+          // }
 
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
-          $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-            // .then(function(){
-            //   const userList = users.map(user=>user._id);
-            //
-            //   if (userList.indexOf(new_id)<0) {
-            //     console.log("new_id");
-            //     users.push(new User ({_id: request.body.id, club_theme_house_created_by_me: []}))
-            //   }
-            //
-            // })
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+            .then(function(){
+              const userList = users.map(user=>user._id);
+
+              if (userList.indexOf(new_id)<0) {
+                console.log("new_id");
+                users.push(new User ({_id: request.body.id, club_theme_house_created_by_me: []}))
+              }
+
+            })
             .then(() => alert('Sign up successfully.'))
             .done(() => window.location.replace("/clubs"))
             .fail(error => alert('Could not sign up with this ID.'));
