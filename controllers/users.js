@@ -16,6 +16,12 @@ module.exports.login = function(request, response, next) {
 };
 
 
+module.exports.signup = function(request, response, next) {
+  Course.distinct('_id')
+    .then(userIDs => response.redirect(`/user/${userIDs[0]}`))
+    .catch(error => next(error));
+};
+/*
 // Get /signup
 module.exports.signup = function(request, response, next) {
   User.find().then(function(users) {
@@ -24,7 +30,7 @@ module.exports.signup = function(request, response, next) {
 
   }).catch(error => next(error));
 };
-
+*/
 
 // GET /clubs/:id
 module.exports.index = function(request, response, next) {
