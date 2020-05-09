@@ -21,6 +21,8 @@ module.exports.signup = function(request, response, next) {
       const userList = users.map(user=>user._id);
       if (userList.indexOf(new_id)<0) {
         new User ({_id: request.body.id, club_theme_house_created_by_me: []})
+      }else{
+        next();
       }
     }).catch(error => next(error));
 };
