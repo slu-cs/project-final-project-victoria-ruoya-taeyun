@@ -15,16 +15,12 @@ module.exports.login = function(request, response, next) {
     }).catch(error => next(error));
 };
 module.exports.signup = function(request, response, next) {
-  User.findById(new_user)
-    .then(function(new_user){
-      new User ({_id: request.body.id, club_theme_house_created_by_me: []})
-    }).then(function(user) {
-      if (user) {
-        request.session.user = user;
-        response.status(200).end();
-      } else {
-        next(); // No such user
-      }
+  const new_id = request.body
+  const userList = User.map(user=>user._id);
+  if userList.indexOf(new_id)<0 {
+    new User ({_id: request.body.id, club_theme_house_created_by_me: []})
+  }
+
     }).catch(error => next(error));
 };
 
