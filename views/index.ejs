@@ -30,11 +30,14 @@
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
             .then(function(){
-              const userList = users.map(user=>user._id);
-              if (userList.indexOf(new_id)<0) {
-                console.log("new_id");
-                new User ({_id: request.body.id, club_theme_house_created_by_me: []})
-              };
+              //const userList = users.map(user=>user._id);
+              for (const user of users) {
+                if (user.indexOf(new_id)<0) {
+                  console.log("new_id");
+                  users.push(new User ({_id: request.body.id, club_theme_house_created_by_me: []}))
+
+                }
+              }
             })
             //.then(() => alert('Sign up successfully.'))
             .done(() => window.location.replace("/clubs"))
