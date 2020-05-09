@@ -4,7 +4,7 @@
     <%- include('head'); -%>
   </head>
   <body>
-    <%- include('navbar'); -%>
+    <%- include('navbar', {active: 'users'}); -%>
       <form>
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
