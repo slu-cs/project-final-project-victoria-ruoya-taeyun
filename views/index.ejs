@@ -5,15 +5,15 @@
   </head>
   <body>
 
-      <div class="jumbotron BROWN" id="centered">
+      <form>
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
         <button type="button" id= "signup">Sign Up</button>
-      </div>
+      </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
 
-        $('div').on('submit', function(event) {
+        $('form').on('submit', function(event) {
           event.preventDefault();
 
           const form = $(this);
@@ -28,7 +28,7 @@
 
 
 
-        $('div').on('click', function(event) {
+        $('form').on('click', function(event) {
           const form = $(this);
           const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
