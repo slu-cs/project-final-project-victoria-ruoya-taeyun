@@ -14,8 +14,8 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
+/*
 module.exports.signup = function(request, response, next) {
-  const new_id = request.body;
   User.find().then(function(users) {
     response.render('./views/index', {users: users});
     /*
@@ -26,11 +26,11 @@ module.exports.signup = function(request, response, next) {
       }else{
         next();
       }
-      */
+
     }).catch(error => next(error));
 };
 
-
+*/
 
 
 //module.exports.signup = function(request, response, next) {
@@ -38,7 +38,7 @@ module.exports.signup = function(request, response, next) {
   //  .then(userIDs => response.redirect(`/user/${userIDs[0]}`))
   //  .catch(error => next(error));
 //};
-/*
+
 // Get /signup
 module.exports.signup = function(request, response, next) {
   User.find().then(function(users) {
@@ -47,19 +47,13 @@ module.exports.signup = function(request, response, next) {
 
   }).catch(error => next(error));
 };
-*/
+
 
 // GET /clubs/:id
 module.exports.index = function(request, response, next) {
   Club.find().then(function(clubs) {
 
     response.render('users/index', {clubs: clubs});
-
-  }).catch(error => next(error));
-
-  User.find().then(function(users) {
-
-    response.render('users/index', {users: users});
 
   }).catch(error => next(error));
 };

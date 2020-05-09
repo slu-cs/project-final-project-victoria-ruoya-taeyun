@@ -8,7 +8,6 @@
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
         <button type="button" id= "signup">Sign Up</button>
-
       </form>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
@@ -27,28 +26,19 @@
         $('#signup').on('click', function(event) {
           event.preventDefault();
           const form = $(this);
-          const new_id = form.find('text');
-
-
-          const userList = users.map(user=>user._id);
-
-          if (userList.indexOf(new_id)<0) {
-            console.log("new_id");
-            users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
-          }
-
+          const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
+
+          
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-            // .then(function(){
-            //   const userList = users.map(user=>user._id);
-            //
-            //   if (userList.indexOf(new_id)<0) {
-            //     console.log("new_id");
-            //     users.push(new User ({_id: request.body.id, club_theme_house_created_by_me: []}))
-            //   }
-            //
-            // })
-            .then(() => alert('Sign up successfully.'))
+            .then(function(){
+              const userList = users.map(user=>user._id);
+              if (userList.indexOf(new_id)<0) {
+                console.log("new_id");
+                new User ({_id: request.body.id, club_theme_house_created_by_me: []})
+              };
+            })
+            //.then(() => alert('Sign up successfully.'))
             .done(() => window.location.replace("/clubs"))
             .fail(error => alert('Could not sign up with this ID.'));
         });
