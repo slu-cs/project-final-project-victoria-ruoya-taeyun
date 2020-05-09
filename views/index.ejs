@@ -26,9 +26,6 @@
         $('#signup').on('click', function(event) {
           event.preventDefault();
           const form = $(this);
-<<<<<<< HEAD
-          const new_id = form.find('text')
-=======
           var new_id = document.getElementById("curID").value;
           console.log(new_id);
 
@@ -39,7 +36,6 @@
             users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
           }
 
->>>>>>> f02c037fe8fcde659efe33a4889c9e6b019ea60a
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
 
           
