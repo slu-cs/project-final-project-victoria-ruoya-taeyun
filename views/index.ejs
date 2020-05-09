@@ -29,12 +29,12 @@
           const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-            .done(() => window.location.replace("/clubs"));
+            .done(() => window.location.replace("/clubs"))
             .fail(error => alert('Could not sign up with this ID.'));
         });
 /*
           // if the id is existed
-          
+
 
 
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
