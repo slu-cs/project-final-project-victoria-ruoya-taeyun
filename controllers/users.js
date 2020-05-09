@@ -16,7 +16,9 @@ module.exports.login = function(request, response, next) {
 };
 module.exports.signup = function(request, response, next) {
   const new_id = request.body;
-  User.find()
+  User.find().then(function(users) {
+    response.render('/', {users: users});
+    /*
     .then(function(users) {
       const userList = users.map(user=>user._id);
       if (userList.indexOf(new_id)<0) {
@@ -24,6 +26,7 @@ module.exports.signup = function(request, response, next) {
       }else{
         next();
       }
+      */
     }).catch(error => next(error));
 };
 
