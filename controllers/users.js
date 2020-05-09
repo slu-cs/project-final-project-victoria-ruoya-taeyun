@@ -57,7 +57,7 @@ module.exports.index = function(request, response, next) {
 
   }).catch(error => next(error));
 
-  User.find().then(function(clubs) {
+  User.find().then(function(users) {
 
     response.render('users/index', {users: users});
 
