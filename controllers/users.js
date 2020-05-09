@@ -17,7 +17,7 @@ module.exports.login = function(request, response, next) {
 module.exports.signup = function(request, response, next) {
   const new_id = request.body
   const userList = User.map(user=>user._id);
-  if userList.indexOf(new_id)<0 {
+  if (userList.indexOf(new_id)<0) {
     new User ({_id: request.body.id, club_theme_house_created_by_me: []})
   }
 
