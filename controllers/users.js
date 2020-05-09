@@ -16,6 +16,9 @@ module.exports.login = function(request, response, next) {
 };
 
 
+
+
+
 // GET /clubs/:id
 module.exports.index = function(request, response, next) {
   Club.find().then(function(clubs) {
