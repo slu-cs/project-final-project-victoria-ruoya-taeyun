@@ -17,7 +17,7 @@ module.exports.login = function(request, response, next) {
 module.exports.signup = function(request, response, next) {
   const new_id = request.body;
   User.find().then(function(users) {
-    response.render('views/index', {users: users});
+    response.render('./views/index', {users: users});
     /*
     .then(function(users) {
       const userList = users.map(user=>user._id);
