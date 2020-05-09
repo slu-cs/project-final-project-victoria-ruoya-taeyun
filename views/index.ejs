@@ -28,21 +28,21 @@
 
 
 
-        $('form').on('click', function(event) {
-          const form = $(this);
-          const new_id = form.find('text')
-          //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
-          event.preventDefault();
-
-          // if the id is existed
-          if (new_id.indexOf(user._id)>=0){
-            $.fail(error => alert('Could not sign up with this ID'));
-          }
-
-
-          $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload());
-        });
+        // $('form').on('click', function(event) {
+        //   const form = $(this);
+        //   const new_id = form.find('text')
+        //   //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
+        //   event.preventDefault();
+        //
+        //   // if the id is existed
+        //   if (new_id.indexOf(user._id)>=0){
+        //     $.fail(error => alert('Could not sign up with this ID'));
+        //   }
+        // 
+        //
+        //   $.ajax({method: 'post', url: '/login', data: form.serialize()})
+        //     .done(() => window.location.reload());
+        // });
 
       </script>
 
