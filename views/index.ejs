@@ -30,6 +30,9 @@
           console.log(new_id);
 
           const userList = users.map(user=>user._id);
+          for (const i in userList){
+            console.log(i);
+          }
 
           if (userList.indexOf(new_id)<0) {
             console.log("new_id");
@@ -38,7 +41,7 @@
 
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
 
-          
+
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
             .then(function(){
               const userList = users.map(user=>user._id);
