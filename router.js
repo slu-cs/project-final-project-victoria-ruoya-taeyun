@@ -21,7 +21,7 @@ router.post('/signup',users.signup);
 // Handle logout requests
 router.get('/logout', function(request, response) {
   request.session.user = undefined;
-  response.redirect('/');
+  response.redirect('/index');
 });
 
 // Check for admin status
