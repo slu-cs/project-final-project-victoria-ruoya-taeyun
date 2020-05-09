@@ -16,7 +16,7 @@ module.exports.login = function(request, response, next) {
 };
 module.exports.signup = function(request, response, next) {
   User.findById(request.body.id)
-    .fail(function(request.body.id){
+    .then(function(request.body.id){
       new User ({_id: request.body.id, club_theme_house_created_by_me: []})
     }).then(function(user) {
       if (user) {
