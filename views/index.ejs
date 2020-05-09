@@ -4,13 +4,14 @@
     <%- include('head'); -%>
   </head>
   <body>
-      <form>
+
+      <div class="jumbotron BROWN" id="centered">
         <input type="text" id = "curID" name="id">
         <button type="submit" id= "signin">Sign In</button>
         <button type="button" id= "signup">Sign Up</button>
-      </form>
+      </div>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script> 
+      <script>
 
         $('form').on('submit', function(event) {
           event.preventDefault();
@@ -32,9 +33,15 @@
           const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
           event.preventDefault();
-          //$.ajax({method: 'post', url: '/login', data: form.serialize()})
-          $.done(() => window.location.reload());
-            //.fail(error => alert('Could not log in.'));
+          for (const user of users){
+            // if the id is existed
+            if (new_id.indexOf(user._id)>=0){
+              .fail(error => alert('Could not sign up with this ID'));
+            }
+          }
+
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+            .done(() => window.location.reload());
         });
 
       </script>
