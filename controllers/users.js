@@ -20,8 +20,8 @@ module.exports.signup = function(request, response, next) {
   if (userList.indexOf(new_id)<0) {
     new User ({_id: request.body.id, club_theme_house_created_by_me: []})
   }
+};
 
-    }.catch(error => next(error));
 
 
 
