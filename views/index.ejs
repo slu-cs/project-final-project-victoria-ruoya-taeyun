@@ -13,7 +13,7 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
 
-        $('$signin').on('submit', function(event) {
+        $('div').on('submit', function(event) {
           event.preventDefault();
 
           const form = $(this);
@@ -28,7 +28,7 @@
 
 
 
-        $('#signup').on('click', function(event) {
+        $('div').on('click', function(event) {
           const form = $(this);
           const new_id = form.find('text')
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
