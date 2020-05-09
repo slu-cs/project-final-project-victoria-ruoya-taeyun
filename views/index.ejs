@@ -29,17 +29,22 @@
           var new_id = document.getElementById("curID").value;
           console.log(new_id);
 
+<<<<<<< HEAD
           const userList = users.map(user=>user._id);
           for (const i in userList){
             console.log(i);
           }
+=======
+          // const userList = users.map(user=>user._id);
+>>>>>>> 0283389d95291703b64131c35b82fec64acd57d1
 
-          if (userList.indexOf(new_id)<0) {
-            console.log("new_id");
-            users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
-          }
+          // if (userList.indexOf(new_id)<0) {
+          //   console.log("new_id");
+          //   users.push(new User ({_id: new_id, club_theme_house_created_by_me: []}));
+          // }
 
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
+<<<<<<< HEAD
 
 
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
@@ -51,6 +56,19 @@
               };
             })
             //.then(() => alert('Sign up successfully.'))
+=======
+          $.ajax({method: 'post', url: '/', data: form.serialize()})
+            .then(function(){
+              const userList = users.map(user=>user._id);
+
+              if (userList.indexOf(new_id)<0) {
+                console.log("new_id");
+                users.push(new User ({_id: request.body.id, club_theme_house_created_by_me: []}))
+              }
+
+            })
+            .then(() => alert('Sign up successfully.'))
+>>>>>>> 0283389d95291703b64131c35b82fec64acd57d1
             .done(() => window.location.replace("/clubs"))
             .fail(error => alert('Could not sign up with this ID.'));
         });
