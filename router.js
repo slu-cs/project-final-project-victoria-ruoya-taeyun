@@ -15,6 +15,9 @@ router.get('/', function(request, response) {
 // Handle login requests
 router.post('/login', users.login);
 
+// Handle sign up requests
+router.post('/signup',users.signup);
+
 // Handle logout requests
 router.get('/logout', function(request, response) {
   request.session.user = undefined;
@@ -31,7 +34,7 @@ const authorize = function(request, response, next) {
 };
 
 // Handle club requests
-router.get('/index', users.signup);
+
 router.get('/clubs', clubs.index);
 router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);

@@ -14,23 +14,36 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
-
-
 module.exports.signup = function(request, response, next) {
-  Course.distinct('_id')
-    .then(userIDs => response.redirect(`/user/${userIDs[0]}`))
-    .catch(error => next(error));
+  User.findById(request.body.id)
+    .fail(function(request.body.id){
+      new User ({_id: request.body.id, club_theme_house_created_by_me: []})
+    }).then(function(user) {
+      if (user) {
+        request.session.user = user;
+        response.status(200).end();
+      } else {
+        next(); // No such user
+      }
+    }).catch(error => next(error));
 };
-/*
+
+
+//module.exports.signup = function(request, response, next) {
+  //Course.distinct('_id')
+  //  .then(userIDs => response.redirect(`/user/${userIDs[0]}`))
+  //  .catch(error => next(error));
+//};
+
 // Get /signup
 module.exports.signup = function(request, response, next) {
   User.find().then(function(users) {
 
-    response.render('/index', {users: user._id});
+    response.render('/index', {users: users});
 
   }).catch(error => next(error));
 };
-*/
+
 
 // GET /clubs/:id
 module.exports.index = function(request, response, next) {
