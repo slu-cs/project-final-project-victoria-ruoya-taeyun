@@ -40,7 +40,7 @@ router.put('/clubs/:id', authorize, clubs.update);
 
 // Handle user requests
 router.get('/users', users.index);
-// router.get('/users', users.index);
+// router.post('/users', users.index);
 router.post('/users', authorize, users.create);
 
 

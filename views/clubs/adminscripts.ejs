@@ -9,12 +9,17 @@
      .fail(error => alert('Fail to update the club.'));
  });
 
- // Delete a club
- $('#delete').on('click', function(event) {
-   const form = $(this);
-   event.preventDefault();
-   $.ajax({method: 'delete', url: '/clubs/<%= club._id -%>'})
-     .done(() => window.location.replace('/clubs'))
-     .fail(error => alert('Fail to delete the club.'));
- });
+ // // Delete a club
+ // $('#delete').on('click', function(event) {
+ //   const form = $(this);
+ //   event.preventDefault();
+ //   $.ajax({method: 'delete', url: '/clubs/<%= club._id -%>'})
+ //     .done(() => window.location.replace('/clubs'))
+ //     .fail(error => alert('Fail to delete the club.'));
+ // });
+
+ $('#delete').on('click', '.uninsert', function(event) {
+    $(this).closest('form').remove();
+    event.preventDefault();
+  });
 </script>
