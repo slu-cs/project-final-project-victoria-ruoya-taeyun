@@ -31,7 +31,7 @@ const authorize = function(request, response, next) {
 };
 
 // Handle club requests
-router.get('/', users.signup);
+router.get('/index', users.signup);
 router.get('/clubs', clubs.index);
 router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
