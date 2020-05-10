@@ -67,6 +67,7 @@ module.exports.newMember = function(request, response, next) {
 
 >>>>>>> 8a839227f5ada4aabbc101cc5bcc7022c9c66a0a
 
+<<<<<<< HEAD
   Club.findById(request.body.id).
   then(function(club){
     console.log(club);
@@ -79,5 +80,22 @@ module.exports.newMember = function(request, response, next) {
     //console.log(club.memberList);
 >>>>>>> 8a839227f5ada4aabbc101cc5bcc7022c9c66a0a
   }).then(response.status(200).end())
+=======
+  Club.findByIdAndUpdate(request.params.id, request.body)
+  .then(function(club){
+    console.log(club);
+    if(club){
+      club.memberList.push(request.session.user._id);
+      response.status(200).end();
+    }else{
+      next()
+    }
+    console.log(club);
+    //console.log(Club.distinct(club));
+    //club.memberList.push(request.session.user._id);
+    //console.log(club.memberList);
+  })
+  //.then(response.status(200).end())
+>>>>>>> fc0ad566809c8ba632006266fafaf54b5e096c85
   .catch(error => next(error));
 };
