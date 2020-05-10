@@ -34,10 +34,10 @@
     // }
 
     <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
-      <%_ club.memberList.push(user._id); -%>
-      <%_ newMemberList = club.memberList; -%>
-      <%_ console.log(club); -%>
-      <%_ console.log(newMemberList); -%>
+      <%= club.memberList.push(user._id); -%>
+      <%= newMemberList = club.memberList; -%>
+      <%= console.log(club); -%>
+      <%= console.log(newMemberList); -%>
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%-newMemberList-%>}})
         //d.memberList = newMemberList;
@@ -46,7 +46,7 @@
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
 
-      <%- console.log(club.memberList); -%>
+      <%= console.log(club.memberList); -%>
     <%_ } -%>
 
   });
