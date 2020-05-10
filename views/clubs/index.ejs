@@ -22,7 +22,7 @@
         </div>
         <div class="col">
           <main class="p-3">
-            <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+            <%_ if (Object.entries(club).length === 0 || club.officerList.indexOf(user._id)>=0){ -%>
               <%- include('./edit', {club: club, clubIDs: clubIDs}); -%>
             <%_ } else { -%>
               <%- include('./browse', {club: club}); -%>
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+    <%_ if (Object.entries(club).length === 0 || club.officerList.indexOf(user._id)>=0){ -%>
       <%- include('./adminscripts', {club: club}); -%>
     <%_ }else if(user){ -%>
       <%- include('./userscripts', {club: club}); -%>
