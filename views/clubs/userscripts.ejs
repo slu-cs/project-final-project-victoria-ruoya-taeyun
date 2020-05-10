@@ -38,14 +38,17 @@
       <%= console.log(club); -%>
       <%= console.log(newMemberList); -%>
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%-newMemberList-%>}})
+
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
+        club.memberList = newMemberList;
+      }})
         //d.memberList = newMemberList;
       //}})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
 
-      <%= console.log(club.memberList); -%>
+      
     <%_ } -%>
 
   });
