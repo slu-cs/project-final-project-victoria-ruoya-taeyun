@@ -41,7 +41,7 @@
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
         club.memberList = newMemberList;
-      }})
+      }});
         //d.memberList = newMemberList;
       //}})
       <%_ } else {-%>
