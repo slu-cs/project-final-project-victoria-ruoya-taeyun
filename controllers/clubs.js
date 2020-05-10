@@ -63,7 +63,7 @@ module.exports.newMember = function(request, response, next) {
 
   Club.findById(request.params.id).distinct('memberList').
   then(function(memberList){
-    club.memberList.append(request.session.user._id)
+    memberList.append(request.session.user._id)
   }).then(response.status(200).end())
   .catch(error => next(error));
 };
