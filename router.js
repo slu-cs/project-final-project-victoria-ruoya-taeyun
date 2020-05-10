@@ -37,6 +37,7 @@ const authorize = function(request, response, next) {
 // Handle club requests
 
 router.get('/clubs', clubs.index);
+router.get('/clubs/new', clubs.new);
 router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
 router.post('/clubs', clubs.create);

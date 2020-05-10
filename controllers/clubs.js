@@ -31,6 +31,10 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
+module.exports.new = function(request, response, next) {
+  response.render('clubs/index', {clubIDs: clubIDs});
+}
+
 // DELETE /club/:id
 module.exports.delete = function(request, response, next) {
   Club.findByIdAndDelete(request.params.id)
