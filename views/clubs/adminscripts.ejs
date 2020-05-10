@@ -2,10 +2,11 @@
 <script>
 
  // Update a club
- $('#update').on('click', function(event) {
+ $('#update').on('submit', function(event) {
    const form = $(this);
    event.preventDefault();
    $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
+     .done(() => alert('Update successfully.'))
      .fail(error => alert('Fail to update the club.'));
  });
 
