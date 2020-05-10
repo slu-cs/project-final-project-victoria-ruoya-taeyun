@@ -34,8 +34,10 @@
     // }
 
     <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
-      <%- newMemberList = club.memberList.push(user._id); -%>
-      <%- console.log(newMemberList); -%>
+      <%_ club.memberList.push(user._id); -%>
+      <%_ newMemberList = club.memberList; -%>
+      <%_ console.log(club); -%>
+      <%_ console.log(newMemberList); -%>
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%-newMemberList-%>}})
         //d.memberList = newMemberList;
