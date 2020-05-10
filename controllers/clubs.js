@@ -56,11 +56,13 @@ module.exports.update = function(request, response, next) {
 
 // PUT /clubs/newMember
 module.exports.newMember = function(request, response, next) {
-  console.log('?')
-  console.log(request.session.user._id);
-  Club.findById(request.params).distinct('memberList').
+  const lst = request.url.split("//");
+  const curClub = lst[-1];
+
+  console.log(curClub);
+  Club.findById(curClub).distinct('memberList').
   then(function(memberList){
-    club.memberList.append(request.session.user)
+    club.memberList.append(request.session.user._id)
   }).then(response.status(200).end())
   .catch(error => next(error));
 };
