@@ -34,7 +34,8 @@ module.exports.create = function(request, response, next) {
 module.exports.new = function(request, response, next) {
 
   Club.distinct('_id')
-    .then(clubIDs => response.render('clubs/index', {clubIDs: clubIDs}))
+    .then(clubIDs => response.render('clubs/index', {club: {}, clubIDs: clubIDs}))
+
     .catch(error => next(error));
 }
 

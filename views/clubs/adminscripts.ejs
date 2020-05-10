@@ -6,11 +6,18 @@
    console.log("j");
    const form = $(this);
    event.preventDefault();
-   $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
 
-     .done(() => alert('Update successfully.'))
-     .fail(error => alert('Fail to update the club.'));
+   <%_ if (Object.entries(club).length === 0) {-%>
+     $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+       .done(() => alert('Update successfully.'))
+       .fail(error => alert('Fail to update the club.'));
+   <%_ } else{ -%>
+     $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
+       .done(() => alert('Update successfully.'))
+       .fail(error => alert('Fail to update the club.'));
+   <%_ } -%>
  });
+
 
 
  // Delete a club
