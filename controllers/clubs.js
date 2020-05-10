@@ -40,7 +40,7 @@ module.exports.delete = function(request, response, next) {
 
 // PUT /club/:id
 module.exports.update = function(request, response, next) {
-  Club.findByIdAndUpdate(request.params.id, request.body)
+  Club.findByIdAndUpdate(request.params.id, request.body,{runValidators: true})
     .then(club => club ? response.status(200).end() : next())
     .catch(error => next(error));
 };
