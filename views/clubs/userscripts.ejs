@@ -16,21 +16,30 @@
   $('#join').on('click', function(event) {
     const form = $(this);
     event.preventDefault();
-    const curURL = window.location.href
-    const lst = curURL.split("/");
-    const curClub = lst[lst.length-1].replace(/%20/g,"");
-    console.log(curClub);
+    // const curURL = window.location.href
+    // const lst = curURL.split("/");
+    // const curClub = lst[lst.length-1].replace(/%20/g,"");
+    // console.log(curClub);
 
-    $.ajax({method: 'get', url: '/clubs/:id', data:{id:curClub}}).
-    then(function(){
-      const currentClub=clubs.find(club=>club._id = curClub);
-      if (currentClub.memberList.indexOf(request.session.user)<0){
-        currentClub.memberList.push(request.session.user);
-        $.$.ajax({method: 'put', url: '/clubs/:id', data:{id:currentClub.memberList}})
-      };
-    })
-    //.done(club => window.location.replace(`/clubs/${club}`))
-      .fail(alert('You are already in this club/theme house.'));
-    }
+    // $.ajax({method: 'get', url: '/clubs/:id', data:{id:curClub}}).
+    // then(function(){
+    //   const currentClub=clubs.find(club=>club._id = curClub);
+    //   if (currentClub.memberList.indexOf(request.session.user)<0){
+    //     currentClub.memberList.push(request.session.user);
+    //     $.$.ajax({method: 'put', url: '/clubs/:id', data:{id:currentClub.memberList}})
+    //   };
+    // })
+    // //.done(club => window.location.replace(`/clubs/${club}`))
+    //   .fail(alert('You are already in this club/theme house.'));
+    // }
+
+    <%_ if (Object.entries(club).memberList.indexOf(user._id) < 0) {-%>
+      <%- Object.entries(club).memberList.push(user._id); -%>
+
+      $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+        .done(() => alert('Join in successfully.'))
+        .fail(error => alert('Fail to join in this club.'));
+    <%_ } -%>
+
   );
 </script>
