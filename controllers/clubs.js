@@ -61,8 +61,8 @@ module.exports.newMember = function(request, response, next) {
 //club = club.replace(/'/g,"");
   console.log(request.body);
 
-  Club.findById(request.body.id).
-  then(function(club){
+  Club.findByIdAndUpdate(request.body.id)
+  .then(function(club){
     console.log(club);
     club.memberList.push(request.session.user._id);
     console.log(club.memberList);
