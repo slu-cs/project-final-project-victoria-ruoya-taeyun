@@ -3,10 +3,16 @@
   <head>
     <%- include('head'); -%>
     <style>
-      body{
+      .login{
         position: absolute;
         left: 50%;
         top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .title{
+        position: absolute;
+        left: 50%;
+        top: 25%;
         transform: translate(-50%,-50%);
       }
     </style>
@@ -15,8 +21,8 @@
   <body>
       <div style="background-image": "'url('https://www.stlawu.edu/news/st-lawrence-goes-us-news-rankings')'}">
       </div>
-      <h1>SLU Clubs and Theme Houses</h1>
-      <div class="log in">
+      <h2 class ="title">SLU Clubs and Theme Houses</h2>
+      <div class="logIn">
         <form >
           <input positive: relative type="text" id = "curID" name="id">
           <button type="submit" id= "signin">Sign In</button>
