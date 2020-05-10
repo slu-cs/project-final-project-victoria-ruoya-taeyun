@@ -47,7 +47,8 @@ module.exports.delete = function(request, response, next) {
 
 // PUT /club/:id
 module.exports.update = function(request, response, next) {
+  console.log(request.params.id);
   Club.findByIdAndUpdate(request.params.id, request.body,{runValidators: true})
-    .then(club => club ? response.status(200).end() : next())
+    .then(club => club ? {response.status(200).end(); console.log(club);}: next())
     .catch(error => next(error));
 };
