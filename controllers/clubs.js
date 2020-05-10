@@ -57,8 +57,8 @@ module.exports.update = function(request, response, next) {
 module.exports.newMember = function(request, response, next) {
   //const lst = ;
   //const curClub = lst[-1];
-  club = Club.findById(request.body);
-  console.log(request.data);
+  club = Club.findById(request.body,{runValidators: true});
+  console.log(request.body,{runValidators: true});
 
   Club.findById(request.body).distinct('memberList').
   then(function(memberList){
