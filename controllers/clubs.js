@@ -59,6 +59,6 @@ module.exports.update = function(request, response, next) {
   Club.findByIdAndAddMember(request.paras.id).
   then(function(club){
     club.memberList.append(user)
-  }).then(response.status(200).end();)
+  }).then(response.status(200).end())
   .catch(error => next(error));
 };
