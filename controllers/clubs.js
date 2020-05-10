@@ -59,10 +59,11 @@ module.exports.newMember = function(request, response, next) {
   //const curClub = lst[-1];
   club = Club.findById(request.body);
 //club = club.replace(/'/g,"");
-  console.log(typeof(club.id));
+  console.log(request.params.id);
 
   Club.findById(request.params.id).distinct('memberList').
   then(function(memberList){
+    console.log(memberList);
     memberList.push(request.session.user._id);
     console.log(memberList);
   }).then(response.status(200).end())
