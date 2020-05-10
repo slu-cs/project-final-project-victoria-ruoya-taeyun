@@ -63,7 +63,8 @@ module.exports.newMember = function(request, response, next) {
 
   Club.findById(request.params.id).distinct('memberList').
   then(function(memberList){
-    memberList.push(request.session.user._id)
+    memberList.push(request.session.user._id);
+    console.log("p");
   }).then(response.status(200).end())
   .catch(error => next(error));
 };
