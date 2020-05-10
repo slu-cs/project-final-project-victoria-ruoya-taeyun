@@ -13,13 +13,14 @@
 
   
 
-  $('#join').on('submit', function(event) {
+  $('#join').on('click', function(event) {
     const form = $(this);
     event.preventDefault();
     if (club.memberList.indexOf(user._id)>=0){
-      .fail(error => alert('You are already in this club/theme house.'));
+      alert('You are already in this club/theme house.');
     }else{
-      club.memberList.push(user._id);
+      console.log("good")
+      club.memberList.push(user._id)
       .done(club => window.location.replace(`/clubs/${club}`))
     }
   });

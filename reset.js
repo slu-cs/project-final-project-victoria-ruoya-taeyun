@@ -25,7 +25,7 @@ const clubs = [
             meetingLocation: 'Johnson 309',
             comingEvent: 'There Are No Upcoming Events',
             officerList: ['Victoria', 'Dhimiter Cobani', 'Samuel Tartakoff'],
-            memberList: ['Victoria', 'Kevin', 'Ruoya', 'Cole'],
+            memberList: ['Victoria', 'Kevin', 'Cole'],
             pastEvent: ['Review sessions for General Chemistry']}),
   new Club({_id: 'Graceful Movements',
             category: 'SLU Club',
