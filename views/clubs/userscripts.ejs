@@ -18,7 +18,7 @@
     event.preventDefault();
     const curURL = window.location.href
     const lst = curURL.split("/");
-    console.log(lst[-1]);
+    console.log(lst[lst.length-1]);
     $.ajax({method: 'put', url: '/clubs', data:""})
     //.done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
