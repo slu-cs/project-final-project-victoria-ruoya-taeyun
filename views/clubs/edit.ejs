@@ -1,15 +1,15 @@
 <form id="update" class="form">
-  <input type="text" name="title" placeholder="Name of the Club/Theme house" value="<%= club._id -%>" class="form-control form-control-lg font-weight-bold mb-1">
+  <input type="text" name="_id" placeholder="Name of the Club/Theme house" value="<%= club._id -%>" class="form-control form-control-lg font-weight-bold mb-1">
   <h4>Introduction</h4>
-  <textarea name="description" placeholder="Description" rows="3" class="form-control mb-1"><%= club.introduction -%></textarea>
+  <textarea name="introduction" placeholder="Description" rows="3" class="form-control mb-1"><%= club.introduction -%></textarea>
   <h4>Meeting Time</h4>
-  <textarea name="time" placeholder="Meeting Time" rows="1" class="form-control mb-1"><%= club.meetingTime -%></textarea>
+  <textarea name="meetingTime" placeholder="Meeting Time" rows="1" class="form-control mb-1"><%= club.meetingTime -%></textarea>
   <h4>Meeting Location</h4>
-  <textarea name="location" placeholder="Meeting Location" rows="1" class="form-control mb-1"><%= club.meetingLocation -%></textarea>
+  <textarea name="meetingLocation" placeholder="Meeting Location" rows="1" class="form-control mb-1"><%= club.meetingLocation -%></textarea>
   <h4>Coming Event</h4>
-  <textarea name="coming" placeholder="Coming Event" rows="1" class="form-control mb-1"><%= club.comingEvent -%></textarea>
+  <textarea name="comingEvent" placeholder="Coming Event" rows="1" class="form-control mb-1"><%= club.comingEvent -%></textarea>
   <h4>Past Event</h4>
-  <textarea name="past" placeholder="Past Event" rows="1" class="form-control mb-1"><%= club.pastEvent -%></textarea>
+  <textarea name="pastEvent" placeholder="Past Event" rows="1" class="form-control mb-1"><%= club.pastEvent -%></textarea>
   <button class="btn btn-primary" id="update">Save</button>
   <button id="delete" class="uninsert btn btn-primary">Delete</button>
 </form>
