@@ -53,3 +53,12 @@ module.exports.update = function(request, response, next) {
     .then(function(club){ if(club) {response.status(200).end(); console.log(club);} else{next()}})
     .catch(error => next(error));
 };
+
+// PUT /clubs/newMember
+module.exports.update = function(request, response, next) {
+  Club.findByIdAndAddMember(request.paras.id).
+  then(function(club){
+    club.memberList.append(user)
+  }).then(response.status(200).end();)
+  .catch(error => next(error));
+};
