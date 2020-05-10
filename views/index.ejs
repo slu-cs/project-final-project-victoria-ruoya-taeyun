@@ -38,12 +38,9 @@
         $('form').on('submit', function(event) {
           event.preventDefault();
           const form = $(this);
-          const lst = request.url.split("//");
-          const curClub = lst[-1];
 
-          console.log(curClub);
           //const currentID = $('#curID').val();
-            $.ajax({method: 'post', url: '/login', data: curClub})
+            $.ajax({method: 'post', url: '/login', data: form.serialize()})
              .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
         });
