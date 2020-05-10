@@ -68,6 +68,7 @@ module.exports.newMember = function(request, response, next) {
   Club.findByIdAndUpdate(request.params.id, request.body)
   .then(function(club){
     if(club){
+      console.log("next");
       console.log(club);
       club.memberList.push(request.session.user._id);
       response.status(200).end();
@@ -75,9 +76,9 @@ module.exports.newMember = function(request, response, next) {
       next()
     }
 
-    console.log(club);
+
     //console.log(Club.distinct(club));
-    club.memberList.push(request.session.user._id);
+
     //console.log(club.memberList);
   })
   //.then(response.status(200).end())
