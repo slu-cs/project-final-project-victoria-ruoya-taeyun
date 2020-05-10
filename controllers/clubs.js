@@ -72,6 +72,7 @@ module.exports.newMember = function(request, response, next) {
     }else{
       next()
     }
+    
     console.log(club);
     //console.log(Club.distinct(club));
     //club.memberList.push(request.session.user._id);
