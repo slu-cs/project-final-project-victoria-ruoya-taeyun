@@ -29,7 +29,7 @@
           var new_id = document.getElementById("curID").value;
           console.log(new_id);
 
-          <%_const userList = users.map(user=>user._id);-%>
+          const userList = users.map(user=>user._id);
           for (const i in userList){
             console.log(i);
           }
@@ -42,7 +42,7 @@
           //new User ({_id:${new_id.val(), club_theme_house_created_by_me:[]});
 
 
-          $.ajax({method: 'post', url: '/signup', data: form.serialize()})
+          $.ajax({method: 'post', url: '/user', data: form.serialize()})
             .then(function(){
               const userList = users.map(user=>user._id);
               if (userList.indexOf(new_id)<0) {
