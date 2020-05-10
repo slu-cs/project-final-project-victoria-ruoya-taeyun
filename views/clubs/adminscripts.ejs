@@ -3,6 +3,7 @@
 
  // Update a club
  $('#update').on('submit', function(event) {
+   console.log("j");
    const form = $(this);
    event.preventDefault();
    $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
@@ -14,7 +15,7 @@
  // Delete a club
  $('#delete').on('click', function(event) {
    const form = $(this);
-   console.log("j");
+
    event.preventDefault();
    if (confirm('Delete all traces of this club from the site?')) {
      $.ajax({method: 'delete', url: '/clubs/<%= club.id -%>'})
