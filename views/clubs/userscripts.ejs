@@ -23,8 +23,7 @@
 　　　　                      var para = arrUrl[1];
 　　　　                      return para;
 　　};
-    $.ajax({method: 'put', url: '/clubs', data: curClub}).
-    done(console.log(form.serialize()))
+    $.ajax({method: 'put', url: '/clubs', data: curClub})
     .done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
     }
