@@ -59,7 +59,7 @@ module.exports.newMember = function(request, response, next) {
   //const curClub = lst[-1];
 
 //club = club.replace(/'/g,"");
-  console.log(Club.find(_id => _id = request.body.id);
+  console.log(Club.find(_id => _id = request.body.id));
 
   Club.findById(request.body.id).
   then(function(club){
