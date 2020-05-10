@@ -33,7 +33,7 @@
     //   .fail(alert('You are already in this club/theme house.'));
     // }
 
-    
+
 
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
@@ -46,7 +46,7 @@
         .fail(error => alert('Fail to join in this club.'));
 
 
-    <%_ } -%>
+
 
   });
 </script>
