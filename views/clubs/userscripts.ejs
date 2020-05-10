@@ -40,7 +40,7 @@
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(d){
         d.memberList = newMemberList;
       }})
-        .done(() => alert('Join in successfully.'))
+        .done(() => alert('Join in successfully.', d.memberList))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
 
