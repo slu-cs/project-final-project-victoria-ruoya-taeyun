@@ -63,12 +63,20 @@ module.exports.newMember = function(request, response, next) {
   //console.log(Club.findById(request.body.id));
 
 
-  Club.findByIdAndUpdate(request.body.id)
+  Club.findByIdAndUpdate(request.params.id, request.body)
   .then(function(club){
+    console.log(club);
+    if(club){
+      club.memberList.push(request.session.user._id);
+      response.status(200).end();
+    }else{
+      next()
+    }
     console.log(club);
     //console.log(Club.distinct(club));
     //club.memberList.push(request.session.user._id);
     //console.log(club.memberList);
-  }).then(response.status(200).end())
+  })
+  //.then(response.status(200).end())
   .catch(error => next(error));
 };
