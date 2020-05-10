@@ -41,6 +41,7 @@
         d.memberList = newMemberList;
       }})
         .done(() => alert('Join in successfully.'))
+        .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
 
       <%- console.log(club.memberList); -%>
