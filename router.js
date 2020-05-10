@@ -41,12 +41,12 @@ router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
 router.post('/clubs', clubs.create);
 router.delete('/clubs/:id',clubs.delete);
-router.put('/clubs/:id', authorize, clubs.update);
+router.put('/clubs/:id', clubs.update);
 
 // Handle user requests
 router.get('/users', users.index);
 // router.post('/users', users.index);
-router.post('/users', authorize, users.create);
+router.post('/users',  users.create);
 
 
 // Export the router
