@@ -17,12 +17,8 @@
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs', data: form.serialize()})
-    if (club.memberList.indexOf(user._id)>=0){
-      alert('You are already in this club/theme house.');
-    }else{
-      console.log("good")
-      club.memberList.push(user._id)
-      .done(club => window.location.replace(`/clubs/${club}`))
+    .done(club => window.location.replace(`/clubs/${club}`))
+      .fail(alert('You are already in this club/theme house.'));
     }
-  });
+  );
 </script>
