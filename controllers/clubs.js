@@ -59,18 +59,13 @@ module.exports.newMember = function(request, response, next) {
   //const curClub = lst[-1];
 
 //club = club.replace(/'/g,"");
-<<<<<<< HEAD
-  console.log(Club.find(_id) => _id = request.body.id););
-=======
-  //console.log(Club.findById(request.body.id));
->>>>>>> 86a7af8583889d51ebcc37f9a3ccd15185465881
+  console.log(Club.find(_id) => _id = request.body.id);
 
-  Club.findByIdAndUpdate(request.body.id)
-  .then(function(club){
+  Club.findById(request.body.id).
+  then(function(club){
     console.log(club);
-    console.log(Club.distinct(club));
     club.memberList.push(request.session.user._id);
-    //console.log(club.memberList);
+    console.log(club.memberList);
   }).then(response.status(200).end())
   .catch(error => next(error));
 };
