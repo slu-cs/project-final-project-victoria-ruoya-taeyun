@@ -48,8 +48,10 @@
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
 
-      
-    <%_ } -%>
+
+    <%_ } else {-%>
+      .fail(error => alert('You are already in the club.'));
+    <%_ }-%>
 
   });
 </script>
