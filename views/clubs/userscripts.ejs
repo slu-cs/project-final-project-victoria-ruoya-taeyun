@@ -39,9 +39,8 @@
         <%_console.log(newMemberList);-%>
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
-        <%_club.memberList = newMemberList-%>;
-      }})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%_newMemberList -%>})
+    
         //d.memberList = newMemberList;
       //}})
       <%_ } else {-%>
