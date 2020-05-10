@@ -43,6 +43,7 @@ router.get('/clubs/:id', clubs.retrieve);
 router.post('/clubs', clubs.create);
 router.delete('/clubs/:id',clubs.delete);
 router.put('/clubs/:id', clubs.update);
+router.put('/clubs',clubs.newMember);
 
 // Handle user requests
 router.get('/users', users.index);

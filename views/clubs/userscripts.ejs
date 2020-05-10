@@ -11,11 +11,12 @@
   //     .fail(error => alert('Fail to create the club.'));
   // });
 
-  
+
 
   $('#join').on('click', function(event) {
     const form = $(this);
     event.preventDefault();
+    $.ajax({method: 'put', url: '/clubs', data: form.serialize()})
     if (club.memberList.indexOf(user._id)>=0){
       alert('You are already in this club/theme house.');
     }else{
