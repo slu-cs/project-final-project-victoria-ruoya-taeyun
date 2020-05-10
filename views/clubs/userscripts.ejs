@@ -35,6 +35,7 @@
 
     <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
       <%- club.memberList.push(user._id); -%>
+      <%- console.log(club); -%>
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
         .done(() => alert('Join in successfully.'))
