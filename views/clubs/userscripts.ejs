@@ -33,7 +33,10 @@
     //   .fail(alert('You are already in this club/theme house.'));
     // }
 
-
+    <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
+      newMemberList = club.memberList.push(user._id);
+      console.log(club);
+      console.log(newMemberList);
 
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
@@ -41,6 +44,9 @@
       }})
         //d.memberList = newMemberList;
       //}})
+      <%_ } else {-%>
+     .fail(error => alert('You are already in the club.'));
+   <%_ }-%>
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
