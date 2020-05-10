@@ -21,7 +21,7 @@
     const curClub = lst[lst.length-1];
     console.log(lst[lst.length-1]);
 
-    $.ajax({method: 'put', url: '/clubs', data:curClub})
+    $.ajax({method: 'put', url: '/clubs', data:{id:curClub}})
     //.done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
     }
