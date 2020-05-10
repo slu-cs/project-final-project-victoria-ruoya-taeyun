@@ -58,7 +58,7 @@ module.exports.newMember = function(request, response, next) {
   //const lst = ;
   //const curClub = lst[-1];
   club = Club.findById(request.body);
-  console.log(request.id);
+  console.log(request.body);
   Club.findById(request.body).distinct('memberList').
   then(function(memberList){
     club.memberList.append(request.session.user._id)
