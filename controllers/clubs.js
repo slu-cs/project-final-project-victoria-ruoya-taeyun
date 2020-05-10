@@ -66,10 +66,12 @@ module.exports.newMember = function(request, response, next) {
 
 
   Club.findByIdAndUpdate(request.params.id, request.body)
+  club = Club.findById(request.params.id);
+  console.log(club);
   .then(function(club){
     if(club){
-      console.log("next");
-      console.log(club);
+      // console.log("next");
+      // console.log(club);
       club.memberList.push(request.session.user._id);
       response.status(200).end();
     }else{
