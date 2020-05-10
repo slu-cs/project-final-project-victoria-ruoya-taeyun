@@ -61,11 +61,11 @@ module.exports.newMember = function(request, response, next) {
 //club = club.replace(/'/g,"");
   console.log(request.body);
 
-  Club.findById(request.body.id).distinct('memberList').
-  then(function(memberList){
-    console.log(memberList);
-    memberList.push(request.session.user._id);
-    console.log(memberList);
+  Club.findById(request.body.id).
+  then(function(club){
+    console.log(club);
+    club.memberList.push(request.session.user._id);
+    console.log(club.memberList);
   }).then(response.status(200).end())
   .catch(error => next(error));
 };
