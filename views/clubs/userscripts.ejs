@@ -18,10 +18,17 @@
     event.preventDefault();
     const curURL = window.location.href
     const lst = curURL.split("/");
-    const curClub = lst[lst.length-1];
-    console.log(lst[lst.length-1]);
+    const curClub = lst[lst.length-1].replace(/%20/g,"");
+    console.log(curClub);
 
-    $.ajax({method: 'put', url: '/clubs', data:{id:curClub}})
+    $.ajax({method: 'get', url: '/clubs/:id', data:{id:curClub}}).
+    then(function(){
+      const currentClub=clubs.find(club=>club._id = curClub);
+      if (currentClub.memberList.indexOf(request.session.user)<0){
+        currentClub.memberList.push(request.session.user);
+        $.$.ajax({method: 'put', url: '/clubs/:id', data:{id:currentClub.memberList}})
+      };
+    })
     //.done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
     }
