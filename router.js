@@ -27,6 +27,7 @@ router.get('/logout', function(request, response) {
 // Check for admin status
 const authorize = function(request, response, next) {
   if (request.session.admin) {
+    console.log("sile")
     next(); // Fulfill the request
   } else {
     response.status(401).end();
