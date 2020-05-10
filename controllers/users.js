@@ -41,11 +41,15 @@ module.exports.signup = function(request, response, next) {
 
 // Get /signup
 module.exports.signup = function(request, response, next) {
-  User.find().then(function(users) {
+  // User.find().then(function(users) {
+  //
+  //   response.render('/index', {users: users});
+  // 
+  // }).catch(error => next(error));
+  User.distinct('_id')
+    .then(userIDs => response.render('/login', {user: {}, userIDs: userIDs}))
 
-    response.render('/index', {users: users});
-
-  }).catch(error => next(error));
+    .catch(error => next(error));
 };
 
 
