@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const router = require('./router');
 const connect = require('./db');
-
+app.use(express.static(path.join(__dirname, 'picture')));
 // Connect to the database
 connect();
 
