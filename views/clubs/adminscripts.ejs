@@ -13,6 +13,7 @@
  // Delete a club
  $('#delete').on('click', function(event) {
    const form = $(this);
+   console.log("j");
    event.preventDefault();
    if (confirm('Delete all traces of this club from the site?')) {
      $.ajax({method: 'delete', url: '/clubs/<%= club.id -%>'})
