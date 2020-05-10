@@ -56,7 +56,7 @@ module.exports.update = function(request, response, next) {
 
 // PUT /clubs/newMember
 module.exports.newMember = function(request, response, next) {
-  console.log("debug",request.params.id);
+  console.log(request.params.id);
   Club.findByIdAndAddMember(request.params.id).
   then(function(club){
     club.memberList.append(user)
