@@ -34,10 +34,10 @@
     // }
 
     <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
-      <%- club.memberList.push(user._id); -%>
+      <%- newMemberList = club.memberList.push(user._id); -%>
       <%- console.log(club); -%>
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: club.serialize()})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {"memberList" = newMemberList}})
         .done(() => alert('Join in successfully.'))
         .fail(error => alert('Fail to join in this club.'));
 
