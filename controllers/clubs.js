@@ -58,8 +58,8 @@ module.exports.newMember = function(request, response, next) {
   //const lst = ;
   //const curClub = lst[-1];
   club = Club.findById(request.body);
-  club = club.replace(/'/g,"");
-  console.log(club);
+//club = club.replace(/'/g,"");
+  console.log(typeof(club));
 
   Club.findById(request.body).distinct('memberList').
   then(function(memberList){
