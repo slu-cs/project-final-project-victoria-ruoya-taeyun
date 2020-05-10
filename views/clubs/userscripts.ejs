@@ -33,8 +33,8 @@
     //   .fail(alert('You are already in this club/theme house.'));
     // }
 
-    <%_ if (Object.entries(club).memberList.indexOf(user._id) < 0) {-%>
-      <%- Object.entries(club).memberList.push(user._id); -%>
+    <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
+      <%- club.memberList.push(user._id); -%>
 
       $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
         .done(() => alert('Join in successfully.'))
