@@ -15,7 +15,7 @@ app.set('views', './views');
 
 // Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, ‘public’)));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Generate a session for each client
 app.use(session({
