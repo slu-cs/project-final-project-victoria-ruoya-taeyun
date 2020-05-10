@@ -16,6 +16,7 @@
   $('#join').on('click', function(event) {
     const form = $(this);
     event.preventDefault();
+    console.log(window.location.href);
     $.ajax({method: 'put', url: '/clubs', data:""})
     .done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
