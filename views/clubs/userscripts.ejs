@@ -16,7 +16,7 @@
   $('#join').on('click', function(event) {
     const form = $(this);
     event.preventDefault();
-    $.ajax({method: 'put', url: '/clubs', data: form.serialize()}).
+    $.ajax({method: 'put', url: '/clubs', data: ${club}}).
     done(console.log(form.serialize()))
     .done(club => window.location.replace(`/clubs/${club}`))
       .fail(alert('You are already in this club/theme house.'));
