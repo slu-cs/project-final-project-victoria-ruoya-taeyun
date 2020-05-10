@@ -35,7 +35,7 @@
     const form = $(this);
     event.preventDefault();
     if (club.memberList.indexOf(user._id)>=0){
-      alert('You are already in this club/theme house.'));
+      alert('You are already in this club/theme house.');
     }else{
       club.memberList.push(user._id);
       .done(club => window.location.replace(`/clubs/${club}`))
