@@ -60,13 +60,26 @@ module.exports.newMember = function(request, response, next) {
 
 //club = club.replace(/'/g,"");
   console.log(Club.find(_id => _id = request.body.id));
+  //  Club.findById(request.body.id).
+  //  then(function(club){
+  //console.log(Club.findById(request.body.id));
 
-//  Club.findById(request.body.id).
-//  then(function(club){
+
+  Club.findByIdAndUpdate(request.params.id, request.body)
+  .then(function(club){
+    if(club){
+      console.log(club);
+      club.memberList.push(request.session.user._id);
+      response.status(200).end();
+    }else{
+      next()
+    }
+
     console.log(club);
     //console.log(Club.distinct(club));
     club.memberList.push(request.session.user._id);
     //console.log(club.memberList);
-  }).then(response.status(200).end())
+  })
+  //.then(response.status(200).end())
   .catch(error => next(error));
 };
