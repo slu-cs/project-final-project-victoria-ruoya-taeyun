@@ -32,7 +32,10 @@ module.exports.create = function(request, response, next) {
 };
 
 module.exports.new = function(request, response, next) {
-  response.render('clubs/index', {clubIDs: clubIDs});
+
+  Club.distinct('_id')
+    .then(clubIDs => response.render('clubs/index', {clubIDs: clubIDs}))
+    .catch(error => next(error));
 }
 
 // DELETE /club/:id
