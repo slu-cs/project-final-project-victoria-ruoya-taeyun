@@ -38,13 +38,7 @@
         $('form').on('submit', function(event) {
           event.preventDefault();
           const form = $(this);
-          var curClub = function GetUrlPara(){　　
-　　　　                      var url = document.location.toString();
-　　　　                      var arrUrl = url.split("?");
-
-　　　　                      var para = arrUrl[1];
-　　　　                      return para;
-　　};
+          
           //const currentID = $('#curID').val();
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
              .done(() => window.location.replace("/clubs"))
