@@ -5,8 +5,9 @@
   $('#create').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
+    var new_club_id = document.getElementById("clubid").value;
     $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
-      .done(id => window.location.replace(`/clubs/${id}`))
+      .done(id => window.location.replace(`/clubs/${new_club_id}`))
       .fail(error => alert('Fail to create the club.'));
   });
 
