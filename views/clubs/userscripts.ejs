@@ -36,7 +36,7 @@
     <%_ if (club.memberList.indexOf(user._id) < 0) {-%>
       <%- club.memberList.push(user._id); -%>
 
-      $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+      $.ajax({method: 'post', url: '/clubs/<%= club._id -%>', data: form.serialize()})
         .done(() => alert('Join in successfully.'))
         .fail(error => alert('Fail to join in this club.'));
     <%_ } -%>
