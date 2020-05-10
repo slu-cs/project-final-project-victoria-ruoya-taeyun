@@ -6,28 +6,37 @@
     <div class="jumbotron BROWN" id="centered">
       <h1 class="display-4">Hello, <%= user._id -%>!</h1>
       <hr class="my-4">
-    <div class=""container-fluid bg=light mb-5 text-primary"">
-      <p>Club(s)/Theme house(s) that you are a member of: </p>
-      <p id = "memberOf"></p>
-      <ul>
-        <%_ for (const club of clubs) { -%>
-          <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
-            <li> <%=  club._id -%> </li>
-          <%_ } -%>
-        <%_ } -%>
-      </ul>
+
+    </div>
+    <div class="container-fluid bg-dark text-white">
+      <div class="row">
+        <div class="col border m-4 p-4">
+          <p>Club(s)/Theme house(s) that you are a member of: </p>
+          <p id = "memberOf"></p>
+          <ul>
+            <%_ for (const club of clubs) { -%>
+              <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
+                <li> <%=  club._id -%> </li>
+              <%_ } -%>
+            <%_ } -%>
+          </ul>
+        </div>
+        <div class="col border m-4 p-4">
+          <p>Club(s)/Theme house(s) that you are an officer of:</p>
+          <p id = "officerOf"></p>
+          <ul>
+            <%_ for (const club of clubs) { -%>
+              <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+                <li> <%=  club._id -%> </li>
+              <%_ } -%>
+            <%_ } -%>
+          </ul>
+        </div>
+      </div>
     </div>
 
 
-      <p>Club(s)/Theme house(s) that you are an officer of:</p>
-      <p id = "officerOf"></p>
-      <ul>
-        <%_ for (const club of clubs) { -%>
-          <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
-            <li> <%=  club._id -%> </li>
-          <%_ } -%>
-        <%_ } -%>
-      </ul>
+
       <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Create a new club/theme house</a> -->
     </div>
   </body>
