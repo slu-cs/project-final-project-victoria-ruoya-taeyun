@@ -10,7 +10,7 @@ const Club = new mongoose.Schema({
   meetingLocation: String,
   comingEvent: String,
   officerList: [String],
-  memberList: [String],
+  memberList: [],
   pastEvent: [String]
 });
 
