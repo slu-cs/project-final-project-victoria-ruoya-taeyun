@@ -27,7 +27,7 @@
           <label for="text">Username: </label>
           <input positive: relative type="text" id = "curID" name="id">
           <button type="submit" id= "signin">Sign In</button>
-          <button name = "btn-signup" id= "signup">Sign In</button>
+          <button name = "btn-signup" id= "signup">Sign Up</button>
 
         </form>
 
@@ -40,7 +40,7 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
 
-        $('#signin').('click', function(event) {
+        $('#signin').click(function(event) {
           event.preventDefault();
           const form = $(this);
 
@@ -50,7 +50,7 @@
              .fail(error => alert('Could not log in.'));
         });
 
-        $('#signup').('click', function(event) {
+        $('#signup').click(function(event) {
           event.preventDefault();
           const form = $(this);
           const name = form.find('input').val();
