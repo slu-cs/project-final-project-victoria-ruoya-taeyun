@@ -19,9 +19,10 @@
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: div.serialize()})
 
         .done(() => alert('Join in successfully.'))
-        .fail(error => alert('Fail to join in this club.'));
-      <%_ } else {-%>
-         alert('You are already in the club.');
+        <%_ } else {-%>
+        .fail(error => alert('You are already in this club.'));
+
+
    <%_ }-%>
 
    });
