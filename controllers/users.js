@@ -49,7 +49,7 @@ module.exports.signup = function(request, response, next) {
 module.exports.new = function(request, response, next) {
 
   User.distinct('_id')
-    .then(userIDs => response.render('/login', {user: {}, userIDs: userIDs}))
+    .then(userIDs => response.render('/index', {user: {}, userIDs: userIDs}))
 
     .catch(error => next(error));
 }
