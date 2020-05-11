@@ -12,7 +12,7 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
-router.post('/signup',function(request, response) {
+router.get('/signup',function(request, response) {
   response.render('signup');
 });
 
@@ -20,7 +20,7 @@ router.post('/signup',function(request, response) {
 router.post('/login', users.login);
 
 // Handle sign up requests
-router.post('/signup',users.create);
+router.post('/users',users.create);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
