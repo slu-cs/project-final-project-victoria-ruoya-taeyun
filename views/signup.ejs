@@ -44,7 +44,7 @@
         event.preventDefault();
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
                          .done(() => window.location.replace('/login'))
-                         .fail(error => alert(error.responseText));
+                         .fail(error => alert("Fail to signup."));
                        })
 
 
