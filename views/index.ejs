@@ -50,18 +50,7 @@
              .fail(error => alert('Could not log in.'));
         });
 
-        $('#signup').click(function(event) {
-          event.preventDefault();
-          const form = $(this);
-          const name = form.find('input').val();
-
-          //const currentID = $('#curID').vaconsl();
-
-
-            $.ajax({method: 'put', url: '/signup', data: form.serialize()})
-              .done(() => window.location.replace("/clubs"))
-              .fail(error => alert('Could not log in.'));
-            }
+      
 
 
 
