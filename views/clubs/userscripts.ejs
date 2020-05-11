@@ -39,15 +39,10 @@
         <%_console.log(newMemberList);-%>
 
 
-<<<<<<< HEAD
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%=newMemberList -%>}})
-
-=======
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%= newMemberList -%>}})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
->>>>>>> 2372e85ced7ad7da58183da95796392812d83288
         //d.memberList = newMemberList;
       // }})
       <%_ } else {-%>
