@@ -59,7 +59,8 @@
           <%_ if (Object.entries(user).length>0) { -%>
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
               .done(() => window.location.replace("/clubs"))
-              .fail(error => alert('Could not log in.'));
+              .fail(error => alert('Could not log in.'))
+              .catch(error => next(error));
 
            //<%_ }else{-%>
             // $.fail(error => alert('Could not log in.'));
@@ -68,7 +69,7 @@
 
         });
 
-        
+
 
 
 /*
