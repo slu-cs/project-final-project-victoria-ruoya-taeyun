@@ -43,7 +43,7 @@
         const form = $(this);
         event.preventDefault();
         $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-                         .done(() => window.location.replace('/clubs'))
+                         .done(() => window.location.replace('/'))
                          .fail(error => alert(error.responseText));
                        })
 
