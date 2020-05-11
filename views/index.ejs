@@ -24,8 +24,11 @@
       <h2 class ="title">SLU Clubs and Theme Houses</h2>
       <div class="logIn">
         <form id="signinForm">
+          <label for="text">Username: </label>
           <input positive: relative type="text" id = "curID" name="id">
           <button type="submit" id= "signin">Sign In</button>
+          <button name = "btn-signup" id= "signup">Sign In</button>
+
         </form>
 
 
@@ -45,6 +48,21 @@
             $.ajax({method: 'post', url: '/login', data: form.serialize()})
              .done(() => window.location.replace("/clubs"))
              .fail(error => alert('Could not log in.'));
+        });
+
+        $('.btn-signup').on('submit', function(event) {
+          event.preventDefault();
+          const form = $(this);
+          const name = form.find('input')
+
+          //const currentID = $('#curID').val();
+           <%_ if (Object.entries(user).indexOf(${name.val()}) < 0) {-%>
+            $.ajax({method: 'put', url: '/signup', data: form.serialize()})
+             .done(() => window.location.replace("/clubs"));
+
+           <%_ }else{-%>
+             .fail(error => alert('Could not log in.'));
+           <%_  }-%>
         });
 
 

@@ -16,7 +16,7 @@ router.get('/', function(request, response) {
 router.post('/login', users.login);
 
 // Handle sign up requests
-router.post('/signup',users.signup);
+router.put('/signup',users.signup);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
