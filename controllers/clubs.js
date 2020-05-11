@@ -24,6 +24,8 @@ module.exports.retrieve = function(request, response, next) {
   }).catch(error => next(error));
 };
 
+
+// Create a new Club
 // POST /club
 module.exports.create = function(request, response, next) {
   Club.create(request.body)
@@ -39,6 +41,7 @@ module.exports.new = function(request, response, next) {
     .catch(error => next(error));
 }
 
+// Delete a Club
 // DELETE /club/:id
 module.exports.delete = function(request, response, next) {
   Club.findByIdAndDelete(request.params.id)
@@ -46,16 +49,23 @@ module.exports.delete = function(request, response, next) {
     .catch(error => next(error));
 };
 
+
+// Update Club information
 // PUT /club/:id
 module.exports.update = function(request, response, next) {
   console.log("next");
-  Club.findByIdAndUpdate(request.params.id, {memberList:club.mermberList.push(request.session.user)},{runValidators: true})
+  Club.findByIdAndUpdate(request.params.id, request.body,{runValidators: true})
     .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };
 
 // PUT /clubs/newMember
 module.exports.newMember = function(request, response, next) {
+  console.log("next");
+  Club.findByIdAndUpdate(request.params.id, {memberList:club.mermberList.push(request.session.user._id)},{runValidators: true})
+    .then(function(club){ if(club) {response.status(200).end();} else{next()}})
+    .catch(error => next(error));
+};
   //const lst = ;
   //const curClub = lst[-1];
 

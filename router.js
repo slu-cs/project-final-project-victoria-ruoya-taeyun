@@ -12,14 +12,15 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
+//
 router.get('/signup',function(request, response) {
   response.render('signup');
 });
 
-// Handle login requests
+// Handle login requests/
 router.post('/login', users.login);
 
-// Handle sign up requests
+// Handle sign up requests /
 router.post('/users',users.create);
 
 // Handle logout requests
@@ -44,8 +45,14 @@ router.get('/clubs', clubs.index);
 router.get('/clubs/new', clubs.new);
 router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
+
+// Create a new Club
 router.post('/clubs', clubs.create);
-router.put('/clubs/:id', clubs.update);
+
+// Update Club information
+router.put('/clubs/:id', clubs.newMember);
+
+// Delete a Club
 router.delete('/clubs/:id',clubs.delete);
 
 router.put('/clubs',clubs.retrieve);
