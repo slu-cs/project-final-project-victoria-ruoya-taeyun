@@ -13,9 +13,16 @@
 
 
 
-  $('#join').on('click', function(event) {
+  $('#clubsinfo').on('click', '#mem', function(event) {
     const div = $(this);
     event.preventDefault();
+    var getCount = $("p#mem").text();
+    getCount = getCount.replace(/\s/g,'');
+    var count = getCount.split("Vote")[1];
+    var listItems = $(this).children();
+    var setCount = listItems[4];
+    var currentCount = parseInt(getcount) + 1;
+    setCount.textContent = currentCount.toString();
     // const curURL = window.location.href
     // const lst = curURL.split("/");
     // const curClub = lst[lst.length-1].replace(/%20/g,"");
