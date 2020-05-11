@@ -44,7 +44,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%= newMemberList -%>}})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%= Object.entries(club.memberList) -%>}})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
