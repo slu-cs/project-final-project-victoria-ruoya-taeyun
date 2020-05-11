@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-  $('#clubsinfo').on('click', function(event) {
+  $('#clubsinfo').on('submit', function(event) {
     const div = $(this);
     event.preventDefault();
 
@@ -9,7 +9,8 @@
     <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
 
       <%_ club.memberList.push(user._id); -%>
-      <%_ newMemberList = Object.entries(club.memberList)-%>
+      <%_console.log(club.memberList)-%>
+      <%_ newMemberList = Object.entries(club.memberList).push(user._id)-%>
       <%_ console.log(newMemberList); -%>
 
 
@@ -20,7 +21,7 @@
         .done(() => alert('Join in successfully.'))
         .fail(error => alert('Fail to join in this club.'));
       <%_ } else {-%>
-      .fail(error => alert('You are already in the club.'));
+        $.fail(error => alert('You are already in the club.'));
    <%_ }-%>
 
    });
