@@ -42,8 +42,8 @@
 
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/signup', data: form.serialize()})
-                         .done(() => window.location.replace('/'))
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+                         .done(() => window.location.replace('/login'))
                          .fail(error => alert(error.responseText));
                        })
 
