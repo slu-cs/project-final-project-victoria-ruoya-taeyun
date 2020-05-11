@@ -13,7 +13,7 @@
        .fail(error => alert('Fail to update the club.'));
    <%_ } else{ -%>
      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
-       club.memberList = ["r3r"];
+       club.pastEvent = ["r3r"];
      }})
        .done(() => alert('Update successfully.'))
        .fail(error => alert('Fail to update the club.'));
