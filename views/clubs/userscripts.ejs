@@ -39,7 +39,7 @@
         <%_console.log(newMemberList);-%>
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%_newMemberList -%>}})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%=newMemberList -%>}})
 
         //d.memberList = newMemberList;
       //}})
