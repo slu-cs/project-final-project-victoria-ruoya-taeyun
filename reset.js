@@ -15,8 +15,8 @@ const clubs = [
             meetingTime: 'Sunday 7pm',
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
-            officerList: ['Ruoya', 'Lilly', 'Jacky', 'Meaghan'],
-            memberList: ['Ruoya', 'Kevin', 'Taeyun'],
+            officerList: ['Rita', 'Lilly', 'Jacky', 'Meaghan'],
+            memberList: ['Rita', 'Kevin', 'Taeyun'],
             pastEvent: ['Haunted House','Gaming Night']}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
@@ -34,7 +34,7 @@ const clubs = [
             meetingLocation: 'Griffiths 40',
             comingEvent: 'Spring Dance Concert',
             officerList: ['Meiting Li'],
-            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
+            memberList: ['Rita', 'Kevin', 'Colby', 'Cole'],
             pastEvent: ['Fall Dance Concert']}),
   new Club({_id: 'L.I.G.H.T. House',
             category: 'Theme House',
@@ -43,7 +43,7 @@ const clubs = [
             meetingLocation: '17 College St. Canton, NY',
             comingEvent: 'Morning yoga on Monday',
             officerList: ['Taeyun'],
-            memberList: ['Rita', 'Taeyun', 'Jack', 'Victoria'],
+            memberList: ['Coco', 'Taeyun', 'Jack', 'Victoria'],
             pastEvent: ['Making candles']})
 ];
 
@@ -52,7 +52,7 @@ const clubs = [
 const users = [
   new User({_id: 'Victoria', club_theme_house_created_by_me: ['American Chemical Society']
   }),
-  new User({_id: 'Ruoya',club_theme_house_created_by_me: ['The Hub']
+  new User({_id: 'Rita',club_theme_house_created_by_me: ['The Hub']
   }),
   new User({_id: 'Taeyun', club_theme_house_created_by_me: ['L.I.G.H.T. House']
   })
