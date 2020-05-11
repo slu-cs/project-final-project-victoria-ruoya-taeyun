@@ -61,7 +61,9 @@
         event.preventDefault();
         const form = $(this);
 
-          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+
+
+          $.ajax({method: 'post', url: '/signup', data: form.serialize()})
            .done(() => alert('Sign up successfully.'))
            .fail(error => alert('Could not create the account with this name.'));
       });
