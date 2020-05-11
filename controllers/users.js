@@ -48,7 +48,7 @@ module.exports.signup = function(request, response, next) {
 
 module.exports.new = function(request, response, next) {
 
-  User.distinct('_id')
+  User.distinct('id')
     .then(userIDs => response.render('/index', {user: {}, userIDs: userIDs}))
 
     .catch(error => next(error));
