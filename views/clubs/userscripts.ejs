@@ -45,7 +45,7 @@
 
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
-        club.memberList = newMemberList;
+        Object.entries(club.memberList) = newMemberList;
       }})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
