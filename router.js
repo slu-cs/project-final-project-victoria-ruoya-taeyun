@@ -12,7 +12,7 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
-router.get('/signup',function(request, response) {
+router.post('/signup',function(request, response) {
   response.render('signup');
 });
 
