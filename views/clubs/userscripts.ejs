@@ -40,12 +40,12 @@
       <%_ newMemberList = Object.entries(club.memberList)-%>
       <%_ console.log(newMemberList) -%>
         <%_ console.log(newMemberList.length);-%>
-
+        console.log(main.serialize())
 
 
 
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: main.serialize()})
-      .done(()=>console.log(main.serialize()))
+
         .done(() => alert('Join in successfully.'))
         //.done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
