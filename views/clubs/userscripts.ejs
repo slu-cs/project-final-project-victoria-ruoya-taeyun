@@ -34,8 +34,8 @@
     // }
 
     <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
-      <%_ newMemberList = club.memberList.push(user._id); -%>
-        <%_ console.log(typeof(newMemberList))-%>;
+      <%_ newMemberList = Object.entries(club.memberList).push(user._id); -%>
+        <%_ console.log(typeof(newMemberList));-%>
 
 
 
