@@ -14,7 +14,7 @@
 
 
   $('#join').on('click', function(event) {
-    const mem = $($this);
+    const div = $(div);
     event.preventDefault();
     // const curURL = window.location.href
     // const lst = curURL.split("/");
@@ -44,7 +44,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: main.serialize()})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: div.serialize()})
 
         .done(() => alert('Join in successfully.'))
         //.done(() => window.location.replace('/clubs'))
