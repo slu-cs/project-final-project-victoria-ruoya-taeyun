@@ -40,12 +40,12 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
 
-      $('#signin').on('click', function(event) {
+      $('#signinForm').on('click', function(event) {
         event.preventDefault();
-        const input = $(this);
-        console.log(input.serialize())
+        const form = $(this);
+
         //const currentID = $('#curID').val();
-          $.ajax({method: 'post', url: '/login', data: input.serialize()})
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
            .done(() => window.location.replace("/clubs"))
            .fail(error => alert('Could not log in.'));
       });
