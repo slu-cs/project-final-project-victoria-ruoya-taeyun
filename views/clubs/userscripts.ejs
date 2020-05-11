@@ -9,6 +9,7 @@
     <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
 
       <%_ club.memberList.push(user._id); -%>
+      <%_console.log(club.memberList)-%>
       <%_ newMemberList = Object.entries(club.memberList)-%>
 
 
