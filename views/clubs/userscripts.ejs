@@ -14,7 +14,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: <%- club.memberList.length-%>})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: div.serialize()})
 
         .done(() => alert('Join in successfully.'))
         .fail(error => alert('Fail to join in this club.'));
