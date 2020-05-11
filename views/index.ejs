@@ -27,9 +27,12 @@
           <label for="text">Username: </label>
           <input positive: relative type="text" id = "curID" name="id">
           <button type="submit" id= "signin">Sign In</button>
-          <button name = "btn-signup" id= "signup">Sign Up</button>
+
 
         </form>
+
+        <a href="/users/new" class="btn btn-primary">Create a new account</a>
+
 
 
 
@@ -44,10 +47,18 @@
         event.preventDefault();
         const form = $(this);
 
-        //const currentID = $('#curID').val();
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
            .done(() => window.location.replace("/clubs"))
            .fail(error => alert('Could not log in.'));
+      });
+
+      $('#signupForm').on('submit', function(event) {
+        event.preventDefault();
+        const form = $(this);
+
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+           .done(() => window.location.replace("/login"))
+           .fail(error => alert('Could not create the account with this name.'));
       });
 
 
