@@ -50,7 +50,7 @@
              .fail(error => alert('Could not log in.'));
         });
 
-        $('.btn-signup').on('submit', function(event) {
+        $('.btn-signup').on('click', function(event) {
           event.preventDefault();
           const form = $(this);
           const name = form.find('input');
@@ -59,14 +59,25 @@
            <%_ if (Object.entries(user).indexOf(${name.val()}) < 0) {-%>
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
              .done(() => window.location.replace("/clubs"))
-             .fail(error => alert('Could not log in.'));
+             .fail(error => alert('Could not sign up.'));
+
 
            //<%_ }else{-%>
             // $.fail(error => alert('Could not log in.'));
         //   <%_  }-%>
-        <%_ };-%>
+        <%_ }-%>
 
 
+        <%_ if (Object.entries(club).length === 0) {-%>
+          $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+            .done(() => alert('Update successfully.'))
+            .fail(error => alert('Fail to update the club.'));
+        <%_ } else{ -%>
+
+          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
+            .done(() => alert('Update successfully.'))
+            .fail(error => alert('Fail to update the club.'));
+        <%_ } -%>
 
 
 /*
