@@ -50,7 +50,7 @@ router.get('/clubs/:id', clubs.retrieve);
 router.post('/clubs', clubs.create);
 
 // Update Club information
-router.put('/clubs/:id', clubs.newMember);
+router.put('/clubs/:id', clubs.update);
 
 // Delete a Club
 router.delete('/clubs/:id',clubs.delete);
