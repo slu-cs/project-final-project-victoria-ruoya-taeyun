@@ -8,7 +8,7 @@
    event.preventDefault();
 
    <%_ if (Object.entries(club).length === 0) {-%>
-     <%_ console.log(typeof(Object.entries(club.push("d")));-%>
+     <%_ console.log(typeof(Object.entries(club.push("d"))));-%>
      $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
        .done(() => alert('Update successfully.'))
        .fail(error => alert('Fail to update the club.'));
