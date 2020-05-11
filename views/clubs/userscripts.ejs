@@ -44,7 +44,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: <%- club.memberList -%>})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: <%- club.memberList.length-%>})
 
         .done(() => alert('Join in successfully.'))
         //.done(() => window.location.replace('/clubs'))
