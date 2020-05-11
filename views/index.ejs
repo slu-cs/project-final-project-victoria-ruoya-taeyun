@@ -58,11 +58,12 @@
           //const currentID = $('#curID').val();
            <%_ if (Object.entries(user).indexOf(${name.val()}) < 0) {-%>
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
-             .done(() => window.location.replace("/clubs"));
+             .done(() => window.location.replace("/clubs"))
+             .fail(error => alert('Could not log in.'));
 
-           <%_ }else{-%>
-             $.fail(error => alert('Could not log in.'));
-           <%_  }-%>
+           //<%_ }else{-%>
+            // $.fail(error => alert('Could not log in.'));
+        //   <%_  }-%>
         });
 
 
