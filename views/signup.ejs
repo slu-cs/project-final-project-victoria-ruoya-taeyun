@@ -28,6 +28,8 @@
           <input positive: relative type="text" id = "curID" name="_id">
           <button type="submit" id= "signup">Sign Up</button>
 
+        </form>
+
 
 
 
@@ -40,7 +42,7 @@
 
       $('#signup').on('click', function(event) {
 
-        const form = $(this);
+        const form = $(this).closest('form');
         event.preventDefault();
 
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
