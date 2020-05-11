@@ -12,6 +12,7 @@
        .done(() => alert('Update successfully.'))
        .fail(error => alert('Fail to update the club.'));
    <%_ } else{ -%>
+     console.log(form.serialize())
      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
        .done(() => alert('Update successfully.'))
        .fail(error => alert('Fail to update the club.'));
