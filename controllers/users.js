@@ -69,10 +69,6 @@ module.exports.create = function(request, response, next) {
   User.create(request.body)
     .then(user => response.status(201).end())
     .catch(error => next(error));
-  // User.distinct('_id')
-  //   .then(userIDs => response.render('users', {user: {}, userIDs: userIDs}))
-  //
-  //   .catch(error => next(error));
 };
 
 // DELETE /club/:id
