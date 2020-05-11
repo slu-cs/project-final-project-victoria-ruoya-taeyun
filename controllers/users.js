@@ -66,7 +66,7 @@ module.exports.index = function(request, response, next) {
 // POST /club
 module.exports.create = function(request, response, next) {
   User.create(request.body)
-    .then(user => response.status(201).send(user.id))
+    .then(user => response.status(201).end())
     .catch(error => next(error));
 };
 
