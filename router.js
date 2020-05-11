@@ -45,8 +45,9 @@ router.get('/clubs/new', clubs.new);
 router.get('/clubs/:id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
 router.post('/clubs', clubs.create);
-router.delete('/clubs/:id',clubs.delete);
 router.put('/clubs/:id', clubs.update);
+router.delete('/clubs/:id',clubs.delete);
+
 router.put('/clubs',clubs.retrieve);
 
 // Handle user requests
