@@ -10,7 +10,7 @@
    <%_ if (Object.entries(club).length === 0) {-%>
      $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
        .done(() => alert('Update successfully.'))
-       .done(() => window.location.replace("/clubs"))
+       .done(() => window.location.reload())
        .fail(error => alert('Fail to update the club.'));
    <%_ } else{ -%>
 
