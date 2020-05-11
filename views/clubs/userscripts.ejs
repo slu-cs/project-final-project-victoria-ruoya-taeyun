@@ -1,13 +1,13 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-  $('#clubsinfo').on('click', '#mem', function(event) {
+  $('#clubsinfo').on('click', function(event) {
     const div = $(this);
     event.preventDefault();
 
 
     <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
-      
+
       <%_ club.memberList.push(user._id); -%>
       <%_ newMemberList = Object.entries(club.memberList)-%>
 
