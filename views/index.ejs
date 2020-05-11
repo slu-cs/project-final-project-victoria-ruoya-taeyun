@@ -53,10 +53,11 @@
         $('.btn-signup').on('click', function(event) {
           event.preventDefault();
           const form = $(this);
-          const name = form.find('input');
+          const name = form.find('input').val();
 
-          //const currentID = $('#curID').val();
-          <%_ if (Object.entries(user).findById(${name.val()}) === null) { -%>
+          //const currentID = $('#curID').vaconsl();
+
+          <%_ if (Object.entries(user).findById(name) === null) { -%>
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
               .done(() => window.location.replace("/clubs"))
               .fail(error => alert('Could not log in.'));
