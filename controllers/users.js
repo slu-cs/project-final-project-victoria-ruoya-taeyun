@@ -5,6 +5,7 @@ const Club = require('../models/club');
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
   User.findById(request.body.id)
+    console.log(request.body.id);
     .then(function(user) {
       if (user) {
         request.session.user = user;
