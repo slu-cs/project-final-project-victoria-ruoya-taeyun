@@ -42,12 +42,15 @@
 
         const form = $(this);
         event.preventDefault();
-        $.ajax({method: 'post', url: '/users', data: form.serialize()})
-                         .done(() => window.location.replace('/login'))
-                         .fail(error => alert("Fail to signup."));
-                       })
+        <%_ if (Object.entries(user).length === 0) {-%>
+          $.ajax({method: 'post', url: '/users', data: form.serialize()})
+                           .done(() => window.location.replace('/login'))
+                           .fail(error => alert("Fail to signup."));
 
 
+        <%_ } -%>
+
+      });
 
       </script>
 
