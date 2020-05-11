@@ -49,7 +49,7 @@ module.exports.delete = function(request, response, next) {
 // PUT /club/:id
 module.exports.update = function(request, response, next) {
   console.log("next");
-  Club.findByIdAndUpdate(request.params.id, request.session.club.memberList,{runValidators: true})
+  Club.findByIdAndUpdate(request.params.id, {memberList:club.mermberList.push(request.session.user)},{runValidators: true})
     .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };

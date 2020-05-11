@@ -16,7 +16,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: div.serialize()})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>'})
 
         .done(() => alert('Join in successfully.'))
         <%_ } else {-%>
