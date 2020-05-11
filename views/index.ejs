@@ -31,12 +31,12 @@
 
         </form>
 
-        <a href="/users/new" class="btn btn-primary">Create a new account</a>
-
         <form id="signupForm">
-          <%_ if (Object.entries(user).length === 0){ -%>
-            <%- include('edit', {user: user, userIDs: userIDs}); -%>
-          <%_ } -%>
+          <label for="text">Create a new account: </label>
+          <input positive: relative type="text" id = "newID" name="_id">
+          <button type="submit" id= "signup">Sign Up</button>
+
+
         </form>
 
 
