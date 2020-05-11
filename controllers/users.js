@@ -46,7 +46,13 @@ module.exports.signup = function(request, response, next) {
   .catch(error => next(error));
 };
 
+module.exports.new = function(request, response, next) {
 
+  User.distinct('_id')
+    .then(userIDs => response.render('/login', {user: {}, userIDs: userIDs}))
+
+    .catch(error => next(error));
+}
 
 // GET /clubs/:id
 module.exports.index = function(request, response, next) {

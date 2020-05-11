@@ -33,6 +33,12 @@
 
         <a href="/users/new" class="btn btn-primary">Create a new account</a>
 
+        <form id="signupForm">
+          <%_ if (Object.entries(user).length === 0){ -%>
+            <%- <input positive: relative type="text" id = "newID" name="_id"> -%>
+            <%- <button type="submit" id= "signup">Sign Up</button> -%>
+          <%_ }
+        </form>
 
 
 
@@ -57,7 +63,7 @@
         const form = $(this);
 
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-           .done(() => window.location.replace("/login"))
+           .done(() => alert('Sign up successfully.'))
            .fail(error => alert('Could not create the account with this name.'));
       });
 

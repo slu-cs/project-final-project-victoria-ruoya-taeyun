@@ -47,6 +47,7 @@ router.put('/clubs',clubs.retrieve);
 
 // Handle user requests
 router.get('/users', users.index);
+router.get('/users/new', users.new);
 // router.post('/users', users.index);
 router.post('/users',  users.create);
 
