@@ -35,8 +35,7 @@
 
         <form id="signupForm">
           <%_ if (Object.entries(user).length === 0){ -%>
-            <input positive: relative type="text" id = "newID" name="_id">
-            <button type="submit" id= "signup">Sign Up</button>
+            <%- include('edit', {user: user, userIDs: userIDs}); -%>
           <%_ } -%>
         </form>
 
