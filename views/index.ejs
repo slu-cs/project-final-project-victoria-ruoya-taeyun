@@ -42,7 +42,7 @@
 
       $('#signin').on('click', function(event) {
         event.preventDefault();
-        const form = $(this);
+        const input = $(this);
         //const currentID = $('#curID').val();
           $.ajax({method: 'post', url: '/login', data: input.serialize()})
            .done(() => window.location.replace("/clubs"))
