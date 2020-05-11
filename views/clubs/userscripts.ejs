@@ -37,15 +37,16 @@
       <%_ console.log(Object.entries(club.memberList)) -%>
       <%_ club.memberList.push(user._id); -%>
       <%_ console.log(Object.entries(club.memberList)) -%>
-      <%_newMemberList = Object.entries(club.memberList)-%>
+      <%_ newMemberList = Object.entries(club.memberList)-%>
       <%_ console.log(newMemberList) -%>
         <%_ console.log(typeof(newMemberList.length));-%>
-        <%_ var o = {memberList:[newMemberList]};-%>
-        <%_jQuery.isPlainObject(o)-%>
+      
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%= newMemberList -%>}})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: function(club){
+        club.memberList = newMemberList;
+      }})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
