@@ -53,7 +53,7 @@
         $('.btn-signup').on('submit', function(event) {
           event.preventDefault();
           const form = $(this);
-          const name = form.find('input')
+          const name = form.find('input');
 
           //const currentID = $('#curID').val();
            <%_ if (Object.entries(user).indexOf(${name.val()}) < 0) {-%>
