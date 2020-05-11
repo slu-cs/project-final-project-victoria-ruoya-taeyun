@@ -40,7 +40,8 @@
       <%_newMemberList = Object.entries(club.memberList)-%>
       <%_ console.log(newMemberList) -%>
         <%_ console.log(typeof(newMemberList.length));-%>
-
+        <%_ var o = {memberList:[newMemberList]};-%>
+        <%_jQuery.isPlainObject(o)-%>
 
 
 
