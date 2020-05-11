@@ -57,7 +57,7 @@
 
           //const currentID = $('#curID').vaconsl();
 
-          <%_ if (Object.entries(user).findById(name) === null) { -%>
+
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
               .done(() => window.location.replace("/clubs"))
               .fail(error => alert('Could not log in.'));
@@ -65,20 +65,8 @@
            //<%_ }else{-%>
             // $.fail(error => alert('Could not log in.'));
         //   <%_  }-%>
-         <%_ }-%>
 
-        });
 
-        <%_ if (Object.entries(club).length === 0) {-%>
-          $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
-            .done(() => alert('Update successfully.'))
-            .fail(error => alert('Fail to update the club.'));
-        <%_ } else{ -%>
-
-          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
-            .done(() => alert('Update successfully.'))
-            .fail(error => alert('Fail to update the club.'));
-        <%_ } -%>
 
 
 
