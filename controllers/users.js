@@ -66,8 +66,12 @@ module.exports.index = function(request, response, next) {
 
 // POST /club
 module.exports.create = function(request, response, next) {
-  User.create(request.body)
-    .then(user => response.status(201).end())
+  // User.create(request.body)
+  //   .then(user => response.status(201).end())
+  //   .catch(error => next(error));
+  User.distinct('_id')
+    .then(userIDs => response.render('users/index', {user: {}, userIDs: userIDs}))
+
     .catch(error => next(error));
 };
 
