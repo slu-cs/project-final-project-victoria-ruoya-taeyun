@@ -16,7 +16,7 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>'})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>/newMember'})
 
         .done(() => alert('Join in successfully.'))
         <%_ } else {-%>
