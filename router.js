@@ -12,11 +12,15 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
+router.get('/newAccount',function(request, response) {
+  response.render('signup');
+});
+
 // Handle login requests
 router.post('/login', users.login);
 
 // Handle sign up requests
-router.put('/signup',users.signup);
+router.post('/signup',users.create);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {

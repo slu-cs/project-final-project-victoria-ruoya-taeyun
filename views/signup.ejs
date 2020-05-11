@@ -42,7 +42,6 @@
 
         const form = $(this);
         event.preventDefault();
-        window.location.assign('create');
         $.ajax({method: 'post', url: '/signup', data: form.serialize()})
                          .done(() => window.location.replace('/clubs'))
                          .fail(error => alert(error.responseText));
