@@ -1,52 +1,15 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-  // Create a club
-  // $('#create').on('submit', function(event) {
-  //   const form = $(this);
-  //   event.preventDefault();
-  //
-  //   $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
-  //     .done(id => window.location.replace(`/clubs/${id}`))
-  //     .fail(error => alert('Fail to create the club.'));
-  // });
-
-
-
   $('#clubsinfo').on('click', '#mem', function(event) {
     const div = $(this);
     event.preventDefault();
-    var getCount = $("p#mem").text();
-    getCount = getCount.replace(/\s/g,'');
-    var count = getCount.split("Vote")[1];
-    var listItems = $(this).children();
-    var setCount = listItems[4];
-    var currentCount = parseInt(getcount) + 1;
-    setCount.textContent = currentCount.toString();
-    // const curURL = window.location.href
-    // const lst = curURL.split("/");
-    // const curClub = lst[lst.length-1].replace(/%20/g,"");
-    // console.log(curClub);
 
-    // $.ajax({method: 'get', url: '/clubs/:id', data:{id:curClub}}).
-    // then(function(){
-    //   const currentClub=clubs.find(club=>club._id = curClub);
-    //   if (currentClub.memberList.indexOf(request.session.user)<0){
-    //     currentClub.memberList.push(request.session.user);
-    //     $.$.ajax({method: 'put', url: '/clubs/:id', data:{id:currentClub.memberList}})
-    //   };
-    // })
-    // //.done(club => window.location.replace(`/clubs/${club}`))
-    //   .fail(alert('You are already in this club/theme house.'));
-    // }
 
     <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
-      <%_ console.log(Object.entries(club.memberList)) -%>
+      
       <%_ club.memberList.push(user._id); -%>
-      <%_ console.log(Object.entries(club.memberList)) -%>
       <%_ newMemberList = Object.entries(club.memberList)-%>
-      <%_ console.log(newMemberList) -%>
-        <%_ console.log(newMemberList.length);-%>
 
 
 
@@ -54,10 +17,7 @@
       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: <%- club.memberList.length-%>})
 
         .done(() => alert('Join in successfully.'))
-        //.done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
-        //d.memberList = newMemberList;
-      // }})
       <%_ } else {-%>
      .fail(error => alert('You are already in the club.'));
    <%_ }-%>
