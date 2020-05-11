@@ -53,7 +53,6 @@ router.put('/clubs',clubs.retrieve);
 router.get('/users/new', users.new);
 router.get('/users', users.index);
 // router.post('/users', users.index);
-router.post('/users',  users.create);
 
 
 // Export the router
