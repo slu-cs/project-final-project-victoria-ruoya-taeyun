@@ -61,6 +61,7 @@
             $.ajax({method: 'put', url: '/signup', data: form.serialize()})
               .done(() => window.location.replace("/clubs"))
               .fail(error => alert('Could not log in.'));
+            }
 
 
 
