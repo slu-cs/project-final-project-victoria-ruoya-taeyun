@@ -57,6 +57,9 @@ router.delete('/clubs/:id',clubs.delete);
 
 router.put('/clubs',clubs.retrieve);
 
+// add new member to the clubs
+router.put('/clubs/:id',clubs.newMember);
+
 // Handle user requests
 router.get('/users/new', users.new);
 router.get('/users', users.index);
