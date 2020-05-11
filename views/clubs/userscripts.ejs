@@ -37,14 +37,14 @@
       <%_ console.log(Object.entries(club.memberList)) -%>
       <%_ club.memberList.push(user._id); -%>
       <%_ console.log(Object.entries(club.memberList)) -%>
-      <%_newMemberList = club.memberList-%>
+      <%_newMemberList = Object.entries(club.memberList)-%>
       <%_ console.log(newMemberList) -%>
         <%_ console.log(typeof(Object.entries(newMemberList)));-%>
 
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:club.memberList}})
+      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: {memberList:<%= newMemberList -%>}})
         .done(() => alert('Join in successfully.'))
         .done(() => window.location.replace('/clubs'))
         .fail(error => alert('Fail to join in this club.'));
