@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Club = new mongoose.Schema({
   _id: {type: String, required: true, maxlength:40, trim: true},
   category: {type: String, required: true, enum: ['SLU Club', 'Theme House'], trim: true},
-  introduction: {type: String, required: true, maxlength:500, trim: true},
+  introduction: {type: String, required: true, maxlength:1000, trim: true},
   meetingTime:{type: String, maxlength:40, trim: true},
   meetingLocation: {type: String, maxlength:40, trim: true},
   comingEvent: {type: String, maxlength:100, trim: true},
