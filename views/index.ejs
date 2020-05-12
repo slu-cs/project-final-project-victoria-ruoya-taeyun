@@ -3,17 +3,18 @@
   <head>
     <%- include('head'); -%>
     <style>
+      .background{
+        filter:alpha(opacity=60);
+        /* CSS3 standard */
+        opacity:0.6;
+
+      }
       .logIn{
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
-        background-color: #ffffff;
-        border: 1px solid black;
-        /* for IE */
-        filter:alpha(opacity=60);
-        /* CSS3 standard */
-        opacity:0.6;
+
       }
       .title{
         position: absolute;
@@ -27,7 +28,7 @@
   </head>
 
   <body>
-    <div>
+    <div class = "background">
       <img  width="100%"  height="100%" opacity= "0.5" src= 'https://www.stlawu.edu/sites/default/files/news-images/Sullivan-Student-Center.jpg'>
     </div>
 
@@ -43,7 +44,7 @@
 
 
       </div>
-    
+
 
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
