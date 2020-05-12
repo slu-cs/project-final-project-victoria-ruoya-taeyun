@@ -18,6 +18,7 @@
       <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
     <%_ } -%>
   </select>
+  <button class="btn btn-primary">impeach</button>
   <h4>Member List</h4>
    <select multiple name="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
      <%_ for (const id of club.memberList) { -%>
@@ -25,6 +26,8 @@
        <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
      <%_ } -%>
    </select>
+   <button class="btn btn-primary">promote</button>
+   <button class="btn btn-primary">remove</button>
 
 
 
