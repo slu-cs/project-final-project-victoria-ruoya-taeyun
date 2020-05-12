@@ -49,9 +49,15 @@
 
       $('#signup').on('click', function(event) {
 
-        const form = $(this);
+        // const form = $(this);
+        // event.preventDefault();
+        // window.location.assign('/signup');
+
+        const form = $(this).closest('form');
         event.preventDefault();
-        window.location.assign('/signup');
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          .done(() => window.location.assign('/signup'))
+          .fail(error => alert("Fail to signup."));
   });
 
 
