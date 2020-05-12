@@ -2,8 +2,11 @@
 <script>
 
   $('#clubsinfo').on('submit', function(event) {
-    const div = $(this);
+    const form = $(this);
     event.preventDefault();
+    $.ajax({method: 'put', url: '/clubs/<%= club._id -%>/newMember'})
+      .done(() => alert('Join in successfully.'))
+        .fail(error => alert('You are already in this club.'));
 
 
       <%_console.log(club.memberList)-%>
@@ -15,11 +18,7 @@
 
 
 
-    $.ajax({method: 'put', url: '/clubs/<%= club._id -%>/newMember'})
 
-      .done(() => alert('Join in successfully.'))
-
-        .fail(error => alert('You are already in this club.'));
 
 
 
