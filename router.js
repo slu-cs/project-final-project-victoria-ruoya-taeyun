@@ -62,7 +62,7 @@ router.delete('/clubs/:id',clubs.delete);
 router.put('/clubs',clubs.retrieve);
 
 // add new member to the clubs
-router.put('/clubs/:id/newMember',clubs.newMember);
+router.put('/clubs/club._id/newMember',clubs.newMember);
 
 
 
