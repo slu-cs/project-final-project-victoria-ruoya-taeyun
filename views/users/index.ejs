@@ -16,9 +16,9 @@
           <ul>
             <%_ for (const club of clubs) { -%>
               <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
-                <li>
-                  <a herf="/clubs/<%= club._id -%>"><%=  club._id -%></a>
-                 </li>
+
+                <a herf="/clubs/<%= club._id -%>"><%=  club._id -%></a>
+
               <%_ } -%>
             <%_ } -%>
           </ul>
