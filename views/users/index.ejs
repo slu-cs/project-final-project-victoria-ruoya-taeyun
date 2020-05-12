@@ -17,7 +17,7 @@
             <%_ for (const club of clubs) { -%>
               <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
                 <li>
-                  <a herf=/clubs/<%=  club._id -%>><%=  club._id -%></a>
+                  <a herf="/clubs/<%= club._id -%"><%=  club._id -%></a>
                  </li>
               <%_ } -%>
             <%_ } -%>
@@ -29,7 +29,9 @@
           <ul>
             <%_ for (const club of clubs) { -%>
               <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
-                <li> <%=  club._id -%> </li>
+                <li>
+                  <a herf="/clubs/<%= club._id -%"><%=  club._id -%></a>
+                </li>
               <%_ } -%>
             <%_ } -%>
           </ul>
