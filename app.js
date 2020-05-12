@@ -66,6 +66,16 @@ app.use(function(request, response) {
   response.status(404).end();
 });
 
+// Handle duplicate ID errors
+app.use(function(error, request, response, next) {
+  if (error.name === 'MongoError' && error.code === 11000) {
+    console.log('Validation error: Duplicate ID');
+    response.status(400).send('Duplicate ID');
+  } else {
+    next(error);
+  }
+});
+
 // Handle cast errors
 app.use(function(error, request, response, next) {
   if (error.name === 'CastError') {
