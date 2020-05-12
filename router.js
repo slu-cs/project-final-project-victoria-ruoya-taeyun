@@ -45,6 +45,8 @@ router.get('/clubs', clubs.index);
 router.get('/clubs/new', clubs.new);
 
 router.get('/clubs/:id', clubs.retrieve);
+
+// redirect when user click their club on the account page
 router.get('/clubs/club._id', clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
 
