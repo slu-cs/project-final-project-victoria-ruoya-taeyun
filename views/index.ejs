@@ -55,7 +55,7 @@
 
         const form = $(this).closest('form');
         event.preventDefault();
-        window.location.assign('/signup');
+        window.location.assign('/index');
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
           .done(() => window.location.replace('/'))
           .fail(error => alert("Fail to signup."));
