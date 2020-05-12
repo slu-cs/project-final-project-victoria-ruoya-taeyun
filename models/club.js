@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 
 // Define the schema
 const Club = new mongoose.Schema({
-  _id: String,
-  category: String,
-  introduction: String,
-  meetingTime:String,
-  meetingLocation: String,
-  comingEvent: String,
-  officerList: [String],
-  memberList: [String],
-  pastEvent: String
+  _id: {type: String, required: true, maxlength:40, trim: true},
+  category: {type: String, required: true, enum: ['SLU Club', 'Theme House'], trim: true},
+  introduction: {type: String, required: true, maxlength:1000, trim: true},
+  meetingTime:{type: String, maxlength:40, trim: true},
+  meetingLocation: {type: String, maxlength:40, trim: true},
+  comingEvent: {type: String, maxlength:100, trim: true},
+  officerList: [{type: String, maxlength:20, trim: true}],
+  memberList: [{type: String, maxlength:20, trim: true}],
+  pastEvent: {type: String, maxlength:100, trim: true}
 });
 
 // Export the model
