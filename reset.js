@@ -15,8 +15,8 @@ const clubs = [
             meetingTime: 'Sunday 7pm',
             meetingLocation: 'House Common Room, 1st Lincoln St.',
             comingEvent: 'Watch the movie “Mulan” together',
-            officerList: ['Rita', 'Lilly', 'Jacky', 'Meaghan'],
-            memberList: ['Rita', 'Kevin', 'Taeyun'],
+            officerList: ['Ruoya', 'Jacky', 'Meaghan'],
+            memberList: ['Rita', 'Kevin', 'Taeyun','Lilly'],
             pastEvent: 'Haunted House, Gaming Night'}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
@@ -24,8 +24,8 @@ const clubs = [
             meetingTime: '6pm',
             meetingLocation: 'Johnson 309',
             comingEvent: 'There Are No Upcoming Events',
-            officerList: ['Victoria', 'Dhimiter Cobani', 'Samuel Tartakoff'],
-            memberList: ['Victoria', 'Kevin', 'Cole'],
+            officerList: ['Victoria', 'Dhimiter Cobani'],
+            memberList: ['Samuel Tartakoff', 'Kevin', 'Cole'],
             pastEvent: 'Review sessions for General Chemistry'}),
   new Club({_id: 'Graceful Movements',
             category: 'SLU Club',
@@ -34,7 +34,7 @@ const clubs = [
             meetingLocation: 'Griffiths 40',
             comingEvent: 'Spring Dance Concert',
             officerList: ['Meiting Li'],
-            memberList: ['Rita', 'Kevin', 'Colby', 'Cole'],
+            memberList: ['Ruoya', 'Kevin', 'Colby', 'Cole'],
             pastEvent: 'Fall Dance Concert'}),
   new Club({_id: 'L.I.G.H.T. House',
             category: 'Theme House',
@@ -43,7 +43,7 @@ const clubs = [
             meetingLocation: '17 College St. Canton, NY',
             comingEvent: 'Morning yoga on Monday',
             officerList: ['Taeyun'],
-            memberList: ['Coco', 'Taeyun', 'Jack', 'Victoria'],
+            memberList: ['Coco', 'Jack', 'Victoria'],
             pastEvent: 'Making candles'})
 ];
 
@@ -51,7 +51,7 @@ const clubs = [
 // Model a collection of users
 const users = [
   new User({_id: 'Victoria'}),
-  new User({_id: 'Rita'}),
+  new User({_id: 'Ruoya'}),
   new User({_id: 'Taeyun'})
 ];
 
