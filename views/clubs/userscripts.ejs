@@ -6,7 +6,6 @@
     event.preventDefault();
 
 
-    <%_ if (club.memberList.indexOf(user._id) < 0) { -%>
       <%_console.log(club.memberList)-%>
       <%_ club.memberList.push(user._id); -%>
       <%_console.log(club.memberList)-%>
@@ -16,14 +15,14 @@
 
 
 
-      $.ajax({method: 'put', url: '/clubs/<%= club._id -%>/newMember'})
+    $.ajax({method: 'put', url: '/clubs/<%= club._id -%>/newMember'})
 
-        .done(() => alert('Join in successfully.'))
-        <%_ } else {-%>
+      .done(() => alert('Join in successfully.'))
+
         .fail(error => alert('You are already in this club.'));
 
 
-   <%_ }-%>
+
 
    });
 
