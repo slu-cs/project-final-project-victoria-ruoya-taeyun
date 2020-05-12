@@ -12,16 +12,16 @@
       <div class="row">
         <div class="col border m-4 p-4">
           <p>Club(s)/Theme house(s) that you are a member of: </p>
-          <!-- <p id = "memberOf"></p> -->
-          <nav class="nav nav-pills flex-column">
+          <p id = "memberOf"></p>
+
             <%_ for (const club of clubs) { -%>
               <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
 
-                <a herf="/clubs/<%= club._id -%>"><%=  club._id -%></a>
+                  <a herf="/clubs/<%= club._id -%>"><%=  club._id -%></a>
 
               <%_ } -%>
             <%_ } -%>
-          </nav>
+
         </div>
         <div class="col border m-4 p-4">
           <p>Club(s)/Theme house(s) that you are an officer of:</p>
