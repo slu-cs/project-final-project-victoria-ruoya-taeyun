@@ -68,6 +68,7 @@ module.exports.newMember = function(request, response, next) {
     newMemberList = club.memberList;
   }).then(function(newMemberList){
     Club.findByIdAndUpdate(request.params.id, {memberList:newMemberList},{runValidators: true});
+    console.log(newMemberList);
   }).then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };
