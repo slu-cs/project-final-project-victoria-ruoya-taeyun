@@ -50,13 +50,9 @@ const clubs = [
 
 // Model a collection of users
 const users = [
-  new User({_id: 'Victoria', club_theme_house_created_by_me: ['American Chemical Society']
-  }),
-  new User({_id: 'Rita',club_theme_house_created_by_me: ['The Hub']
-  }),
-  new User({_id: 'Taeyun', club_theme_house_created_by_me: ['L.I.G.H.T. House']
-  })
-
+  new User({_id: 'Victoria'}),
+  new User({_id: 'Rita'}),
+  new User({_id: 'Taeyun'})
 ];
 
 
