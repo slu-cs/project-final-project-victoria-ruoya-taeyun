@@ -15,6 +15,7 @@
           <p id = "memberOf"></p>
           <ul>
             <%_ for (const club of clubs) { -%>
+              <%_ const status = (id === club._id) ? 'active BROWN' : 'inactive'; -%>
               <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
                 <li>
                   <a herf="/clubs/<%= club._id -%"><%=  club._id -%></a>
@@ -28,6 +29,7 @@
           <p id = "officerOf"></p>
           <ul>
             <%_ for (const club of clubs) { -%>
+              <%_ const status = (id === club._id) ? 'active BROWN' : 'inactive'; -%>
               <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
                 <li>
                   <a herf="/clubs/<%= club._id -%"><%=  club._id -%></a>
