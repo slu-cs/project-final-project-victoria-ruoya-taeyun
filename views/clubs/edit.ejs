@@ -18,9 +18,16 @@
       <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
     <%_ } -%>
   </select>
+  <h4>Member List</h4>
+   <select multiple name="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
+     <%_ for (const id of club.memberrList) { -%>
+       <%_ const status = club.memberrList.includes(id) ? 'selected' : 'unselected' ; -%>
+       <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
+     <%_ } -%>
+   </select>
 
 
-  
+
   <button class="btn btn-primary" id="update">Save</button>
   <button id="delete" class="uninsert btn btn-primary">Delete</button>
 </form>
