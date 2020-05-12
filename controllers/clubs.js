@@ -64,6 +64,7 @@ module.exports.newMember = function(request, response, next) {
   console.log("next");
   Club.findById(request.params.id)
   .then(function(club){
+    console.log(club.memberList);
     club.memberList.push(request.session.user._id);
     newMemberList = club.memberList;
   }).then(function(newMemberList){
