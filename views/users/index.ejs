@@ -29,6 +29,7 @@
           <ul>
             <%_ for (const club of clubs) { -%>
               <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
+                console.log(<%= club._id -%>);
                 <li>
                   <a herf="/clubs/<%= club._id -%>"><%=  club._id -%></a>
                 </li>
