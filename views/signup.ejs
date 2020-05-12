@@ -25,9 +25,10 @@
       <div class="logIn">
         <form id="signinForm">
           <label for="text">Username: </label>
-          <input positive: relative type="text" id = "curID" name="id">
-          <button type="submit" id= "signin">Sign In</button>
+          <input positive: relative type="text" id = "curID" name="_id">
           <button type="submit" id= "signup">Sign Up</button>
+
+        </form>
 
 
 
@@ -37,25 +38,13 @@
 
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
-
-      $('#signinForm').on('submit', function(event) {
-        event.preventDefault();
-        const form = $(this);
-
-          $.ajax({method: 'post', url: '/login', data: form.serialize()})
-           .done(() => window.location.replace("/clubs"))
-           .fail(error => alert('Could not log in.'));
-      });
-
       $('#signup').on('click', function(event) {
-
-        const form = $(this);
+        const form = $(this).closest('form');
         event.preventDefault();
-        window.location.assign('/signup');
-  });
-
-
-
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          .done(() => window.location.replace('/'))
+          .fail(error => alert("Fail to signup."));
+      });
       </script>
 
 
