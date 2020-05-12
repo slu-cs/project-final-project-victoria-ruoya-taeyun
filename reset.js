@@ -17,7 +17,7 @@ const clubs = [
             comingEvent: 'Watch the movie “Mulan” together',
             officerList: ['Rita', 'Lilly', 'Jacky', 'Meaghan'],
             memberList: ['Rita', 'Kevin', 'Taeyun'],
-            pastEvent: 'Haunted House','Gaming Night'}),
+            pastEvent: 'Haunted House, Gaming Night'}),
   new Club({_id: 'American Chemical Society',
             category: 'SLU Club',
             introduction: 'To facilitate interest in chemistry through general meetings, educational outreach, and departmental events. To support and recognize students within the chemistry department through actions such as, but not limited to, hosting major/minor declaration events, hosting Chymist honorary society inductions, and financially assisting chemistry students in their attempts to share their research. To cultivate relationships with other departments, especially within the sciences, by collaboration with other student organizations within those departments to host events at the university or in the greater St. Lawrence Community.',
