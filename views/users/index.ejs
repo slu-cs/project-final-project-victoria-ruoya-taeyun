@@ -18,7 +18,7 @@
               <%_ const status = (id === club._id) ? 'active BROWN' : 'inactive'; -%>
               <%_ if (club.memberList.indexOf(user._id)>=0){ -%>
                 <li>
-                  <a herf="/clubs/<%= club._id -%" class="<%= status -%>"><%=  club._id -%></a>
+                  <a herf="/clubs/<%= club._id -%>" class="<%= status -%>"><%=  club._id -%></a>
                  </li>
               <%_ } -%>
             <%_ } -%>
@@ -32,7 +32,7 @@
               <%_ const status = (id === club._id) ? 'active BROWN' : 'inactive'; -%>
               <%_ if (club.officerList.indexOf(user._id)>=0){ -%>
                 <li>
-                  <a herf="/clubs/<%= club._id -%" class="<%= status -%>"><%=  club._id -%></a>
+                  <a herf="/clubs/<%= club._id -%>" class="<%= status -%>"><%=  club._id -%></a>
                 </li>
               <%_ } -%>
             <%_ } -%>
