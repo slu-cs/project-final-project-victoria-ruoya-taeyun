@@ -1,20 +1,26 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-  $('#clubsinfo').on('submit', function(event) {
-    const form = $(this);
+  $('#join').on('click', function(event) {
+      const form = $(this).closest('form');
     event.preventDefault();
-    $.ajax({method: 'put', url: '/clubs/member/<%= club._id -%>'})
-      .done(() => window.location.reload())
+    $.ajax({method: 'put', url: '/clubs/join/<%= club._id -%>'})
+      .done(()=>alert('You are in this club now.'));
+      .done(() => window.location.reload());
 
-        .fail(error => alert('You are already in this club.'));
+  $('#leave').on('click', function(event) {
+
+    event.preventDefault();
+    if (confirm('Are you sure you want to leave the club?')) {
+    $.ajax({method: 'put', url: '/clubs/leave/<%= club._id -%>'})
+      .done(()=>alert('You leave the club.'));
+      .done(() => window.location.reload());
+    };
 
 
-      <%_console.log(club.memberList)-%>
-      <%_ club.memberList.push(user._id); -%>
-      <%_console.log(club.memberList)-%>
-      <%_ newMemberList = Object.entries(club.memberList).push(user._id)-%>
-      <%_ console.log(club._id); -%>
+
+
+
 
 
 
