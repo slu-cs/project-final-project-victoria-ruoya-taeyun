@@ -1,16 +1,16 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-/*
+
   $('#join').on('click', function(event) {
-    const form = $(this);
+    //const form = $(this);
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/join/<%= club._id -%>'})
       .done(() => window.location.reload())
         .fail(error => alert('You are already in this club.'));
-*/
+
 
   $('#leave').on('click', function(event) {
-    const form = $(this);
+  //  const form = $(this);
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/leave/<%= club._id -%>'})
       .done(() => window.location.reload())
