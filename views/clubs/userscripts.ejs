@@ -5,7 +5,8 @@
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/member/<%= club._id -%>'})
-      .done(() => alert('Join in successfully.'))
+      .done(() => window.location.reload())
+
         .fail(error => alert('You are already in this club.'));
 
 
