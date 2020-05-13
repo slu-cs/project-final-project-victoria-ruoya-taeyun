@@ -58,9 +58,6 @@ router.get('/clubs/club._id',authorize, clubs.retrieve);
 // Delete a Club
 router.delete('/clubs/:id',authorize,clubs.delete);
 
-//?
-
-
 // Handle join requests
 router.put('/clubs/join/:id',authorize,clubs.join);
 
