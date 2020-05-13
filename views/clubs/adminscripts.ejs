@@ -2,7 +2,7 @@
 <script>
 
  // Update a club
- $('#updateButton').on('submit', function(event) {
+ $('#updateButton').on('click', function(event) {
    console.log("j");
    const form = $(this);
    event.preventDefault();
@@ -37,7 +37,9 @@
        .fail(error => alert('Fail to delete the club.'));
    }
  });
- $('#"impeach').on('click')
+ $('#"impeach').on('click', function(event)){
+
+ }
 
  // impeach a officer
 
