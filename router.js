@@ -36,7 +36,7 @@ router.get('/logout',function(request, response) {
 router.get('/signup',function(request, response) {
   response.render('signup');
 });
-router.post('/users',authorize,users.create);
+router.post('/users',users.create);
 
 // Create a new Club
 router.get('/clubs/new', authorize,clubs.new);
