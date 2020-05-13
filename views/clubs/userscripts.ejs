@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-  $('#join').on('click', function(event) {
+  $('#clubsinfo').on('submit', function(event) {
       //const form = $(this).closest('form');
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/join/<%= club._id -%>'})
