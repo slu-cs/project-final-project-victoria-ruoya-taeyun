@@ -8,14 +8,7 @@
       .done(()=>alert('You are in this club now.'));
       .done(() => window.location.reload());
 
-  $('#leave').on('click', function(event) {
 
-    event.preventDefault();
-    if (confirm('Are you sure you want to leave the club?')) {
-    $.ajax({method: 'put', url: '/clubs/leave/<%= club._id -%>'})
-      .done(()=>alert('You leave the club.'));
-      .done(() => window.location.reload());
-    };
 
 
 
