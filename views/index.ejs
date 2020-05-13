@@ -30,22 +30,29 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script>
 
-      $('#signinForm').on('submit', function(event) {
+      $('#signin').on('click', function(event) {
         event.preventDefault();
-        const form = $(this);
+        const form = $(this).closest('form');
 
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
            .done(() => window.location.replace("/clubs"))
            .fail(error => alert('Could not log in.'));
       });
-
+      $('#signup').on('click', function(event) {
+        const form = $(this).closest('form');
+        event.preventDefault();
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          .done(() => window.location.replace('/'))
+          .fail(error => alert("Fail to signup."));
+      });
+/*
       $('#signup').on('click', function(event) {
 
         const form = $(this);
         event.preventDefault();
         window.location.assign('/signup');
   });
-
+*/
 
 
       </script>
