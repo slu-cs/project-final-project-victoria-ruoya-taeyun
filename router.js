@@ -50,7 +50,6 @@ router.get('/users',authorize, users.index);
 // Update a Club
 router.put('/clubs/:id',authorize, clubs.update);
 
-
 // redirect when user click their club on the account page
 router.get('/clubs/club._id',authorize, clubs.retrieve);
 // router.get('/clubs/:category',clubs.retreve);
