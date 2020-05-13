@@ -2,12 +2,12 @@
 <script>
 
   $(document).on('input', '.form-control', function(event) {
-  
+
      $(this).addClass('bg-dark text-white');
    });
 
  // Update a club
- $('#updateButton').on('submit', function(event) {
+ $('#update').on('submit', function(event) {
    console.log("j");
    const form = $(this);
    event.preventDefault();
