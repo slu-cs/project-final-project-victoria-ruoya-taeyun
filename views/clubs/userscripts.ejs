@@ -9,6 +9,13 @@
         .fail(error => alert('You are already in this club.'));
 
 
+  $('#join').on('click', function(event) {
+    const form = $(this);
+    event.preventDefault();
+    $.ajax({method: 'put', url: '/clubs/leave/<%= club._id -%>'})
+      .done(() => window.location.reload())
+        .fail(error => alert('You are not in this club.'));
+
 
 
 
