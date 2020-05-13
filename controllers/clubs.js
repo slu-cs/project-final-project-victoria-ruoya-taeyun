@@ -45,7 +45,6 @@ module.exports.create = function(request, response, next) {
 // Update a club
 // Put/clubs/:id
 module.exports.update = function(request, response, next) {
-  console.log("next");
   Club.findByIdAndUpdate(request.params.id, request.body,{runValidators: true})
     .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
@@ -62,18 +61,18 @@ module.exports.delete = function(request, response, next) {
 
 
 
-
-
-
+// Handle join requests
+// Put/clubs/join/:id
 module.exports.join = function(request, response, next) {
-
     Club.findByIdAndUpdate(request.params.id, {$push: {memberList: request.session.user._id}},{runValidators: true})
   .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };
 
+
+// Handle leave requests
+// Put/clubs/leave/:id
 module.exports.leave = function(request, response, next) {
-  console.log("awsl");
     Club.findByIdAndUpdate(request.params.id, {$pull: {memberList: request.session.user._id}},{runValidators: true})
   .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));

@@ -14,30 +14,8 @@ module.exports.login = function(request, response, next) {
       }
     }).catch(error => next(error));
 };
-/*
-module.exports.signup = function(request, response, next) {
-  User.find().then(function(users) {
-    response.render('./views/index', {users: users});
-    /*
-    .then(function(users) {
-      const userList = users.map(user=>user._id);
-      if (userList.indexOf(new_id)<0) {
-        new User ({_id: request.body.id, club_theme_house_created_by_me: []})
-      }else{
-        next();
-      }
-
-    }).catch(error => next(error));
-};
-
-*/
 
 
-//module.exports.signup = function(request, response, next) {
-  //Course.distinct('_id')
-  //  .then(userIDs => response.redirect(`/user/${userIDs[0]}`))
-  //  .catch(error => next(error));
-//};
 
 // Get /signup
 module.exports.signup = function(request, response, next) {

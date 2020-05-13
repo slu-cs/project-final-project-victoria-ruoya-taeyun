@@ -12,7 +12,6 @@ router.get('/', function(request, response) {
   response.render('index');
 });
 
-
 // Check for admin status
 const authorize = function(request, response, next) {
   if (request.session.user) {
@@ -21,7 +20,6 @@ const authorize = function(request, response, next) {
     response.render('index');
   }
 };
-
 
 // Handle login requests
 router.post('/login', users.login);
@@ -69,20 +67,4 @@ router.put('/clubs/join/:id',authorize,clubs.join);
 // Handle leave requests
 router.put('/clubs/leave/:id/',authorize,clubs.leave);
 
-
-
-//router.put('/clubs',clubs.retrieve);
-
-// add new member to the clubs
-//router.put('/clubs/:id/',clubs.newMember);
-
-
-
-// Handle user requests 好像没用到
-//router.get('/users/new', authorize,users.new);
-
-// router.post('/users', users.index);
-
-
-// Export the router
 module.exports = router;
