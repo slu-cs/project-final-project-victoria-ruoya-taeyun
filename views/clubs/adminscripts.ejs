@@ -7,19 +7,20 @@
    const form = $(this);
    event.preventDefault();
 
-   <%_ if (Object.entries(club).length === 0) {-%>
-     $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
-       .done(() => alert('Update successfully.'))
-       .done(() => window.location.reload())
-       .fail(error => alert('Fail to update the club.'));
-   <%_ } else{ -%>
+   if (confirm('Update this club from the site?')) {
+     <%_ if (Object.entries(club).length === 0) {-%>
+       $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
+         .done(() => alert('Update successfully.'))
+         .done(() => window.location.reload())
+         .fail(error => alert('Fail to update the club.'));
+     <%_ } else{ -%>
 
-     $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
-       .done(() => alert('Update successfully.'))
-       .fail(error => alert('Fail to update the club.'));
-   <%_ } -%>
+       $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
+         .done(() => alert('Update successfully.'))
+         .fail(error => alert('Fail to update the club.'));
+     <%_ } -%>
+  }
  });
-
 
 
  // Delete a club
@@ -33,6 +34,10 @@
        .fail(error => alert('Fail to delete the club.'));
    }
  });
+ $('#"impeach').on('click')
+
+ // impeach a officer
+
 
 
 </script>

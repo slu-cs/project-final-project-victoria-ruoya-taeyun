@@ -20,7 +20,7 @@
       <%_ } -%>
     </select>
   <%_ } -%>
-  <button class="btn btn-primary mt-1">impeach</button>
+  <button class="btn btn-primary mt-1" id = "impeach">impeach</button>
   <h4>Member List</h4>
   <%_ if (Object.entries(club).length === 0 || club.officerList.indexOf(user._id)>=0){ -%>
     <select multiple name="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
@@ -30,8 +30,8 @@
      <%_ } -%>
     </select>
    <%_ } -%>
-   <button class="btn btn-primary mt-1">promote</button>
-   <button class="btn btn-primary mt-1">remove</button>
+   <button class="btn btn-primary mt-1" id ="promote" >promote</button>
+   <button class="btn btn-primary mt-1" id ="remove" >remove</button>
 
    <div class="mt-3">
      <button class="btn btn-primary" id="update">Save</button>
