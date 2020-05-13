@@ -2,7 +2,7 @@
 <script>
 
   $('#clubsinfo').on('submit', function(event) {
-      //const form = $(this).closest('form');
+    const form = $(this)
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/member/<%= club._id -%>'})
       .done(()=>alert('You are in this club now.'));
