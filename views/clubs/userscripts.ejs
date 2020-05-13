@@ -8,6 +8,7 @@
       .done(() => window.location.reload())
         .fail(error => alert('You are already in this club.'));
 
+  }
 
   $('#leave').on('click', function(event) {
     const form = $(this).closest('form');
@@ -16,7 +17,7 @@
       .done(() => window.location.reload())
         .fail(error => alert('You are not in this club.'));
 
-
+    }
 
 
 
