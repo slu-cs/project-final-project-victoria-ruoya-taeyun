@@ -15,6 +15,7 @@
 
      <%_ if (Object.entries(club).length === 0) {-%>
        if (confirm('Update this club from the site?')) {
+         $('option').prop('selected', true);
          $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
            .done(() => alert('Update successfully.'))
            .done(() => window.location.reload())
@@ -22,6 +23,7 @@
          }
      <%_ } else{ -%>
        if (confirm('Update this club from the site?')) {
+         $('option').prop('selected', true);
          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
           .done(() => form.find('.form-control').removeClass('bg-dark text-white'))
            .done(() => alert('Update successfully.'))
