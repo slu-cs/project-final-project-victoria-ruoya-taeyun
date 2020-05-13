@@ -1,8 +1,12 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
+  $(document).on('input', '.form-control', function(event) {
+     $(this).addClass('bg-dark text-white');
+   });
+
  // Update a club
- $('#updateButton').on('click', function(event) {
+ $('#updateButton').on('submit', function(event) {
    console.log("j");
    const form = $(this);
    event.preventDefault();
@@ -18,6 +22,7 @@
      <%_ } else{ -%>
        if (confirm('Update this club from the site?')) {
          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
+          .done(() => form.find('.form-control').removeClass('bg-dark text-white'))
            .done(() => alert('Update successfully.'))
            .fail(error => alert('Fail to update the club.'));
        }
@@ -37,7 +42,9 @@
        .fail(error => alert('Fail to delete the club.'));
    }
  });
+ $('#"impeach').on('click', function(event)){
 
+ }
 
  // impeach a officer
 

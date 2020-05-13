@@ -64,7 +64,7 @@ router.put('/clubs/:id/',clubs.newMember);
 
 
 
-// Handle user requests
+// Handle user requests 好像没用到
 router.get('/users/new', users.new);
 
 // router.post('/users', users.index);
