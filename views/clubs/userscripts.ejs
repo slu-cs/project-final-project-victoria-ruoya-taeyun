@@ -2,7 +2,7 @@
 <script>
 
   $('#join').on('click', function(event) {
-      const form = $(this).closest('form');
+      //const form = $(this).closest('form');
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/join/<%= club._id -%>'})
       .done(()=>alert('You are in this club now.'));

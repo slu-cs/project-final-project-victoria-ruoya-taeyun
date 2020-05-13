@@ -66,6 +66,7 @@ module.exports.delete = function(request, response, next) {
 
 
 module.exports.join = function(request, response, next) {
+  console.log("awsl");
     Club.findByIdAndUpdate(request.params.id, {$push: {memberList: request.session.user._id}},{runValidators: true})
   .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
