@@ -63,8 +63,11 @@ router.delete('/clubs/:id',authorize,clubs.delete);
 //?
 
 
-// add new member to the clubs
-router.put('/clubs/member/:id/',authorize,clubs.newMember);
+// Handle join requests
+router.put('/clubs/join/:id/',authorize,clubs.join);
+
+// Handle leave requests
+router.put('/clubs/join/:id/',authorize,clubs.leave);
 
 
 

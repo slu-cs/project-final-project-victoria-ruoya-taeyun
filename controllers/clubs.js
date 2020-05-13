@@ -65,9 +65,14 @@ module.exports.delete = function(request, response, next) {
 
 
 
-module.exports.newMember = function(request, response, next) {
-  console.log("next");
+module.exports.join = function(request, response, next) {
     Club.findByIdAndUpdate(request.params.id, {$push: {memberList: request.session.user._id}},{runValidators: true})
+  .then(function(club){ if(club) {response.status(200).end();} else{next()}})
+    .catch(error => next(error));
+};
+
+module.exports.leave = function(request, response, next) {
+    Club.findByIdAndUpdate(request.params.id, {$pull: {memberList: request.session.user._id}},{runValidators: true})
   .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };
