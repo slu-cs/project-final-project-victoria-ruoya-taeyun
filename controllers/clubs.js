@@ -67,14 +67,7 @@ module.exports.delete = function(request, response, next) {
 
 module.exports.newMember = function(request, response, next) {
   console.log("next");
-  Club.findById(request.params.id)
-  .then(function(club){
-    console.log(club.memberList);
-    club.memberList.push(request.session.user._id);
-    newMemberList = club.memberList;
-  }).then(function(newMemberList){
-    Club.findByIdAndUpdate(request.params.id, {memberList:newMemberList},{runValidators: true});
-    console.log(newMemberList);
-  }).then(function(club){ if(club) {response.status(200).end();} else{next()}})
+    Club.findByIdAndUpdate(request.params.id, {$push: {memberList: request.session.user._id}},{runValidators: true})
+  .then(function(club){ if(club) {response.status(200).end();} else{next()}})
     .catch(error => next(error));
 };

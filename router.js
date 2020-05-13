@@ -53,14 +53,14 @@ router.delete('/clubs/:id',clubs.delete);
 
 
 // add new member to the clubs
-router.put('/clubs/:id/',clubs.newMember);
+router.put('/clubs/member/:id/',clubs.newMember);
 
 
 
-router.put('/clubs',clubs.retrieve);
+//router.put('/clubs',clubs.retrieve);
 
 // add new member to the clubs
-router.put('/clubs/:id/',clubs.newMember);
+//router.put('/clubs/:id/',clubs.newMember);
 
 
 
