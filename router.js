@@ -64,7 +64,7 @@ router.delete('/clubs/:id',authorize,clubs.delete);
 
 
 // Handle join requests
-router.put('/clubs/member/:id/',authorize,clubs.newMember);
+router.put('/clubs/member/:id',authorize,clubs.newMember);
 
 // Handle leave requests
 router.put('/clubs/leave/:id/',authorize,clubs.leave);
