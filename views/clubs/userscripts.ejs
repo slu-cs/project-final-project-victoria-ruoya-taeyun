@@ -2,11 +2,12 @@
 <script>
 
   $('#clubsinfo').on('submit', function(event) {
-    const form = $(this)
+    const form = $(this);
     event.preventDefault();
     $.ajax({method: 'put', url: '/clubs/member/<%= club._id -%>'})
-      .done(()=>alert('You are in this club now.'));
-      .done(() => window.location.reload());
+      
+      .done(() => window.location.reload())
+        .fail(error => alert('You are already in this club.'));
 
 
 
