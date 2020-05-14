@@ -19,7 +19,7 @@
   <textarea name="pastEvent" placeholder="Past Event" rows="1" class="form-control mb-1"><%= club.pastEvent -%></textarea>
  <h4>Officer List</h4>
   <%_ if (Object.entries(club).length !== 0) {-%>
-    <select multiple name="officerList" size="<%= club.officerList.length -%>" class="form-control w-auto mb-1">
+    <select multiple name="officerList" id="officerList" size="<%= club.officerList.length -%>" class="form-control w-auto mb-1">
       <%_ for (const id of club.officerList) { -%>
         <%_ const status = club.officerList.includes(id) ? 'selected' : 'unselected' ; -%>
         <option <%= status -%> value="<%= id -%>"> <%= id -%></option>

@@ -50,14 +50,23 @@
  // impeach a officer
  $('#impeach').on('click',function(event){
    console.log("aaa")
-   const select = $(this).closest('select');
-   const choices = select.find('option');
-   for (let choice of choices) {
-     choice = $(choice)
-     if (choice.selected == true){
-       choices.remove(choice);
-     };
-  };
+   const choices = document.getElementById("officerList");
+   const length = choices.length;
+
+   for(var i=length-1;i>-1;i--){
+
+     var choice = choices.options[i];
+
+	 if(choice.selected==true){
+
+	   choices.remove(i)
+
+	 }
+
+   }
+
+
+  
 });
 
 
