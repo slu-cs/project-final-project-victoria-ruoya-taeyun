@@ -42,8 +42,8 @@
         const form = $(this).closest('form');
         event.preventDefault();
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
-          .done(() => window.location.replace('/clubs'))
-
+          .done(() => window.location.replace('/'))
+          .done(()=>alert("Sign up successfully."))
           .fail(error => alert("Fail to signup."));
       });
 /*
