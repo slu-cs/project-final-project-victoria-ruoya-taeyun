@@ -18,16 +18,6 @@ module.exports.login = function(request, response, next) {
 
 
 // Handle signup requests
-// Get /signup
-/*
-module.exports.signup = function(request, response, next) {
-  User.create(request.body)
-  .then(user => response.status(201).send(club.id))
-  .catch(error => next(error));
-};
-*/
-
-// Handle signup requests
 // Post/users
 module.exports.create = function(request, response, next) {
   User.create(request.body)
@@ -35,13 +25,6 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
-/*
-module.exports.new = function(request, response, next) {
-  User.distinct('_id')
-    .then(userIDs => response.render('/index', {user: {}, userIDs: userIDs}))
-    .catch(error => next(error));
-}
-*/
 
 // Handle MyAccount page requests
 // Get/users
@@ -52,5 +35,3 @@ module.exports.index = function(request, response, next) {
 
   }).catch(error => next(error));
 };
-
-// POST /club

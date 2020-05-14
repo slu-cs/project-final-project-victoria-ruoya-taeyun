@@ -36,24 +36,16 @@
 
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
            .done(() => window.location.replace("/clubs"))
-           .fail(error => alert('Could not log in.'));
+           .fail(error => alert('Username does not exist.'));
       });
       $('#signup').on('click', function(event) {
         const form = $(this).closest('form');
         event.preventDefault();
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
           .done(() => window.location.replace('/'))
-          .done(()=>alert("Sign up successfully."))
-          .fail(error => alert("Fail to signup."));
+          .done(()=>alert("Sign up successfully, you can log in now."))
+          .fail(error => alert("Fail to signup, you may have duplicate username."));
       });
-/*
-      $('#signup').on('click', function(event) {
-
-        const form = $(this);
-        event.preventDefault();
-        window.location.assign('/signup');
-  });
-*/
 
 
       </script>
