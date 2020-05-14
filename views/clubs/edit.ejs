@@ -1,7 +1,9 @@
 <form id="update" class="form">
   <h4>Club Name</h4>
+  <p class="text-danger"> (Required) </p>
   <input type="text" name="_id" placeholder="Name of the Club/Theme house" value="<%= club._id -%>" class="form-control form-control-lg font-weight-bold mb-1">
   <h4>Introduction</h4>
+  <p class="text-danger"> (Required) </p>
   <textarea name="introduction" placeholder="Description" rows="3" class="form-control mb-1"><%= club.introduction -%></textarea>
   <h4>Membership</h4>
   <%_ if (Object.entries(club).length !== 0) {-%>
