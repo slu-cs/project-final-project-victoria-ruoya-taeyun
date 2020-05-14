@@ -78,13 +78,17 @@ $('#promote').on('click',function(event){
      var choice = choices.options[i];
 
      if(choice.selected==true){
-       if (officer.length<5){
-         const selectText=$("#memberList").find("option:selected").text();  
+       if (officer.length<5  && choices.length >1){
+         const selectText=$("#memberList").find("option:selected").text();
          const selectValue=$("#memberList").val();
          $("#officerList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
          choices.remove(i);
        }else{
-         $('#MList').append($(`<p class="text-danger">You can not have more than 5 officers.</p>`));
+         if (officer.length>=5){
+          $('#MList').append($(`<p class="text-danger">You can not have more than 5 officers.</p>`));
+        }else{
+          $('#MList').append($(`<p class="text-danger">You can not make all members become officers.</p>`));
+        }
        }
      }
   }
