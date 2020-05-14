@@ -49,6 +49,7 @@
 
  // impeach a officer
  $('#impeach').on('click',function(event){
+   console.log("aaa")
    const select = $(this).closest('select');
    const choices = select.find('option');
    for (let choice of choices) {
