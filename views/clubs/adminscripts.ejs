@@ -49,7 +49,7 @@
 
  // impeach a officer
  $('#impeach').on('click',function(event){
-   console.log("aaa")
+   event.preventDefault();
    const choices = document.getElementById("officerList");
    const length = choices.length;
 
@@ -66,7 +66,7 @@
    }
 
 
-  
+
 });
 
 
