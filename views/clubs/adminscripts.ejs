@@ -52,14 +52,13 @@
    event.preventDefault();
    const choices = document.getElementById("officerList");
    const length = choices.length;
-
    for(var i=length-1;i>-1;i--){
-
      var choice = choices.options[i];
-
 	 if(choice.selected==true){
+      if (choices.length >1){
+        choices.remove(i)
+      }
 
-	   choices.remove(i)
 
 	 }
 
