@@ -2,7 +2,11 @@
 <html>
   <%- include('../head'); -%>
   <body>
-    <%- include('../navbar', {active: 'clubs'}); -%>
+    <%_ if (Object.entries(club).length !== 0) {-%>
+        <%- include('../navbar', {active: 'clubs'}); -%>
+    <%_ } else{ -%>
+        <%- include('../navbar', {active: 'newClub'}); -%>
+    <%_ } -%>
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto p-3 border-right">
@@ -14,7 +18,7 @@
           </nav>
 
 
-          
+
             <!-- <input type="text" name="clubid" placeholder="Name of the Club/Theme house" size="1" class="form-control"> -->
 
 

@@ -9,7 +9,7 @@
   <nav class="navbar-nav ml-3 ">
     <a href="/users" class="nav-item nav-link <%= (active === 'accounts') ? 'active' : 'inactive' -%>">My Account</a>
 
-    <a href="/clubs/new" class= "nav-item nav-link <%= (active === 'clubs') ? 'active' : 'inactive' -%>">Create a New Club</a>
+    <a href="/clubs/new" class= "nav-item nav-link <%= (active === 'newClub') ? 'active' : 'inactive' -%>">Create a New Club</a>
 </nav>
   <nav class="navbar-nav ml-auto">
     <%_ if (user) { -%>
