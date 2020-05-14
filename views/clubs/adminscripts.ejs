@@ -8,7 +8,6 @@
 
  // Update a club
  $('#updateButton').on('click', function(event) {
-   console.log("j");
    const form = $(this).closest('form');
    event.preventDefault();
 
@@ -19,7 +18,7 @@
          $.ajax({method: 'post', url: '/clubs', data: form.serialize()})
            .done(() => alert('Update successfully.'))
            .done(() => window.location.reload())
-           .fail(error => alert('Fail to update the club.'));
+           .fail(error => alert('Fail to update the club because of incomplete information.'));
          }
      <%_ } else{ -%>
        if (confirm('Update this club from the site?')) {
@@ -27,7 +26,7 @@
          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
           .done(() => form.find('.form-control').removeClass('bg-dark text-white'))
            .done(() => alert('Update successfully.'))
-           .fail(error => alert('Fail to update the club.'));
+           .fail(error => alert('Fail to update the club because of incomplete information.'));
        }
      <%_ } -%>
 
@@ -51,15 +50,14 @@
  $('#impeach').on('click',function(event){
    event.preventDefault();
    const choices = document.getElementById("officerList");
-   //const member = document.getElementById("memberList");
    const length = choices.length;
    for(var i=length-1;i>-1;i--){
       var choice = choices.options[i];
 
 	    if(choice.selected==true){
         if (choices.length >1){
-          const selectText=$("#officerList").find("option:selected").text();  //获取Select选择的Text
-          const selectValue=$("#officerList").val();  //获取Select选择的Value
+          const selectText=$("#officerList").find("option:selected").text();
+          const selectValue=$("#officerList").val();
           $("#memberList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
           choices.remove(i);
         }else{
@@ -69,6 +67,7 @@
    }
 });
 
+// promote a member
 $('#promote').on('click',function(event){
   event.preventDefault();
   const choices = document.getElementById("memberList");

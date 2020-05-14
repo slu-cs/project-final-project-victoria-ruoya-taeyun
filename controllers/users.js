@@ -2,6 +2,7 @@
 const User = require('../models/user');
 const Club = require('../models/club');
 
+// Handle login requests
 // POST /login (with a user ID in the request body)
 module.exports.login = function(request, response, next) {
   User.findById(request.body._id)
@@ -16,23 +17,34 @@ module.exports.login = function(request, response, next) {
 };
 
 
-
+// Handle signup requests
 // Get /signup
+/*
 module.exports.signup = function(request, response, next) {
   User.create(request.body)
   .then(user => response.status(201).send(club.id))
   .catch(error => next(error));
 };
+*/
 
+// Handle signup requests
+// Post/users
+module.exports.create = function(request, response, next) {
+  User.create(request.body)
+    .then(user => response.status(201).end())
+    .catch(error => next(error));
+};
+
+/*
 module.exports.new = function(request, response, next) {
-
   User.distinct('_id')
     .then(userIDs => response.render('/index', {user: {}, userIDs: userIDs}))
-
     .catch(error => next(error));
 }
+*/
 
-// GET /clubs/:id
+// Handle MyAccount page requests
+// Get/users
 module.exports.index = function(request, response, next) {
   Club.find().then(function(clubs) {
 
@@ -42,22 +54,3 @@ module.exports.index = function(request, response, next) {
 };
 
 // POST /club
-module.exports.create = function(request, response, next) {
-  User.create(request.body)
-    .then(user => response.status(201).end())
-    .catch(error => next(error));
-};
-
-// DELETE /club/:id
-module.exports.delete = function(request, response, next) {
-  User.findByIdAndDelete(request.params.id)
-    .then(user => user ? response.status(200).end() : next())
-    .catch(error => next(error));
-};
-
-// PUT /club/:id
-module.exports.update = function(request, response, next) {
-  User.findByIdAndUpdate(request.params.id, request.body)
-    .then(user => user ? response.status(200).end() : next())
-    .catch(error => next(error));
-};
