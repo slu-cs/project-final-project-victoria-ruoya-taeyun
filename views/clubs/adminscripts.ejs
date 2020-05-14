@@ -51,7 +51,6 @@
    event.preventDefault();
    const choices = document.getElementById("officerList");
    const length = choices.length;
-   var countOfficer = 0;
    for(var i=length-1;i>-1;i--){
       var choice = choices.options[i];
 
@@ -61,12 +60,6 @@
           const selectValue=$("#officerList").val();
           $("#memberList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
           choices.remove(i);
-        }else{
-          if(countOfficer != 1){
-            $('#OList').append($(`<p class="text-danger">You have to keep at least one officer on the club.</p>`));
-            countOfficer = 1;
-            console.log(countOfficer !=1)
-          }
         }
 	    }
    }
@@ -78,8 +71,6 @@ $('#promote').on('click',function(event){
   const choices = document.getElementById("memberList");
   const officer = document.getElementById("officerList");
   const length = choices.length;
-  var countOffi = 0;
-  var countMember = 0;
   for(var i=length-1;i>-1;i--){
      var choice = choices.options[i];
 
@@ -89,14 +80,7 @@ $('#promote').on('click',function(event){
          const selectValue=$("#memberList").val();
          $("#officerList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
          choices.remove(i);
-       }else{
-         if (officer.length>=5 && countOffi != 1){
-          $('#MList').append($(`<p class="text-danger">You can not have more than 5 officers.</p>`));
-          countOffi = 1;
-        }if(choices.length <= 1 && countMember != 1){
-          $('#MList').append($(`<p class="text-danger">You can not make all members become officers.</p>`));
-          countMember = 1;
-        }
+
        }
      }
   }

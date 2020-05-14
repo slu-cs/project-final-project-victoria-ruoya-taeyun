@@ -26,6 +26,7 @@
         <option unselected value="<%= id -%>"> <%= id -%></option>
       <%_ } -%>
     </select>
+    <p class="text-danger">*You can only have 1-5 officers.</p>
     <button class="btn btn-primary mt-1" id = "impeach">impeach</button>
 
   <%_ }else{-%>
@@ -45,6 +46,7 @@
        <option unselected value="<%= id -%>"> <%= id -%></option>
      <%_ } -%>
     </select>
+    <p class="text-danger">*You can not make all members become officers.</p>
     <button class="btn btn-primary mt-1" id ="promote" >promote</button>
    <%_ } -%>
    </div>
