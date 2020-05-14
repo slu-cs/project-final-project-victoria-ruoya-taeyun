@@ -25,7 +25,6 @@
          $('option').prop('selected', true);
          $.ajax({method: 'put', url: '/clubs/<%= club._id -%>', data: form.serialize()})
           .done(() => form.find('.form-control').removeClass('bg-dark text-white'))
-          .done(() => window.location.assign(/clubs))
            .done(() => alert('Update successfully.'))
 
            .fail(error => alert('Fail to update the club because of incomplete information or duplicate club name.'));
