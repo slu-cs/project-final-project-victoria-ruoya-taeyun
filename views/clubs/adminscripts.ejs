@@ -55,11 +55,11 @@
    for(var i=length-1;i>-1;i--){
      var choice = choices.options[i];
 	 if(choice.selected==true){
-    //  if (choices.length >1){
+     if (choices.length >1){
         choices.remove(i)
-    //  }else{
-      //  (#'OList').append(<p>You have to keep at least one officer on the club.</p>)
-    //  }
+     }else{
+        ('#OList').append($`<p>You have to keep at least one officer on the club.</p>`);
+    }
 
 
 	 }
