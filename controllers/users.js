@@ -35,13 +35,13 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
-
+/*
 module.exports.new = function(request, response, next) {
   User.distinct('_id')
     .then(userIDs => response.render('/index', {user: {}, userIDs: userIDs}))
     .catch(error => next(error));
 }
-
+*/
 
 // Handle MyAccount page requests
 // Get/users
