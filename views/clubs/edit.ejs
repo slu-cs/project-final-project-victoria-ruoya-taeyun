@@ -39,7 +39,7 @@
   <button class="btn btn-primary mt-1" id = "impeach">impeach</button>
   <h4>Member List</h4>
   <%_ if (Object.entries(club).length !== 0) {-%>
-    <select multiple name="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
+    <select multiple name="memberList" id="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
      <%_ for (const id of club.memberList) { -%>
        <%_ const status = club.memberList.includes(id) ? 'selected' : 'unselected' ; -%>
        <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
