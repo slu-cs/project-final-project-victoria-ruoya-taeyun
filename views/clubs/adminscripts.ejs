@@ -79,8 +79,8 @@ $('#promote').on('click',function(event){
 
      if(choice.selected==true){
        if (officer.length<5){
-         const selectText=$("#memberList").find("option:selected").text();  //获取Select选择的Text
-         const selectValue=$("#memberList").val();  //获取Select选择的Value
+         const selectText=$("#memberList").find("option:selected").text();  
+         const selectValue=$("#memberList").val();
          $("#officerList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
          choices.remove(i);
        }else{

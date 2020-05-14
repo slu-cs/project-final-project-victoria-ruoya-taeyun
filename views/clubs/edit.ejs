@@ -20,7 +20,8 @@
   <div id="OList">
  <h4>Officer List</h4>
   <%_ if (Object.entries(club).length !== 0) {-%>
-    <select multiple name="officerList" id="officerList" size="<%= club.officerList.length -%>" class="form-control w-auto mb-1">
+    <!-- a club have at most five officers-->
+    <select multiple name="officerList" id="officerList" size="5" class="form-control w-auto mb-1">
       <%_ for (const id of club.officerList) { -%>
         <option unselected value="<%= id -%>"> <%= id -%></option>
       <%_ } -%>
@@ -29,7 +30,7 @@
 
   <%_ }else{-%>
 
-      <select multiple name="officerList" size="1" class="form-control w-auto mb-1">
+      <select multiple name="officerList" size="5" class="form-control w-auto mb-1">
           <option  unselected value="<%= user._id -%>"> <%= user._id  -%></option>
       </select>
     <%_ } -%>
