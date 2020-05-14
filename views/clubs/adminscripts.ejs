@@ -48,6 +48,18 @@
 
 
  // impeach a officer
+ $('#impeach').on('click',function(event){
+   const select = $(this).closest('select');
+   const choices = select.find('option');
+   for (let choice of choices) {
+     choice = $(choice)
+     if (choice.selected == true){
+       choices.remove(choice);
+     };
+  };
+});
+
+
 
 
 
