@@ -17,6 +17,7 @@
   <textarea name="comingEvent" placeholder="Coming Event" rows="1" class="form-control mb-1"><%= club.comingEvent -%></textarea>
   <h4>Past Event</h4>
   <textarea name="pastEvent" placeholder="Past Event" rows="1" class="form-control mb-1"><%= club.pastEvent -%></textarea>
+  <div id="OList">
  <h4>Officer List</h4>
   <%_ if (Object.entries(club).length !== 0) {-%>
     <select multiple name="officerList" id="officerList" size="<%= club.officerList.length -%>" class="form-control w-auto mb-1">
@@ -26,12 +27,14 @@
       <%_ } -%>
     </select>
 
+
   <%_ }else{-%>
 
       <select multiple name="officerList" size="1" class="form-control w-auto mb-1">
           <option  value="<%= user._id -%>"> <%= user._id  -%></option>
       </select>
     <%_ } -%>
+    </div>
 
   <button class="btn btn-primary mt-1" id = "impeach">impeach</button>
   <h4>Member List</h4>
