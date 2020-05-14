@@ -78,13 +78,13 @@ $('#promote').on('click',function(event){
      var choice = choices.options[i];
 
      if(choice.selected==true){
-       if ($("#memberList").length >4){
+       if ($("#officerList").length<5){
          const selectText=$("#memberList").find("option:selected").text();  //获取Select选择的Text
          const selectValue=$("#memberList").val();  //获取Select选择的Value
          $("#officerList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
          choices.remove(i);
        }else{
-         $('#OList').append($(`<p class="text-danger">You have to keep at least one officer on the club.</p>`));
+         $('#MList').append($(`<p class="text-danger">You can not have more than 5 officers.</p>`));
        }
      }
   }
