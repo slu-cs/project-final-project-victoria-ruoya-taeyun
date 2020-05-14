@@ -51,14 +51,17 @@
  $('#impeach').on('click',function(event){
    event.preventDefault();
    const choices = document.getElementById("officerList");
-   const member = document.getElementById("memberList");
+   //const member = document.getElementById("memberList");
    const length = choices.length;
    for(var i=length-1;i>-1;i--){
      var choice = choices.options[i];
 
 	 if(choice.selected==true){
      if (choices.length >1){
-        member.append(i);
+       const selectText=$("#officerList").find("option:selected").text();  //获取Select选择的Text
+       const selectValue=$("#officerList").val();  //获取Select选择的Value
+       $("#memberList").append("<option value='"+selectValue+"'>"+selectText+"</option>");
+        //member.append(i);
         choices.remove(i);
 
 
