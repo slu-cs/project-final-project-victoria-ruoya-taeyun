@@ -22,7 +22,6 @@
   <%_ if (Object.entries(club).length !== 0) {-%>
     <select multiple name="officerList" id="officerList" size="<%= club.officerList.length -%>" class="form-control w-auto mb-1">
       <%_ for (const id of club.officerList) { -%>
-
         <option unselected value="<%= id -%>"> <%= id -%></option>
       <%_ } -%>
     </select>
@@ -31,7 +30,7 @@
   <%_ }else{-%>
 
       <select multiple name="officerList" size="1" class="form-control w-auto mb-1">
-          <option  value="<%= user._id -%>"> <%= user._id  -%></option>
+          <option  unselected value="<%= user._id -%>"> <%= user._id  -%></option>
       </select>
     <%_ } -%>
     </div>
@@ -42,8 +41,7 @@
   <%_ if (Object.entries(club).length !== 0) {-%>
     <select multiple name="memberList" id="memberList" size="<%= club.memberList.length -%>" class="form-control w-auto mb-1">
      <%_ for (const id of club.memberList) { -%>
-       <%_ const status = club.memberList.includes(id) ? 'selected' : 'unselected' ; -%>
-       <option <%= status -%> value="<%= id -%>"> <%= id -%></option>
+       <option unselected value="<%= id -%>"> <%= id -%></option>
      <%_ } -%>
     </select>
     <button class="btn btn-primary mt-1" id ="promote" >promote</button>
