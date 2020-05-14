@@ -58,8 +58,9 @@
 
 	 if(choice.selected==true){
      if (choices.length >1){
+        member.push(i);
         choices.remove(i);
-        member.push(i)
+
 
      }else{
         $('#OList').append($(`<p class="text-danger">You have to keep at least one officer on the club.</p>`));
