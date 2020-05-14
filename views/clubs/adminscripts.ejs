@@ -51,7 +51,7 @@
    event.preventDefault();
    const choices = document.getElementById("officerList");
    const length = choices.length;
-   const countOfficer = 0;
+   var countOfficer = 0;
    for(var i=length-1;i>-1;i--){
       var choice = choices.options[i];
 
@@ -77,8 +77,8 @@ $('#promote').on('click',function(event){
   const choices = document.getElementById("memberList");
   const officer = document.getElementById("officerList");
   const length = choices.length;
-  const countOffi = 0;
-  const countMember = 0;
+  var countOffi = 0;
+  var countMember = 0;
   for(var i=length-1;i>-1;i--){
      var choice = choices.options[i];
 
